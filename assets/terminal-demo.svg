@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="348" viewBox="0 0 800 348">
+  <title>Three real Bash commands from Linux Lab</title>
+  <desc>In chapter 01, bash hello.sh prints Hello From Bash. Integer remainder 17 % 5 prints 2. A true arithmetic comparison returns exit status 0.</desc>
+  <rect width="800" height="348" rx="16" fill="#1C1520"/>
+  <path d="M16 0h768a16 16 0 0 1 16 16v34H0V16A16 16 0 0 1 16 0" fill="#342837"/>
+  <circle cx="24" cy="25" r="4" fill="#F27A48"/>
+  <circle cx="40" cy="25" r="4" fill="#A594AA"/>
+  <circle cx="56" cy="25" r="4" fill="#A9C9B4"/>
+  <text x="79" y="31" fill="#FFF4E9" font-family="DejaVu Sans, sans-serif" font-size="16">mahad@linux-lab · first commands</text>
+  <text x="776" y="31" text-anchor="end" fill="#A9C9B4" font-family="DejaVu Sans, sans-serif" font-size="13">01-shell-and-script-basics/</text>
+  <g font-family="DejaVu Sans Mono, monospace" font-size="26">
+<text x="30" y="91" fill="#F27A48">$</text>
+<text x="61.31" y="91" fill="#FFF4E9" xml:space="preserve">bash hello.sh</text>
+<text x="30" y="128" fill="#A9C9B4">Hello From Bash</text>
+<text x="30" y="165" fill="#F27A48">$</text>
+<text x="61.31" y="165" fill="#FFF4E9" xml:space="preserve">echo $((17 % 5))</text>
+<text x="30" y="202" fill="#A9C9B4">2</text>
+<text x="30" y="239" fill="#F27A48">$</text>
+<text x="61.31" y="239" fill="#FFF4E9" xml:space="preserve">(( 20 &gt; 15 )); echo &quot;$?&quot;</text>
+<text x="30" y="276" fill="#A9C9B4">0</text>
+<text x="30" y="313" fill="#F27A48">$</text>
+<text x="61.31" y="313" fill="#FFF4E9" xml:space="preserve"></text>
+</g>
+<rect x="61.31" y="293" width="2" height="25" fill="#F27A48"/>
+</svg>

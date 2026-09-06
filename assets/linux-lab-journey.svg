@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="340" viewBox="0 0 1440 340" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">The route so far</title>
+  <desc id="description">Mahad's Linux learning path. Commands: basics covered. Bash: learning now. Linux systems, automation, and developer tools: to explore. The orange route ends at Bash and the remaining route is a dotted line.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1440" y2="340" gradientUnits="userSpaceOnUse"><stop stop-color="#241328"/><stop offset="1" stop-color="#421D39"/></linearGradient>
+    <clipPath id="canvas"><rect width="1440" height="340" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#canvas)">
+    <rect width="1440" height="340" fill="url(#paper)"/>
+    <!-- Open notebook rules, not a box around every topic. -->
+    <path d="M0 117h1440M0 326h1440" stroke="#B58BA8" stroke-opacity="0.12"/>
+    <path d="M45 0v340" stroke="#F27A48" stroke-opacity="0.2"/>
+    <path d="M1389 0v340" stroke="#B58BA8" stroke-opacity="0.09"/>
+    <text x="79" y="80" fill="#FFF4E9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="46" font-weight="500" letter-spacing="-1.2">The route so far.</text>
+    <text x="1355" y="75" text-anchor="end" fill="#CBB3C9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="24">Started in an OS lab. Still going.</text>
+
+    <path d="m78 170 13 12-13 12" stroke="#F27A48" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M109 182h264" stroke="#F27A48" stroke-width="3" stroke-linecap="round"/>
+    <path d="M388 182h904" stroke="#AF8CA4" stroke-opacity="0.6" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 11"/>
+    <path d="m1292 175 9 7-9 7" stroke="#AF8CA4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <circle cx="126" cy="182" r="8" fill="#F27A48"/>
+    <circle cx="389" cy="182" r="17" fill="#241328" stroke="#A9C9B4" stroke-width="2"/>
+    <circle cx="389" cy="182" r="7" fill="#A9C9B4"/>
+    <circle cx="652" cy="182" r="8" fill="#31172F" stroke="#AF8CA4" stroke-width="2"/>
+    <circle cx="915" cy="182" r="8" fill="#361933" stroke="#AF8CA4" stroke-width="2"/>
+    <circle cx="1178" cy="182" r="8" fill="#3D1B37" stroke="#AF8CA4" stroke-width="2"/>
+
+    <g font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="20">
+      <text x="112" y="151" fill="#F0A17B">01</text>
+      <text x="375" y="151" fill="#A9C9B4">02</text>
+      <text x="638" y="151" fill="#AC91AD">03</text>
+      <text x="901" y="151" fill="#AC91AD">04</text>
+      <text x="1164" y="151" fill="#AC91AD">05</text>
+    </g>
+    <g font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="28" font-weight="500" fill="#FFF4E9">
+      <text x="110" y="241">Commands</text>
+      <text x="373" y="241">Bash</text>
+      <text x="636" y="241">Linux systems</text>
+      <text x="899" y="241">Automation</text>
+      <text x="1162" y="241">Developer tools</text>
+    </g>
+    <g font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="23">
+      <text x="110" y="280" fill="#CBB3C9">basics covered</text>
+      <text x="373" y="280" fill="#A9C9B4">learning now</text>
+      <text x="636" y="280" fill="#CBB3C9">to explore</text>
+      <text x="899" y="280" fill="#CBB3C9">to explore</text>
+      <text x="1162" y="280" fill="#CBB3C9">to explore</text>
+    </g>
+    <!-- A small handwritten-style arrow points at the part that is currently open. -->
+    <path d="M493 296c-28 17-68 20-96 3m2 10-3-11 13 1" stroke="#A9C9B4" stroke-opacity="0.7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

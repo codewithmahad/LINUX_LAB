@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="760" viewBox="0 0 720 760" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">LINUX_LAB — Come learn Linux with me.</title>
+  <desc id="description">Mahad's Linux and Bash learning notes from UBIT, Karachi. An original penguin sits behind a terminal in a warm Ubuntu-inspired desktop illustration. Running bash hello.sh prints Hello From Bash, and echo $((17 % 5)) prints 2.</desc>
+  <defs>
+    <linearGradient id="wallpaper" x1="0" y1="0" x2="720" y2="760" gradientUnits="userSpaceOnUse"><stop stop-color="#231127"/><stop offset="0.56" stop-color="#3A173A"/><stop offset="1" stop-color="#641F3E"/></linearGradient>
+    <linearGradient id="sunset" x1="470" y1="197" x2="747" y2="529" gradientUnits="userSpaceOnUse"><stop stop-color="#F47B48"/><stop offset="1" stop-color="#D74739"/></linearGradient>
+    <linearGradient id="horizon" x1="88" y1="760" x2="603" y2="560" gradientUnits="userSpaceOnUse"><stop stop-color="#2C1330"/><stop offset="1" stop-color="#92374E"/></linearGradient>
+    <linearGradient id="coat" x1="118" y1="58" x2="240" y2="278" gradientUnits="userSpaceOnUse"><stop stop-color="#302736"/><stop offset="1" stop-color="#17121D"/></linearGradient>
+    <linearGradient id="belly" x1="157" y1="155" x2="218" y2="261" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF4E9"/><stop offset="1" stop-color="#E3CEB8"/></linearGradient>
+    <clipPath id="canvas"><rect width="720" height="760" rx="20"/></clipPath>
+    <clipPath id="window"><rect x="45" y="373" width="630" height="306" rx="15"/></clipPath>
+  </defs>
+  <g clip-path="url(#canvas)">
+    <rect width="720" height="760" fill="url(#wallpaper)"/>
+    <circle cx="593" cy="367" r="163" fill="url(#sunset)" fill-opacity="0.75"/>
+    <circle cx="593" cy="367" r="203" stroke="#EAA090" stroke-opacity="0.18"/>
+    <circle cx="593" cy="367" r="247" stroke="#EAA090" stroke-opacity="0.1"/>
+    <path d="M78 760 529 548 720 760Z" fill="url(#horizon)"/>
+    <path d="m414 760 231-173 75 58v115Z" fill="#38162F"/>
+    <path d="m587 760 133-85v85Z" fill="#251227"/>
+    <path d="m78 760 451-212 80 89" stroke="#ECA18C" stroke-opacity="0.12"/>
+    <path d="m414 760 231-173 75 58" stroke="#ECA18C" stroke-opacity="0.2"/>
+
+    <rect x="54" y="51" width="37" height="4" rx="2" fill="#F27A48"/>
+    <text x="108" y="61" fill="#DCC7D8" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.6">MAHAD / UBIT, KARACHI</text>
+    <text x="51" y="143" fill="#FFF4E9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="-2">LINUX_LAB</text>
+    <text x="54" y="234" fill="#FFF4E9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="46" letter-spacing="-1.2">Come learn</text>
+    <text x="54" y="291" fill="#FFF4E9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="46" letter-spacing="-1.2"><tspan fill="#F69A71">Linux</tspan> with me.</text>
+    <text x="56" y="342" fill="#CBB3C9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="23">My OS lab notes, and beyond.</text>
+
+    <!-- The mascot is stacked above the terminal so the type keeps its space. -->
+    <g transform="translate(386 146) scale(.95)">
+
+    <!-- The broad seated shape and long flippers keep the bird recognizably penguin-like. -->
+    <path d="M124 150C110 169 92 192 85 222c-4 15 0 25 8 22 10-5 22-22 36-38l6-39Z" fill="#231C2B" stroke="#49374A" stroke-width="2"/>
+    <path d="M236 150c14 19 32 42 39 72 4 15 0 25-8 22-10-5-22-22-36-38l-6-39Z" fill="#231C2B" stroke="#49374A" stroke-width="2"/>
+    <path d="M180 45c-37 0-56 28-56 68 0 27-11 43-17 72-7 34-5 63 16 80 14 12 35 17 57 17s43-5 57-17c21-17 23-46 16-80-6-29-17-45-17-72 0-40-19-68-56-68Z" fill="url(#coat)" stroke="#49374A" stroke-width="2"/>
+    <path d="M148 149c-11 13-24 44-24 72 0 31 21 48 56 48s56-17 56-48c0-28-13-59-24-72-11-12-22-17-32-17s-21 5-32 17Z" fill="url(#belly)"/>
+    <path d="M158 87c-14 0-23 15-21 33 1 16 11 27 23 25 12-1 21-13 21-28s-9-30-23-30Z" fill="#FFF4E9"/>
+    <path d="M202 87c14 0 23 15 21 33-1 16-11 27-23 25-12-1-21-13-21-28s9-30 23-30Z" fill="#FFF4E9"/>
+    <ellipse cx="160" cy="113" rx="6.5" ry="12" fill="#221929"/>
+    <ellipse cx="200" cy="113" rx="6.5" ry="12" fill="#221929"/>
+    <circle cx="162" cy="109" r="2" fill="#FFF4E9"/>
+    <circle cx="202" cy="109" r="2" fill="#FFF4E9"/>
+    <path d="M151 137c8-10 19-15 29-15s21 5 29 15c-6 9-20 17-29 17s-23-8-29-17Z" fill="#EDB750" stroke="#CE8B35" stroke-width="1.5"/>
+    <path d="M154 137c14 4 38 4 52 0" stroke="#A46B32" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M131 250c-12-5-29 3-43 15-11 10-18 22-10 27 11 7 54 9 75-1 10-5 6-22-5-31-5-4-10-7-17-10Z" fill="#EDB750" stroke="#CE8B35" stroke-width="2"/>
+    <path d="M229 250c12-5 29 3 43 15 11 10 18 22 10 27-11 7-54 9-75-1-10-5-6-22 5-31 5-4 10-7 17-10Z" fill="#EDB750" stroke="#CE8B35" stroke-width="2"/>
+    <path d="m105 281 9-10m141 10-9-10" stroke="#CE8B35" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <path d="m649 175 9-6-9-6m18 13h9" stroke="#EFC3AC" stroke-opacity="0.65" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="468" cy="174" r="3" fill="#A9C9B4"/>
+
+    <rect x="53" y="386" width="630" height="306" rx="15" fill="#130C19" fill-opacity="0.3"/>
+    <g clip-path="url(#window)">
+      <rect x="45" y="373" width="630" height="306" fill="#1C1520"/>
+      <rect x="45" y="373" width="630" height="55" fill="#342837"/>
+      <path d="M45 428h630" stroke="#534052" stroke-opacity="0.7"/>
+      <text x="75" y="408" fill="#E7DCE7" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="21">mahad@linux-lab: ~</text>
+      <path d="M563 403h10" stroke="#C0A9C0" stroke-width="1.7" stroke-linecap="round"/>
+      <rect x="602" y="397" width="10" height="10" rx="1" stroke="#C0A9C0" stroke-width="1.5"/>
+      <circle cx="647" cy="402" r="11" fill="#E66B42"/>
+      <path d="m644 399 6 6m0-6-6 6" stroke="#321B25" stroke-width="1.5" stroke-linecap="round"/>
+      <g font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="30">
+        <text x="75" y="480" fill="#F1E9EE" xml:space="preserve"><tspan fill="#EF8C63">$ </tspan>bash <tspan fill="#D8D397">hello.sh</tspan></text>
+        <text x="111" y="519" fill="#BDAABC">Hello From Bash</text>
+        <text x="75" y="572" fill="#F1E9EE" xml:space="preserve"><tspan fill="#EF8C63">$ </tspan>echo $((17 % 5))</text>
+        <text x="111" y="611" fill="#BDAABC">2</text>
+        <text x="75" y="654" fill="#EF8C63">$</text>
+      </g>
+      <rect x="111" y="629" width="15" height="30" rx="1" fill="#A9C9B4"/>
+    </g>
+    <rect x="45.5" y="373.5" width="629" height="305" rx="14.5" stroke="#A17194" stroke-opacity="0.55"/>
+    <text x="54" y="722" fill="#DCC7D8" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="19" font-weight="500" letter-spacing="1.5">ONE COMMAND AT A TIME</text>
+  </g>
+</svg>

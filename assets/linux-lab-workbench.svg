@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="270" viewBox="0 0 1440 270" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">Same terminal. Your turn.</title>
+  <desc id="description">A personal invitation to learn Linux with Mahad at UBIT, Karachi. Warm cream lettering on aubergine, an orange terminal prompt, and an original penguin seated at a terminal on the right.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1440" y2="270" gradientUnits="userSpaceOnUse"><stop stop-color="#2A162C"/><stop offset="1" stop-color="#57203B"/></linearGradient>
+    <linearGradient id="coat" x1="118" y1="58" x2="240" y2="278" gradientUnits="userSpaceOnUse"><stop stop-color="#302736"/><stop offset="1" stop-color="#17121D"/></linearGradient>
+    <linearGradient id="belly" x1="157" y1="155" x2="218" y2="261" gradientUnits="userSpaceOnUse"><stop stop-color="#FFF4E9"/><stop offset="1" stop-color="#E3CEB8"/></linearGradient>
+    <clipPath id="canvas"><rect width="1440" height="270" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#canvas)">
+    <rect width="1440" height="270" fill="url(#paper)"/>
+    <circle cx="1267" cy="208" r="207" stroke="#F27A48" stroke-opacity="0.2"/>
+    <circle cx="1267" cy="208" r="262" stroke="#F27A48" stroke-opacity="0.1"/>
+    <path d="m961 270 263-168 216 101v67Z" fill="#8B3550" fill-opacity="0.35"/>
+    <path d="m1173 270 267-102v102Z" fill="#251227" fill-opacity="0.7"/>
+    <path d="m81 65 18 15-18 15m36 0h20" stroke="#F27A48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="163" y="101" fill="#FFF4E9" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="62" font-weight="500" letter-spacing="-1.8">Same terminal.</text>
+    <text x="79" y="174" fill="#F69A71" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="62" font-weight="500" letter-spacing="-1.8">Your turn.</text>
+    <path d="M81 224h37" stroke="#A9C9B4" stroke-width="2" stroke-linecap="round"/>
+    <text x="134" y="231" fill="#DCC7D8" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="21" letter-spacing="1.8">MAHAD / UBIT, KARACHI</text>
+
+    <!-- The same original penguin that appears in the Linux Lab sidebar mark. -->
+    <g transform="translate(1084 -27) scale(.88)">
+      <path d="M124 150C110 169 92 192 85 222c-4 15 0 25 8 22 10-5 22-22 36-38l6-39Z" fill="#231C2B" stroke="#73516A" stroke-width="2"/>
+      <path d="M236 150c14 19 32 42 39 72 4 15 0 25-8 22-10-5-22-22-36-38l-6-39Z" fill="#231C2B" stroke="#73516A" stroke-width="2"/>
+      <path d="M180 45c-37 0-56 28-56 68 0 27-11 43-17 72-7 34-5 63 16 80 14 12 35 17 57 17s43-5 57-17c21-17 23-46 16-80-6-29-17-45-17-72 0-40-19-68-56-68Z" fill="url(#coat)" stroke="#73516A" stroke-width="2"/>
+      <path d="M148 149c-11 13-24 44-24 72 0 31 21 48 56 48s56-17 56-48c0-28-13-59-24-72-11-12-22-17-32-17s-21 5-32 17Z" fill="url(#belly)"/>
+      <path d="M158 87c-14 0-23 15-21 33 1 16 11 27 23 25 12-1 21-13 21-28s-9-30-23-30Z" fill="#FFF4E9"/>
+      <path d="M202 87c14 0 23 15 21 33-1 16-11 27-23 25-12-1-21-13-21-28s9-30 23-30Z" fill="#FFF4E9"/>
+      <ellipse cx="160" cy="113" rx="6.5" ry="12" fill="#221929"/>
+      <ellipse cx="200" cy="113" rx="6.5" ry="12" fill="#221929"/>
+      <circle cx="162" cy="109" r="2" fill="#FFF4E9"/>
+      <circle cx="202" cy="109" r="2" fill="#FFF4E9"/>
+      <path d="M151 137c8-10 19-15 29-15s21 5 29 15c-6 9-20 17-29 17s-23-8-29-17Z" fill="#EDB750" stroke="#CE8B35" stroke-width="1.5"/>
+      <path d="M154 137c14 4 38 4 52 0" stroke="#A46B32" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M131 250c-12-5-29 3-43 15-11 10-18 22-10 27 11 7 54 9 75-1 10-5 6-22-5-31-5-4-10-7-17-10Z" fill="#EDB750" stroke="#CE8B35" stroke-width="2"/>
+      <path d="M229 250c12-5 29 3 43 15 11 10 18 22 10 27-11 7-54 9-75-1-10-5-6-22 5-31 5-4 10-7 17-10Z" fill="#EDB750" stroke="#CE8B35" stroke-width="2"/>
+      <path d="m105 281 9-10m141 10-9-10" stroke="#CE8B35" stroke-width="2" stroke-linecap="round"/>
+      <rect x="98" y="257" width="164" height="65" rx="10" fill="#211626" stroke="#8F6189" stroke-width="2"/>
+      <path d="m121 278 11 10-11 10" stroke="#F27A48" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M143 298h17" stroke="#FFF4E9" stroke-width="3" stroke-linecap="round"/>
+      <path d="M185 280h54m-54 12h38m-38 12h25" stroke="#765771" stroke-width="2" stroke-linecap="round"/>
+      <rect x="231" y="290" width="8" height="13" rx="1" fill="#A9C9B4"/>
+    </g>
+    <path d="m1042 102 13-6m-10-5 7 15" stroke="#F27A48" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="1381" cy="42" r="4" fill="#A9C9B4"/>
+  </g>
+</svg>
