@@ -1,3 +1,5 @@
+[Previous: Navigation and Paths](../01-navigation-and-paths/README.md) · [LINUX_LAB](../../../README.md) · [Learning map](../../../README.md#what-im-learning)
+
 # Files and Directories
 
 Linux work revolves around files and directories. This section covers the commands used to create them, inspect their type and metadata, and view directory structures from the terminal.

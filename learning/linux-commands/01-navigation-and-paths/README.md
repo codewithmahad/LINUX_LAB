@@ -1,424 +1,375 @@
+[LINUX_LAB](../../../README.md) / [Linux commands](../../../README.md#what-im-learning) / **01**
+
+<img align="right" src="../../../assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="100">
+
 # Navigation and Paths
 
-Linux command-line work starts with knowing **where you are, what is around you, and how to move through the filesystem**.
+**Know where you are before you start changing things.**
 
-This section covers the basic commands and path concepts used for navigating a Linux system.
+A terminal doesn't give you a row of open folders to click through. You ask where you are, look around, and choose where to go. These are the three commands I want within easy reach before getting into the rest of Linux.
 
----
+| Where am I? | What's here? | How do I get there? |
+| :--- | :--- | :--- |
+| `pwd` prints your location. | `ls` lists files and directories. | `cd` changes your location. |
 
-## Command Structure
+<br clear="right">
 
-Most Linux commands follow a general structure:
+[Try it](#start-in-your-copy-of-the-repo) · [Read a command](#read-a-command) · [Understand paths](#give-a-command-an-address) · [Practise](#take-a-short-trip-through-the-repo) · [Quick revision](#quick-revision)
+
+> **By the end:** find a folder, explain the path you used, and get back without guessing.
+>
+> **Before starting:** open a Bash terminal on Linux or Ubuntu in WSL. The main README has [setup instructions](../../../README.md#get-a-linux-terminal) and [clone instructions](../../../README.md#lets-run-something).
+
+## Start in your copy of the repo
+
+Open your cloned `LINUX_LAB` folder in your editor, then open a terminal there. If you're already using a separate terminal, use `cd` followed by the location where **you** saved the repo.
+
+Run:
+
+```bash
+pwd
+ls -1 learning
+```
+
+`pwd` means *print working directory*. It prints the path to the directory your shell is currently working in. Here, that path should end in `/LINUX_LAB`. The part before it depends on where you cloned the repo.
+
+The second command lists the contents of `learning`, one entry per line:
+
+```text
+bash-scripting
+linux-commands
+```
+
+That is the digit **1** in `ls -1`, not a lowercase L.
+
+Now take one step in and one step back:
+
+```bash
+cd learning
+pwd
+cd ..
+pwd
+```
+
+| After this command | Your location should end in |
+| :--- | :--- |
+| `cd learning` | `/LINUX_LAB/learning` |
+| `cd ..` | `/LINUX_LAB` |
+
+A successful `cd` normally prints nothing. Use `pwd` to see the change. `cd ..` moves to the **parent directory**, the folder containing the one you're in.
+
+**Keep this terminal open.** You're back at the repo root, which is the starting point for the next examples.
+
+## Read a command
+
+A useful pattern for many commands is:
 
 ```text
 command [options] [arguments]
 ```
 
-Example:
+The square brackets here mean “optional.” Don't type those brackets.
+
+For example, from the repo root:
 
 ```bash
 ls -la learning
 ```
 
-Here:
+| Part | What it does |
+| :--- | :--- |
+| `ls` | The command to run. |
+| `-l` | Ask for a detailed listing. This is a lowercase L. |
+| `-a` | Include entries whose names start with a dot. |
+| `learning` | The directory to inspect. This is an argument. |
 
-- `ls` is the command.
-- `-la` contains options that change how the command behaves.
-- `learning` is the argument, in this case the directory to list.
+For these `ls` options, `-la` combines `-l -a`. Options change the behaviour of a command; arguments tell it what to work on. Each command defines the options it accepts.
 
-Options are commonly written using `-` followed by one or more letters.
+A command such as `ls learning` can inspect another directory **without moving you into it**. Run `pwd` afterwards: you're still at the repo root.
 
----
+## Look around with ls
 
-## `pwd`: Print Working Directory
-
-`pwd` displays the absolute path of the directory you are currently working in.
-
-```bash
-pwd
-```
-
-Example output:
-
-```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB
-```
-
-This is useful whenever you want to confirm your current location in the filesystem.
-
----
-
-## `ls`: List Directory Contents
-
-`ls` displays the contents of a directory.
-
-### Basic Listing
+Start with the plain command:
 
 ```bash
 ls
 ```
 
-Lists the visible files and directories in the current location.
+With no path argument, it lists the current directory. These are the options worth practising first:
 
-### One Entry Per Line
+| Command | What changes |
+| :--- | :--- |
+| `ls` | List visible entries in the current directory. |
+| `ls -1` | Put each entry on its own line. |
+| `ls -a` | Include hidden entries, plus `.` and `..`. |
+| `ls -A` | Include hidden entries, but leave out `.` and `..`. |
+| `ls -l` | Show details such as permissions, owner, size, and modification time. |
+| `ls -lah` | Combine a detailed listing, hidden entries, and readable sizes such as `4.0K`. |
 
-```bash
-ls -1
-```
+Try `ls -a` in the repo root. You should see `.git` and `.gitignore` among the entries.
 
-The `-1` option displays each entry on a separate line.
+A name beginning with a dot is hidden from ordinary listings. “Hidden” doesn't mean protected or encrypted. `.` and `..` are special entries for the current and parent directories.
 
-### Long Listing
+<details>
+<summary><strong>Read one line of ls -l output</strong></summary>
 
-```bash
-ls -l
-```
-
-Displays additional information such as:
-
-- file permissions,
-- owner,
-- group,
-- size,
-- modification time,
-- file or directory name.
-
-### Include Hidden Files
+Inspect a file that is already in this repo:
 
 ```bash
-ls -a
+ls -l README.md
 ```
 
-The `-a` option includes hidden files and directories.
-
-In Linux, names beginning with `.` are normally hidden.
-
-Examples:
+An illustrative line looks like this; the values on your machine will differ:
 
 ```text
-.git
-.gitignore
+-rw-r--r-- 1 student student 4096 Sep 7 10:00 README.md
 ```
 
-### Human-Readable Detailed Listing
+| Part | Meaning |
+| :--- | :--- |
+| `-` at the beginning | This is a regular file. A directory begins with `d`. |
+| `rw-r--r--` | Permission bits. We'll study these in the permissions topic later. |
+| `1` | Number of hard links. |
+| First `student` | Owner. |
+| Second `student` | Group. |
+| `4096` | File size in bytes in this example. `-h` changes how sizes are displayed. |
+| `Sep 7 10:00` | Modification time, in this example's display format. |
+| `README.md` | The filename. |
+
+For now, recognise the columns. You don't need to learn permissions and hard links just to move between folders. File metadata gets more attention in [Files and Directories](../02-files-and-directories/README.md).
+
+Terminal colours depend on your settings. Use the listing's information rather than relying on a particular colour to identify a directory.
+
+</details>
+
+## Give a command an address
+
+A **path** tells a command where to find something. The same path can be given to `cd`, `ls`, or another command that accepts filenames.
+
+### Absolute paths start at /
+
+`/` is the root of the Linux filesystem. An absolute path starts there, so it doesn't depend on your current working directory.
 
 ```bash
-ls -lha
+ls /home
 ```
 
-This combines three options:
+This inspects `/home` even when you're inside the repo. On a typical Ubuntu setup, user home directories live there.
 
-| Option | Meaning |
-| --- | --- |
-| `-l` | Long listing format |
-| `-h` | Human-readable file sizes |
-| `-a` | Include hidden entries |
+To get an absolute path to **your** repo, run `pwd` while you're at its root. You can later pass that full path to `cd`. Don't copy someone else's `/home/username/...` path and expect it to exist on your computer.
 
-For example, `4096` bytes may be displayed as `4.0K`.
+### Relative paths start where you are
 
-Single-letter options can often be combined:
+From the repo root:
 
 ```bash
-ls -l -h -a
+ls learning/linux-commands
 ```
 
-and:
+This starts from the current directory, then looks inside `learning`, then `linux-commands`.
+
+If you're already inside `learning`, the relative path becomes simply:
 
 ```bash
-ls -lha
+ls linux-commands
 ```
 
-are equivalent.
+These commands reach the same directory from different starting points.
 
----
+<details>
+<summary><strong>Open a map of the folders used in this chapter</strong></summary>
 
-## Absolute and Relative Paths
+This is just the relevant part of the repo:
 
-Linux commands frequently work with filesystem paths.
-
-There are two important types.
-
-### Absolute Path
-
-An absolute path describes the complete location of a file or directory starting from the filesystem root `/`.
-
-Example:
-
-```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB
+```mermaid
+flowchart TD
+    repo["LINUX_LAB/"] --> learning["learning/"]
+    learning --> commands["linux-commands/"]
+    learning --> bash["bash-scripting/"]
+    commands --> first["01-navigation-and-paths/"]
+    commands --> second["02-files-and-directories/"]
 ```
 
-An absolute path works regardless of the current working directory.
+From `01-navigation-and-paths`, one `..` gets you to `linux-commands`, two get you to `learning`, and three get you to `LINUX_LAB`.
 
-Example:
+</details>
+
+### The small symbols you'll keep seeing
+
+| Path or command | Meaning |
+| :--- | :--- |
+| `/` | The filesystem root. |
+| `~` | Your home directory, when Bash expands the unquoted tilde. |
+| `.` | The current directory. |
+| `..` | The parent directory. |
+| `../..` | Two parent directories up. |
+| `cd` or `cd ~` | Go to your home directory. |
+| `cd -` | Go to the previous working directory and print its path. |
+
+The **repo root** means the top-level `LINUX_LAB` directory. The **filesystem root** means `/`. Your **home directory** is your account's own starting place. They're three different things.
+
+`cd -` is different from `cd ..`. The first returns to the last directory you were in; the second goes to the parent. Before you've changed directories, `cd -` may report that `OLDPWD` isn't set.
+
+## Names need a little care
+
+### Uppercase and lowercase can matter
+
+Ubuntu's usual Linux filesystems distinguish `learning` from `Learning`. Use the spelling that `ls` shows. Mounted Windows drives in WSL can have different case behaviour.
+
+Tab completion is a good way to avoid guessing the spelling.
+
+### Keep a path with spaces together
+
+If a directory is named `OS Lab`, pass that name as one argument:
 
 ```bash
-cd /home/mahad/Github-Repo-Clones/LINUX_LAB
+cd "OS Lab"
 ```
 
----
+That is a naming example, not a folder supplied with this repo. Without the quotes, Bash passes `OS` and `Lab` separately, and `cd` normally complains about too many arguments.
 
-### Relative Path
+One detail to remember: quoting `"~"` stops Bash from expanding it to your home directory. Use `cd ~` or just `cd` to go home. We'll cover quoting properly in [Variables and Expansion](../../bash-scripting/02-variables-and-expansion/README.md).
 
-A relative path is interpreted from the current working directory.
+## Let the keyboard help
 
-Example:
-
-```text
-learning/linux-commands
-```
-
-If the current directory is:
-
-```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB
-```
-
-then:
-
-```text
-learning/linux-commands
-```
-
-refers to:
-
-```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB/learning/linux-commands
-```
-
-Relative paths are usually shorter and more convenient when working inside a project.
-
----
-
-## Important Path Symbols
-
-| Symbol | Meaning |
-| --- | --- |
-| `/` | Root of the Linux filesystem |
-| `~` | Current user's home directory |
-| `.` | Current directory |
-| `..` | Parent directory |
-
-For the current user:
-
-```text
-~ = /home/mahad
-```
-
-The filesystem root `/` and the user's home directory `~` are different locations.
-
-A simplified example:
-
-```text
-/
-├── etc
-├── home
-│   └── mahad
-├── tmp
-└── usr
-```
-
-Here, `/home/mahad` exists inside the filesystem rooted at `/`.
-
----
-
-## `cd`: Change Directory
-
-`cd` is used to move between directories.
-
-### Enter a Directory
-
-```bash
-cd learning
-```
-
----
-
-### Move to the Parent Directory
-
-```bash
-cd ..
-```
-
-`..` represents the parent of the current directory.
-
----
-
-### Move Up Multiple Levels
-
-```bash
-cd ../..
-```
-
-Each `..` moves one level upward.
-
----
-
-### Move to the Home Directory
-
-```bash
-cd ~
-```
-
-A shorter equivalent is simply:
-
-```bash
-cd
-```
-
-Both move to the current user's home directory.
-
----
-
-### Return to the Previous Directory
-
-```bash
-cd -
-```
-
-This switches back to the previous working directory.
-
-It is useful when repeatedly moving between two locations.
-
-Example:
-
-```bash
-cd ~
-cd -
-```
-
----
-
-## Current and Parent Directory Entries
-
-Running:
-
-```bash
-ls -la
-```
-
-also shows:
-
-```text
-.
-..
-```
-
-These have special meanings:
-
-```text
-.   current directory
-..  parent directory
-```
-
-This is why a command such as:
-
-```bash
-code .
-```
-
-means:
-
-> Open the current directory in Visual Studio Code.
-
----
-
-## Tab Completion
-
-Bash can automatically complete command names and filesystem paths.
-
-Start typing a path:
+In Bash, start typing this from the repo root:
 
 ```text
 cd lea
 ```
 
-then press `Tab`.
+Press <kbd>Tab</kbd>. If there is one match, Bash completes the name. If there are several, another <kbd>Tab</kbd> can show the possibilities. Completion settings can change the exact behaviour.
 
-If there is a unique match, Bash may complete it to:
+<details>
+<summary><strong>A few shortcuts to keep beside the terminal</strong></summary>
 
-```text
-cd learning/
-```
+These are common defaults for an interactive Bash terminal.
 
-Tab completion is useful because it:
+| Keys | What they do |
+| :--- | :--- |
+| <kbd>↑</kbd> / <kbd>↓</kbd> | Browse previous commands. |
+| <kbd>Ctrl</kbd> + <kbd>R</kbd> | Search backwards through command history. |
+| <kbd>Ctrl</kbd> + <kbd>A</kbd> | Move to the beginning of the line. |
+| <kbd>Ctrl</kbd> + <kbd>E</kbd> | Move to the end of the line. |
+| <kbd>Ctrl</kbd> + <kbd>L</kbd> | Clear the visible screen; this doesn't erase command history. |
+| <kbd>Ctrl</kbd> + <kbd>C</kbd> | Cancel the input line, or ask a foreground program to stop. Some programs handle it differently. |
 
-- reduces typing,
-- avoids spelling mistakes,
-- makes long paths easier to work with.
+For history search, press <kbd>Ctrl</kbd> + <kbd>R</kbd> and type part of an earlier command, such as `ls`. Check the result before pressing Enter. <kbd>Ctrl</kbd> + <kbd>C</kbd> cancels the search.
 
-If multiple matches exist, pressing `Tab` again may display the available possibilities.
+</details>
 
----
+## Take a short trip through the repo
 
-## Useful Terminal Shortcuts
+**Start at the repo root.** This exercise uses folders and files already in the clone. Type one command at a time and check where each step leaves you.
 
-These shortcuts make command-line work faster.
+1. Enter `learning/linux-commands/01-navigation-and-paths`.
+2. List the files there, including hidden entries.
+3. Move directly to the neighbouring `02-files-and-directories` folder using a relative path.
+4. Use `cd -` to return to this chapter.
+5. Return to the repo root using parent-directory notation.
+6. List `learning/bash-scripting` without leaving the repo root. Use `pwd` to confirm.
 
-| Shortcut | Purpose |
-| --- | --- |
-| `Tab` | Auto-complete commands and paths |
-| `↑` / `↓` | Browse previously executed commands |
-| `Ctrl + L` | Clear the visible terminal |
-| `Ctrl + C` | Cancel the currently running command |
-| `Ctrl + R` | Search backward through command history |
+<details>
+<summary><strong>Compare your route with mine</strong></summary>
 
-### Reverse History Search
-
-Press:
-
-```text
-Ctrl + R
-```
-
-and start typing part of an earlier command.
-
-For example:
-
-```text
-git push
-```
-
-Bash can search your command history for a previous matching command such as:
+Run this whole sequence from the repo root:
 
 ```bash
-git push origin main
+cd learning/linux-commands/01-navigation-and-paths
+pwd
+ls -a
+cd ../02-files-and-directories
+pwd
+cd -
+pwd
+cd ../../..
+pwd
+ls learning/bash-scripting
+pwd
 ```
 
----
+| Checkpoint | The end of your working-directory path |
+| :--- | :--- |
+| After entering this chapter | `/LINUX_LAB/learning/linux-commands/01-navigation-and-paths` |
+| After entering the neighbouring chapter | `/LINUX_LAB/learning/linux-commands/02-files-and-directories` |
+| After `cd -` | `/LINUX_LAB/learning/linux-commands/01-navigation-and-paths` |
+| After `cd ../../..` | `/LINUX_LAB` |
+| After the final `ls` | Still `/LINUX_LAB`. Listing a directory doesn't move you. |
 
-## Quick Reference
+The beginning of the path and the exact listings can differ between clones. The route should be the same.
+
+</details>
+
+<details>
+<summary><strong>One more check: can you spot the wrong path?</strong></summary>
+
+You're inside `LINUX_LAB/learning`. Which command lists the Linux command chapters?
+
+1. `ls linux-commands`
+2. `ls learning/linux-commands`
+
+**Answer: 1.** The second path would look for another `learning` directory inside the one you're already in.
+
+This is why `pwd` is useful when a command says a file or directory doesn't exist.
+
+</details>
+
+## When a path doesn't work
+
+| What you see | What to check |
+| :--- | :--- |
+| `No such file or directory` | Run `pwd` and `ls`. Check your starting point, spelling, and letter case. |
+| `Not a directory` | You may have passed a file to `cd`, such as `README.md`. `cd` enters directories. |
+| `too many arguments` | A path with spaces may need quotes. |
+| `Permission denied` | Your account may lack permission to enter part of the path. Practise in your own repo; changing permissions is a later topic. |
+
+A failed `cd` leaves you in the same directory. Check with `pwd` before continuing.
+
+If you need to check the command itself, Bash has local help:
 
 ```bash
-pwd                 # Show current directory
-
-ls                  # List directory contents
-ls -1               # One entry per line
-ls -l               # Detailed listing
-ls -a               # Include hidden files
-ls -lha              # Detailed, human-readable, including hidden files
-
-cd learning         # Enter a directory
-cd ..               # Move one level up
-cd ../..             # Move two levels up
-cd ~                 # Go to home directory
-cd                   # Also go to home directory
-cd -                 # Return to previous directory
-
-ls /                 # List the filesystem root
+help cd
+help pwd
+ls --help
 ```
 
----
+`cd` and Bash's `pwd` are shell builtins, so `help` describes them. `ls --help` describes the installed `ls` program. You can look things up without leaving the terminal.
 
-## Key Takeaways
+## Quick revision
 
-- `pwd` tells you where you currently are.
-- `ls` shows what exists in a directory.
-- `cd` moves between directories.
-- Absolute paths start from `/`.
-- Relative paths depend on the current working directory.
-- `~` represents the user's home directory.
-- `.` represents the current directory.
-- `..` represents the parent directory.
-- Hidden Linux files usually begin with `.`.
-- Tab completion and command-history shortcuts make terminal work much faster.
+| I want to… | Command |
+| :--- | :--- |
+| Check my location | `pwd` |
+| See what's here | `ls` |
+| See hidden entries | `ls -a` |
+| Read a detailed listing with friendly sizes | `ls -lah` |
+| Inspect another folder without moving | `ls path/to/directory` |
+| Enter a folder | `cd path/to/directory` |
+| Go up one level | `cd ..` |
+| Go home | `cd` |
+| Return to the previous location | `cd -` |
+
+The paths in this table are placeholders. Replace them with the directory you actually want.
+
+**Before moving on, try explaining these without looking up:** why `ls learning` doesn't change your location, how `/` differs from `~`, and when you'd choose `cd -` instead of `cd ..`.
+
+<details>
+<summary><strong>References behind these notes</strong></summary>
+
+- [Bash builtin commands](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html): `cd` and `pwd`.
+- [Which files ls lists](https://www.gnu.org/software/coreutils/manual/html_node/Which-files-are-listed.html): visible and hidden entries.
+- [Bash tilde expansion](https://www.gnu.org/software/bash/manual/html_node/Tilde-Expansion.html): what `~` means and why quoting matters.
+- Local references: `help cd`, `help pwd`, and `ls --help`.
+- [Artwork credits](../../../assets/README.md#tux) for the Tux image.
+
+</details>
+
+## Next, make something
+
+Now that you can find a directory and get back, the next chapter uses `mkdir` and `touch` to create a small workspace of your own.
+
+**[Continue to 02: Files and Directories](../02-files-and-directories/README.md)**
+
+[Back to LINUX_LAB](../../../README.md) · [All learning topics](../../../README.md#what-im-learning) · [Back to the top](#navigation-and-paths)
+
+Notes by **Shaikh Mahad**. If an example behaves differently in your terminal, [tell me what happened](https://github.com/codewithmahad/LINUX_LAB/issues).

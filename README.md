@@ -114,7 +114,7 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 
 | Chapter | What's inside |
 | :--- | :--- |
-| **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, and terminal shortcuts. |
+| **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, quoting names, and a [guided practice route](learning/linux-commands/01-navigation-and-paths/README.md#take-a-short-trip-through-the-repo). |
 | **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, and timestamps. |
 | **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `less`, `more`, `head`, and `tail`. |
 | **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, and what their options change. |
