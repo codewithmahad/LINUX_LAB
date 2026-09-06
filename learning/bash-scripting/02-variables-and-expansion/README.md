@@ -1,42 +1,47 @@
 # Variables and Expansion
 
-Notes and examples covering basic Bash variables, quoting, and common forms of shell expansion.
+Notes and examples from learning how Bash stores values and expands them before executing commands.
 
 ## Variables
 
-Create a variable:
+Bash normally creates variables through assignment:
 
 ```bash
 name="Mahad"
+age=20
 course="Operating Systems"
-semester=4
 ```
 
-There must be no spaces around `=`.
+Unlike C++/Java, a separate declaration is usually unnecessary.
+
+```bash
+name="Mahad"
+```
+
+There must be no spaces around `=`:
 
 ```bash
 name="Mahad"      # correct
 name = "Mahad"    # incorrect
 ```
 
-Use a variable with:
+Whitespace separates command words in Bash, so the second form is interpreted as a command rather than an assignment.
+
+## Using Variables
 
 ```bash
 echo "$name"
-```
-
-or:
-
-```bash
 echo "${name}"
 ```
 
-Braces are useful when additional text follows the variable name:
+Both expand the variable.
+
+Braces are useful when text follows the variable name:
 
 ```bash
-name="linux"
+language="linux"
 
-echo "${name}_lab"
+echo "${language}_lab"
 ```
 
 Output:
@@ -45,9 +50,91 @@ Output:
 linux_lab
 ```
 
+Without braces:
+
+```bash
+echo "$language_lab"
+```
+
+Bash would look for a variable named `language_lab`.
+
+## Declaration with `declare`
+
+Bash also provides `declare`:
+
+```bash
+declare message
+message="Assigned later"
+```
+
+For ordinary variables this is usually unnecessary, but `declare` becomes useful for variable attributes.
+
+Examples:
+
+```bash
+declare -i number=10
+declare -a names
+declare -A users
+```
+
+These represent an integer-attributed variable, indexed array, and associative array respectively.
+
+## Unset vs Empty
+
+An empty variable:
+
+```bash
+name=""
+```
+
+has been assigned an empty string.
+
+An unset variable:
+
+```bash
+unset name
+```
+
+has no assigned value.
+
+These are different states and become important when checking configuration and environment variables.
+
+## Bash Values and Types
+
+Bash is primarily string-oriented.
+
+```bash
+name="Mahad"
+age=20
+path="/home/mahad"
+message="Linux and Bash"
+```
+
+Even numeric-looking scalar values are normally handled as shell data until used in an arithmetic context.
+
+Bash does not use the normal C++/Java type system:
+
+```text
+int
+float
+double
+char
+bool
+String
+```
+
+It also supports:
+
+```text
+scalar variables
+indexed arrays
+associative arrays
+integer attributes
+```
+
 ## Quoting
 
-Double quotes allow variable expansion:
+Double quotes allow expansion:
 
 ```bash
 name="Mahad"
@@ -73,15 +160,22 @@ Output:
 Hello, $name
 ```
 
-In general, variables should be quoted when used as strings:
+Variables should generally be quoted when used as strings:
 
 ```bash
 echo "$name"
 ```
 
-This avoids problems with spaces and shell word splitting.
-
 ## Parameter Expansion
+
+```bash
+$name
+${name}
+```
+
+Both retrieve the value of a parameter.
+
+Example:
 
 ```bash
 name="Mahad"
@@ -89,11 +183,15 @@ name="Mahad"
 echo "${name}"
 ```
 
-`${name}` expands to the value stored in `name`.
+Output:
+
+```text
+Mahad
+```
 
 ## Command Substitution
 
-Command substitution captures the output of another command:
+Command substitution runs a command and substitutes its output:
 
 ```bash
 current_directory="$(pwd)"
@@ -104,7 +202,7 @@ echo "$current_directory"
 Example output:
 
 ```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB/learning/bash-scripting/02-variables-and-expansion
+/home/mahad/Github-Repo-Clones/LINUX_LAB
 ```
 
 Preferred syntax:
@@ -115,54 +213,123 @@ $(command)
 
 ## Arithmetic Expansion
 
-Bash supports integer arithmetic using:
+Bash needs an explicit arithmetic context:
 
 ```bash
-$((expression))
-```
+number=10
+result=$((number + 5))
 
-Example:
-
-```bash
-year=2026
-next_year=$((year + 1))
-
-echo "$next_year"
+echo "$result"
 ```
 
 Output:
 
 ```text
-2027
+15
 ```
 
-## Tilde Expansion
+`$(( ... ))` evaluates an arithmetic expression and substitutes its resulting value.
 
-`~` expands to the current user's home directory.
+Coming from C++:
+
+```cpp
+int result = number + 5;
+```
+
+Bash instead uses:
+
+```bash
+result=$((number + 5))
+```
+
+because normal shell syntax is centered around commands and words rather than typed arithmetic expressions.
+
+## Arithmetic Evaluation
+
+Bash also supports:
+
+```bash
+(( ... ))
+```
+
+Example:
+
+```bash
+count=5
+((count++))
+
+echo "$count"
+```
+
+Output:
+
+```text
+6
+```
+
+Useful distinction:
+
+```text
+$((expression))    produce/substitute an arithmetic value
+((expression))     evaluate an arithmetic expression
+```
+
+This becomes especially useful in loops and conditions.
+
+## Integer Arithmetic
+
+Bash's built-in arithmetic is integer-based.
+
+```bash
+result=$((10 / 3))
+
+echo "$result"
+```
+
+Output:
+
+```text
+3
+```
+
+Normal Bash arithmetic does not provide C++/Java-style floating-point types such as `float` or `double`.
+
+## Tilde Expansion
 
 ```bash
 echo ~
 ```
 
-Example:
+Example output:
 
 ```text
 /home/mahad
 ```
 
-## Expansion Overview
+`~` expands to the current user's home directory.
 
-Some common expansions used by Bash are:
+## Expansion Summary
 
 ```text
-$name           variable/parameter expansion
-${name}         explicit parameter expansion
-$(command)      command substitution
-$((expression)) arithmetic expansion
-~               home-directory expansion
+$name             parameter expansion
+${name}           explicit parameter expansion
+$(command)        command substitution
+$((expression))   arithmetic expansion
+((expression))    arithmetic evaluation
+~                 tilde expansion
 ```
 
-Bash performs expansions while interpreting a command before the resulting command is executed.
+A useful Bash mental model is:
+
+```text
+shell syntax
+    ↓
+expansion
+    ↓
+resulting command
+    ↓
+execution
+```
 
 ## Examples
 
@@ -172,23 +339,4 @@ See:
 variables.sh
 quoting.sh
 expansions.sh
-```
-
-## Quick Reference
-
-```bash
-name="Mahad"
-
-echo "$name"
-echo "${name}"
-
-echo 'Literal $name'
-echo "Expanded $name"
-
-directory="$(pwd)"
-
-number=10
-result=$((number + 5))
-
-echo ~
 ```
