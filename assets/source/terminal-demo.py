@@ -11,6 +11,7 @@ rendered replay, not a desktop screen recording. No network access is used.
 import ctypes as C
 import html
 from pathlib import Path
+import re
 import struct
 import subprocess
 
@@ -18,12 +19,14 @@ ROOT = Path(__file__).resolve().parents[2]
 ASSETS = ROOT / "assets"
 CWD = ROOT / "learning/bash-scripting/01-shell-and-script-basics"
 WIDTH, HEIGHT = 800, 348
-BACKGROUND = "#1C1520"
-HEADER = "#342837"
-CREAM = "#FFF4E9"
-MINT = "#A9C9B4"
-ORANGE = "#F27A48"
-MUTED = "#A594AA"
+BACKGROUND = "#1E1E1E"
+HEADER = "#252526"
+CREAM = "#D4D4D4"
+MINT = "#B5CEA8"
+BLUE = "#569CD6"
+MUTED = "#9DA3AB"
+YELLOW = "#DCDCAA"
+PEACH = "#CE9178"
 COMMANDS = ["bash hello.sh", "echo $((17 % 5))", '(( 20 > 15 )); echo "$?"']
 EXPECTED = ["Hello From Bash", "2", "0"]
 
@@ -42,30 +45,45 @@ def capture_outputs():
     return outputs
 
 
+def colored_command(value):
+    """Keep command text intact while adding familiar editor syntax colors."""
+    parts = []
+    for token in re.findall(r'"[^\"]*(?:"|$)|[a-zA-Z_][\w.-]*|\d+|[^\w\"]+', value):
+        color = CREAM
+        if token in {"bash", "echo", "sl", "cowsay"}:
+            color = YELLOW
+        elif token.startswith('"'):
+            color = PEACH
+        elif token.isdecimal():
+            color = MINT
+        elif "$" in token or "((" in token or "))" in token:
+            color = BLUE
+        parts.append(f'<tspan fill="{color}">{html.escape(token)}</tspan>')
+    return "".join(parts)
+
+
 def svg_frame(lines, cursor_row=None, cursor_column=0):
     drawing = [f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
   <title>Three real Bash commands from Linux Lab</title>
   <desc>In chapter 01, bash hello.sh prints Hello From Bash. Integer remainder 17 % 5 prints 2. A true arithmetic comparison returns exit status 0.</desc>
   <rect width="800" height="348" rx="16" fill="{BACKGROUND}"/>
   <path d="M16 0h768a16 16 0 0 1 16 16v34H0V16A16 16 0 0 1 16 0" fill="{HEADER}"/>
-  <circle cx="24" cy="25" r="4" fill="{ORANGE}"/>
-  <circle cx="40" cy="25" r="4" fill="{MUTED}"/>
-  <circle cx="56" cy="25" r="4" fill="{MINT}"/>
-  <text x="79" y="31" fill="{CREAM}" font-family="DejaVu Sans, sans-serif" font-size="16">mahad@linux-lab · first commands</text>
-  <text x="776" y="31" text-anchor="end" fill="{MINT}" font-family="DejaVu Sans, sans-serif" font-size="13">01-shell-and-script-basics/</text>
+  <text x="30" y="31" fill="{CREAM}" font-family="DejaVu Sans, sans-serif" font-size="14" letter-spacing="1">TERMINAL</text>
+  <text x="154" y="31" fill="{MUTED}" font-family="DejaVu Sans, sans-serif" font-size="13">first commands</text>
+  <text x="770" y="31" text-anchor="end" fill="{MUTED}" font-family="DejaVu Sans Mono, monospace" font-size="13">bash · Linux_LAB</text>
   <g font-family="DejaVu Sans Mono, monospace" font-size="26">''']
     for row, (value, is_command) in enumerate(lines):
         y = 91 + row * 37
         if is_command:
-            drawing.append(f'<text x="30" y="{y}" fill="{ORANGE}">$</text>')
-            drawing.append(f'<text x="61.31" y="{y}" fill="{CREAM}" xml:space="preserve">{html.escape(value)}</text>')
+            drawing.append(f'<text x="30" y="{y}" fill="{BLUE}">$</text>')
+            drawing.append(f'<text x="61.31" y="{y}" xml:space="preserve">{colored_command(value)}</text>')
         else:
             drawing.append(f'<text x="30" y="{y}" fill="{MINT}">{html.escape(value)}</text>')
     drawing.append("</g>")
     if cursor_row is not None:
         x = 61.31 + cursor_column * 15.6543
         y = 71 + cursor_row * 37
-        drawing.append(f'<rect x="{x:.2f}" y="{y}" width="2" height="25" fill="{ORANGE}"/>')
+        drawing.append(f'<rect x="{x:.2f}" y="{y}" width="2" height="25" fill="{CREAM}"/>')
     drawing.append("</svg>\n")
     return "\n".join(drawing).encode()
 
@@ -96,10 +114,10 @@ def native_rendering():
 def make_palette():
     base = tuple(bytes.fromhex(BACKGROUND[1:]))
     colors = [base]
-    for color in [HEADER, CREAM, MINT, ORANGE, MUTED]:
+    for color in [HEADER, CREAM, MINT, BLUE, MUTED, YELLOW, PEACH]:
         rgb = tuple(bytes.fromhex(color[1:]))
-        for step in range(1, 25):
-            shade = tuple(round(a + (b - a) * step / 24) for a, b in zip(base, rgb))
+        for step in range(1, 19):
+            shade = tuple(round(a + (b - a) * step / 18) for a, b in zip(base, rgb))
             if shade not in colors:
                 colors.append(shade)
     return colors + [base] * (128 - len(colors))
@@ -128,9 +146,9 @@ def rasterize(svg, libraries, png=None):
                 p = y * stride + x * 4
                 b, g, r, a = pixels[p:p + 4]
                 if a < 255:  # Flatten rounded corners onto the terminal background.
-                    r += round(28 * (255 - a) / 255)
-                    g += round(21 * (255 - a) / 255)
-                    b += round(32 * (255 - a) / 255)
+                    r += round(int(BACKGROUND[1:3], 16) * (255 - a) / 255)
+                    g += round(int(BACKGROUND[3:5], 16) * (255 - a) / 255)
+                    b += round(int(BACKGROUND[5:7], 16) * (255 - a) / 255)
                 rgb = (r, g, b)
                 if rgb not in COLOR_CACHE:
                     COLOR_CACHE[rgb] = min(
@@ -147,7 +165,7 @@ def rasterize(svg, libraries, png=None):
 
 
 def lzw(data):
-    """GIF LZW with early clears, keeping all codes at nine bits."""
+    """GIF LZW with a full 12-bit dictionary for compact ASCII animations."""
     table = {bytes([i]): i for i in range(256)}
     next_code = 258
     codes = [256]
@@ -159,7 +177,7 @@ def lzw(data):
             prefix = pair
             continue
         codes.append(table[prefix])
-        if next_code < 511:
+        if next_code < 4096:
             table[pair] = next_code
             next_code += 1
         else:
@@ -172,13 +190,24 @@ def lzw(data):
     codes.append(257)
     encoded = bytearray()
     buffer = bits = 0
+    code_width, decoder_next, has_previous = 9, 258, False
     for code in codes:
         buffer |= code << bits
-        bits += 9
+        bits += code_width
         while bits >= 8:
             encoded.append(buffer & 255)
             buffer >>= 8
             bits -= 8
+        # The decoder inserts its first dictionary entry after two data codes.
+        # Track its width separately so boundaries and the end code align.
+        if code == 256:
+            code_width, decoder_next, has_previous = 9, 258, False
+        elif code != 257:
+            if has_previous:
+                decoder_next += 1
+                if decoder_next == 1 << code_width and code_width < 12:
+                    code_width += 1
+            has_previous = True
     if bits:
         encoded.append(buffer & 255)
     blocks = bytearray([8])

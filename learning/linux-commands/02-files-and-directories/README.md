@@ -4,7 +4,7 @@ Linux work revolves around files and directories. This section covers the comman
 
 ---
 
-## `mkdir` — Create Directories
+## `mkdir`: Create Directories
 
 `mkdir` stands for **make directory**.
 
@@ -48,7 +48,7 @@ mkdir scripts
 
 ---
 
-## `mkdir -p` — Create Parent Directories
+## `mkdir -p`: Create Parent Directories
 
 The `-p` option means **parents**.
 
@@ -109,7 +109,7 @@ perform the same operation.
 
 ---
 
-# `touch` — Create or Update Files
+# `touch`: Create or Update Files
 
 A common use of `touch` is creating an empty file.
 
@@ -171,7 +171,7 @@ its timestamps are updated without deleting or changing its contents.
 
 ## Useful `touch` Options
 
-### `-a` — Update Access Time Only
+### `-a`: Update Access Time Only
 
 ```bash
 touch -a notes.txt
@@ -181,7 +181,7 @@ Updates the file's **access time** without changing its modification time.
 
 ---
 
-### `-m` — Update Modification Time Only
+### `-m`: Update Modification Time Only
 
 ```bash
 touch -m notes.txt
@@ -191,7 +191,7 @@ Updates only the **modification time**.
 
 ---
 
-### `-c` — Do Not Create a Missing File
+### `-c`: Do Not Create a Missing File
 
 Normally:
 
@@ -213,7 +213,7 @@ If it does not exist, no new file is created.
 
 ---
 
-### `-t` — Set a Specific Timestamp
+### `-t`: Set a Specific Timestamp
 
 A timestamp can also be supplied manually.
 
@@ -233,7 +233,7 @@ This is less common during everyday development, but useful when timestamp contr
 
 ---
 
-# `file` — Identify File Type
+# `file`: Identify File Type
 
 The `file` command examines a filesystem object and reports what kind of data it contains.
 
@@ -279,7 +279,7 @@ This makes it useful when working with unfamiliar files.
 
 ---
 
-# `stat` — View Detailed File Metadata
+# `stat`: View Detailed File Metadata
 
 `stat` displays detailed information about a file or directory.
 
@@ -381,7 +381,7 @@ Represents the creation time of the file when the filesystem supports it.
 
 ---
 
-# `tree` — Display Directory Structure
+# `tree`: Display Directory Structure
 
 `tree` displays files and directories hierarchically.
 
@@ -434,7 +434,7 @@ sandbox
 
 ---
 
-## `tree -d` — Directories Only
+## `tree -d`: Directories Only
 
 The `-d` option tells `tree` to display only directories.
 

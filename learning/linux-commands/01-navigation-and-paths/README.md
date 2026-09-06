@@ -30,7 +30,7 @@ Options are commonly written using `-` followed by one or more letters.
 
 ---
 
-## `pwd` — Print Working Directory
+## `pwd`: Print Working Directory
 
 `pwd` displays the absolute path of the directory you are currently working in.
 
@@ -48,7 +48,7 @@ This is useful whenever you want to confirm your current location in the filesys
 
 ---
 
-## `ls` — List Directory Contents
+## `ls`: List Directory Contents
 
 `ls` displays the contents of a directory.
 
@@ -222,7 +222,7 @@ Here, `/home/mahad` exists inside the filesystem rooted at `/`.
 
 ---
 
-## `cd` — Change Directory
+## `cd`: Change Directory
 
 `cd` is used to move between directories.
 

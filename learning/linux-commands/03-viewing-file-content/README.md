@@ -11,7 +11,7 @@ The right command depends on whether you want to:
 
 ---
 
-## `cat` — Display File Content
+## `cat`: Display File Content
 
 `cat` stands for **concatenate**.
 
@@ -88,7 +88,7 @@ This is where the name **concatenate** comes from: `cat` can combine file conten
 
 ---
 
-## `cat -n` — Show Line Numbers
+## `cat -n`: Show Line Numbers
 
 ```bash
 cat -n notes.txt
@@ -109,7 +109,7 @@ This is useful when discussing or debugging a particular line in a text file.
 
 ---
 
-# `head` — View the Beginning of a File
+# `head`: View the Beginning of a File
 
 `head` displays the beginning of a file.
 
@@ -188,7 +188,7 @@ Docker
 
 ---
 
-# `tail` — View the End of a File
+# `tail`: View the End of a File
 
 `tail` displays the end of a file.
 
@@ -220,7 +220,7 @@ line 20
 
 ---
 
-# `tail -f` — Follow a Growing File
+# `tail -f`: Follow a Growing File
 
 One of the most useful forms of `tail` is:
 
@@ -265,7 +265,7 @@ This is especially useful in backend development where logs change continuously.
 
 ---
 
-# `less` — Browse Large Files
+# `less`: Browse Large Files
 
 `less` opens a file in an interactive terminal viewer.
 
@@ -356,7 +356,7 @@ The terminal itself is not frozen.
 
 ---
 
-# `more` — Basic File Pager
+# `more`: Basic File Pager
 
 `more` is another command for viewing long files page by page.
 

@@ -2,26 +2,26 @@
 
 <picture>
   <source media="(max-width: 600px)" srcset="assets/linux-lab-hero-mobile.svg">
-  <img src="assets/linux-lab-hero.svg" alt="LINUX_LAB — Come learn Linux with me. Mahad's Ubuntu-inspired workspace, with a penguin at the terminal." width="100%">
+  <img src="assets/linux-lab-hero.svg" alt="LINUX_LAB. Come learn Linux with me. Classic Tux beside a colourful Bash terminal." width="100%">
 </picture>
 
 **Linux commands, Bash scripts, and the things I'll learn along the way.**
 
-[My story](#hey-im-mahad-) · [Set up Linux](#get-a-linux-terminal) · [The learning map](#what-im-learning) · [Get the notes](#lets-run-something)
+[My story](#hey-im-shaikh-mahad-) · [Set up Linux](#get-a-linux-terminal) · [Learning map](#what-im-learning) · [Try a script](#lets-run-something)
 
 </div>
 
 # LINUX_LAB
 
-## Hey, I'm Mahad 👋
+## Hey, I'm Shaikh Mahad 👋
 
-I'm a fourth-semester **BS Software Engineering student at UBIT, University of Karachi**. This repo started with the Linux and shell scripting part of my **Operating Systems lab**. I wanted somewhere to keep my notes, practise the commands, and come back to them before a lab or exam.
+I'm a **BS Software Engineering student at UBIT, University of Karachi**. This repo started with the Linux and shell scripting part of my **Operating Systems lab**. I wanted somewhere to keep my notes, practise the commands, and come back to them before a lab or exam.
 
 But I want to keep going after the course. I want to understand the system I'm writing code on: how files and permissions work, what a process is doing, and how to write a script that saves me doing the same job again tomorrow. This is where I'll work through that, one topic at a time.
 
 I'm putting it here so it can help someone else too. **If you're taking an OS course, learning for a project, or just curious about Linux, come learn with me.** Open a chapter, try the examples, change a few things, and see what happens. You can start from zero.
 
-> **Currently at:** [Bash 04 — Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
+> **Currently at:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
 > **In the notebook:** 4 Linux command chapters · 4 Bash chapters · 14 example scripts.
 
@@ -43,16 +43,20 @@ For me, that's the interesting part: learning a command today, then finding a wa
 
 ## Get a Linux terminal
 
-You can keep your current operating system. Pick the setup that fits what you want to try.
+<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="85"></a>
+
+You can keep your current operating system. Pick the setup that fits what you want to try. The steps below use Ubuntu, so we have a common starting point for commands, package names, and examples.
+
+<br clear="right">
 
 | If you want… | Start with… |
 | :--- | :--- |
-| Linux commands and Bash on a Windows computer | **Ubuntu in WSL** — enough for the current lessons. |
-| The full Ubuntu desktop to explore alongside the terminal | **Ubuntu in a virtual machine** — a separate OS running in a window. |
+| Linux commands and Bash on a Windows computer | **Ubuntu in WSL** is enough for the current lessons. |
+| The full Ubuntu desktop to explore alongside the terminal | **Ubuntu in a virtual machine** runs a separate OS in a window. |
 | To use Linux you already have installed | Open a terminal, run `bash --version`, and [jump to the examples](#lets-run-something). |
 
 <details>
-<summary><strong>🪟 Windows + WSL — set up the terminal</strong></summary>
+<summary><strong>🪟 Windows + WSL: set up the terminal</strong></summary>
 
 These steps are for **Windows 11**, or **Windows 10 version 2004 / build 19041 or later**.
 
@@ -63,7 +67,7 @@ These steps are for **Windows 11**, or **Windows 10 version 2004 / build 19041 o
    ```
 
 2. Restart when prompted, then open **Ubuntu** from the Start menu.
-3. Create your Linux username and password. Nothing appears while you type the password, even dots — that's normal.
+3. Create your Linux username and password. Nothing appears while you type the password, even dots. That's normal.
 4. In the Ubuntu terminal, check Bash:
 
    ```bash
@@ -77,7 +81,7 @@ If installation needs troubleshooting, Microsoft's [WSL installation guide](http
 </details>
 
 <details>
-<summary><strong>🖥️ Ubuntu in a virtual machine — set up the desktop</strong></summary>
+<summary><strong>🖥️ Ubuntu in a virtual machine: set up the desktop</strong></summary>
 
 A virtual machine lets you explore Ubuntu while your usual operating system is still running.
 
@@ -155,15 +159,15 @@ The published learning material is under `learning/`. The other areas below desc
 
 ```text
 LINUX_LAB/
-├── learning/
-│   ├── linux-commands/       # Command notes, one topic per folder
-│   └── bash-scripting/       # Bash notes and example scripts
-├── practice/                 # Planned: exercises to try yourself
-├── automation/               # Planned: scripts for useful tasks
-├── resources/                # Planned: references and lab material
-├── assets/                   # README artwork and terminal demo
-├── README.md                 # You are here
-└── LICENSE
+    learning/
+        linux-commands/       # Command notes, one topic per folder
+        bash-scripting/       # Bash notes and example scripts
+    practice/                 # Planned: exercises to try yourself
+    automation/               # Planned: scripts for useful tasks
+    resources/                # Planned: references and lab material
+    assets/                   # README artwork and terminal demos
+    README.md                 # You are here
+    LICENSE
 ```
 
 Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter links above take you to the material already available.
@@ -172,7 +176,11 @@ Empty planned folders may not appear in a fresh clone; Git starts tracking them 
 
 ## Let's run something
 
+<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="80"></a>
+
 Inside your Linux terminal, check that Git is available with `git --version`. If Ubuntu says the command is missing, install it:
+
+<br clear="right">
 
 <details>
 <summary><strong>Install Git on Ubuntu</strong></summary>
@@ -196,14 +204,24 @@ bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
 
 It prints `Hello From Bash`. Already cloned the repo? Open its directory and run the last command.
 
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-demo.svg">
-  <img src="assets/terminal-demo.gif" alt="Terminal replay: bash hello.sh prints Hello From Bash; 17 modulo 5 gives 2; a true comparison returns exit status 0." width="800">
-</picture>
-
-<sub>A replay of commands run with Bash. The demo starts in the folder containing <a href="learning/bash-scripting/01-shell-and-script-basics/hello.sh">hello.sh</a>.</sub>
-
 My suggestion: read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
+
+### Make the first script your own
+
+<a href="https://www.gnu.org/software/bash/">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logos/bash-dark.svg">
+    <img align="right" src="assets/logos/bash.svg" alt="GNU Bash logo." width="100">
+  </picture>
+</a>
+
+Open `hello.sh` in your editor. Change the greeting, save it, and run the same command again. Then try printing two lines instead of one. That's a small change, but now you're editing a program and checking what it does.
+
+When you move on to variables, replace the fixed greeting with a name stored in a variable. After input and output, try asking the person running it for their name. The same tiny script can grow with you.
+
+[Start with the script basics](learning/bash-scripting/01-shell-and-script-basics/README.md) · [Give it variables](learning/bash-scripting/02-variables-and-expansion/README.md) · [Make it ask a question](learning/bash-scripting/03-input-and-output/README.md)
+
+<br clear="right">
 
 <details>
 <summary><strong>Try this from my current chapter: why does “true” give 0?</strong></summary>
@@ -233,11 +251,56 @@ Change `>` to `<` and run the block again. The last number becomes `1`. `$?` rea
 
 </details>
 
+<div align="center">
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-playground.svg">
+  <img src="assets/terminal-playground.gif" alt="A looping terminal Easter egg: a steam train passes, then a cowsay cow says mahad is dumb." width="800">
+</picture>
+</div>
+
+## A comfortable place to practise
+
+<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="100"></a>
+
+Use an editor you already like. If that's **VS Code**, a useful layout is the chapter notes beside your script, with a terminal underneath. Read a little, edit a little, run it, and keep the result in view.
+
+Open the cloned `LINUX_LAB` folder. From **Terminal → New Terminal**, choose a Bash terminal. On Windows with WSL, open the project through the **WSL extension** so the commands run in Ubuntu.
+
+The [VS Code terminal guide](https://code.visualstudio.com/docs/terminal/basics) and [WSL walkthrough](https://code.visualstudio.com/docs/remote/wsl) show how to set that up. The examples here also work in a separate Ubuntu terminal if you prefer.
+
+<br clear="right">
+
+### Three small wins to work towards
+
+| Try to do this without looking it up | Where to practise |
+| :--- | :--- |
+| Find your current directory, move to its parent, and return to where you were. | [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md) |
+| Explain what changes when you use single quotes instead of double quotes around a variable. | [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md) |
+| Predict which command runs after `&&` or `\|\|`, then check your prediction. | [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md) |
+
+Being able to explain the result is a good reason to move on. If you can't yet, change the example and try again. There's no deadline here.
+
+<details>
+<summary><strong>📌 A few reminders for the next lab</strong></summary>
+
+| Easy to forget | A useful reminder |
+| :--- | :--- |
+| Where a relative path begins | It starts from your current directory. Check with `pwd`. |
+| Spaces in variable assignment | Use `name="Shaikh Mahad"`, with no spaces around `=`. |
+| When variables expand | `echo "$name"` expands the variable; `echo '$name'` prints its name literally. |
+| Running a Bash script | `bash script.sh` explicitly chooses Bash and doesn't need executable permission. |
+| Checking syntax | `bash -n script.sh` checks syntax without running the script. |
+| Reading an exit status | Check `$?` immediately after the command you care about. |
+
+These reminders come from the current chapters. Follow the learning map when you want the full examples and explanations.
+
+</details>
+
 ## If you're learning with me
 
-<img align="right" src="assets/linux-lab-mark.svg" alt="An original penguin illustration sitting at a Linux Lab terminal." width="130">
+<img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="85">
 
-Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, please tell me — I'm learning this too.
+Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, please tell me. I'm learning this too.
 
 [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the chapter, the command you tried, and what happened. Corrections and clearer examples are welcome as pull requests.
 
@@ -245,10 +308,24 @@ If you want to come back as the notebook grows, **[give it a star](https://githu
 
 <br clear="right">
 
-<img src="assets/linux-lab-workbench.svg" alt="Same terminal. Your turn. Mahad — UBIT, Karachi." width="100%">
+## A little about the person keeping these notes
+
+<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="150"></a>
+
+**Shaikh Mahad · Software Engineering student · UBIT, University of Karachi**
+
+I want my GitHub to show the work behind what I learn: the notes, the examples I can explain, and the useful things I eventually build with them. `LINUX_LAB` is part of that. It starts with the basics and has room to grow into the Linux tools and automation I'll use as a developer.
+
+If you like following a project as it takes shape, you're welcome to follow along. If you're here to study, I hope you leave with something you can use in your next lab or project.
+
+**[Follow me on GitHub](https://github.com/codewithmahad)** · **[Explore my repositories](https://github.com/codewithmahad?tab=repositories)**
+
+<br clear="right">
+
+<img src="assets/linux-lab-closing.svg" alt="Keep learning. Keep building. Shaikh Mahad, UBIT, Karachi." width="100%">
 
 <div align="center">
 
-[Mahad / @codewithmahad](https://github.com/codewithmahad) · [MIT License](LICENSE) · [Artwork credits](assets/README.md)
+[MIT License](LICENSE) · [Artwork and demo credits](assets/README.md) · [Back to the start](#linux_lab)
 
 </div>

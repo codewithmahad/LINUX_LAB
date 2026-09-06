@@ -15,7 +15,7 @@ These commands modify filesystem data, so it is important to understand exactly 
 
 ---
 
-# `cp` — Copy Files
+# `cp`: Copy Files
 
 Basic syntax:
 
@@ -89,7 +89,7 @@ Result:
 
 ---
 
-# `cp -r` — Copy Directories Recursively
+# `cp -r`: Copy Directories Recursively
 
 A directory may contain other files and directories.
 
@@ -134,7 +134,7 @@ Recursion means the command processes the directory and everything contained bel
 
 ---
 
-## `cp -i` — Ask Before Overwriting
+## `cp -i`: Ask Before Overwriting
 
 ```bash
 cp -i notes.txt backup.txt
@@ -152,7 +152,7 @@ This is useful when you want protection against accidentally replacing an existi
 
 ---
 
-## `cp -v` — Verbose Output
+## `cp -v`: Verbose Output
 
 ```bash
 cp -v notes.txt backup.txt
@@ -176,7 +176,7 @@ cp -iv notes.txt backup.txt
 
 ---
 
-## `cp -a` — Archive Copy
+## `cp -a`: Archive Copy
 
 For copying complete directory trees while preserving important metadata, GNU `cp` provides:
 
@@ -206,7 +206,7 @@ is often preferable.
 
 ---
 
-# `mv` — Move Files and Directories
+# `mv`: Move Files and Directories
 
 `mv` stands for **move**.
 
@@ -292,7 +292,7 @@ This:
 
 ---
 
-## `mv -i` — Ask Before Overwriting
+## `mv -i`: Ask Before Overwriting
 
 ```bash
 mv -i notes.txt destination.txt
@@ -306,7 +306,7 @@ mv: overwrite 'destination.txt'?
 
 ---
 
-## `mv -v` — Verbose Output
+## `mv -v`: Verbose Output
 
 ```bash
 mv -v notes.txt documents/
@@ -326,7 +326,7 @@ mv -iv notes.txt documents/
 
 ---
 
-# `rm` — Remove Files
+# `rm`: Remove Files
 
 `rm` stands for **remove**.
 
@@ -367,7 +367,7 @@ Always verify paths before deleting important data.
 
 ---
 
-# `rm -i` — Confirm Before Removing
+# `rm -i`: Confirm Before Removing
 
 ```bash
 rm -i notes.txt
@@ -391,7 +391,7 @@ to confirm.
 
 ---
 
-# `rm -v` — Show What Was Removed
+# `rm -v`: Show What Was Removed
 
 ```bash
 rm -v notes.txt
@@ -405,7 +405,7 @@ removed 'notes.txt'
 
 ---
 
-# `rm -r` — Remove Directories Recursively
+# `rm -r`: Remove Directories Recursively
 
 Plain `rm` cannot normally remove a directory:
 
@@ -455,7 +455,7 @@ as part of the recursive operation.
 
 ---
 
-# `rm -f` — Force Removal
+# `rm -f`: Force Removal
 
 ```bash
 rm -f notes.txt
@@ -475,7 +475,7 @@ normally produces no error even if `missing.txt` does not exist.
 
 ---
 
-# `rm -rf` — Recursive Forced Removal
+# `rm -rf`: Recursive Forced Removal
 
 ```bash
 rm -rf directory
@@ -512,7 +512,7 @@ Avoid using it automatically when a safer command is sufficient.
 
 ---
 
-# `rmdir` — Remove Empty Directories
+# `rmdir`: Remove Empty Directories
 
 `rmdir` removes directories only when they are empty.
 
