@@ -1,624 +1,340 @@
-[Previous: Navigation and Paths](../01-navigation-and-paths/README.md) · [LINUX_LAB](../../../README.md) · [Learning map](../../../README.md#what-im-learning)
+[LINUX_LAB](../../../README.md) / [Linux commands](../../../README.md#what-im-learning) / **02**
 
 # Files and Directories
 
-Linux work revolves around files and directories. This section covers the commands used to create them, inspect their type and metadata, and view directory structures from the terminal.
+<picture>
+  <source media="(max-width: 620px)" srcset="../../../assets/lessons/files-and-directories-mobile.svg">
+  <img src="../../../assets/lessons/files-and-directories.svg" alt="Make room for your ideas. A notes folder holds today.txt and questions.txt: mkdir creates the folder, touch creates the empty files." width="100%">
+</picture>
 
----
+In the [first chapter](../01-navigation-and-paths/README.md), we moved through folders that already existed. Now let's make a small workspace of our own and look at what Linux knows about each file.
 
-## `mkdir`: Create Directories
+I like having a separate place for these experiments. It makes it easier to try a command, check the result, and leave my actual notes alone.
 
-`mkdir` stands for **make directory**.
+[Set up](#a-place-to-practise) · [Create folders](#make-the-folders) · [Create files](#give-the-folders-some-files) · [Inspect](#look-beyond-the-filename) · [Practise](#your-turn-build-a-tiny-project) · [Revise](#quick-revision)
 
-### Create a Directory
+> **By the end:** build a directory structure, create empty files, and explain the difference between a file's contents and its metadata.
+>
+> **Before starting:** use a Bash terminal on Linux or Ubuntu in WSL. You should be comfortable with `pwd`, `ls`, and `cd` from [Navigation and Paths](../01-navigation-and-paths/README.md).
+
+## A place to practise
+
+Create a practice folder in your home directory, outside the cloned repo:
 
 ```bash
-mkdir sandbox
+mkdir -p ~/linux-lab-practice/files
+cd ~/linux-lab-practice/files
+pwd
 ```
 
-Verify it:
+Your path should end in `/linux-lab-practice/files`. Stay here for the chapter's examples.
+
+`mkdir` means *make directory*. We used `-p` so it can create the missing parent folders too. It also accepts a directory that already exists, which makes this setup easy to run again.
+
+The listings below assume a fresh practice folder. If you've been here before, you'll also see anything you kept from the last visit.
+
+## Make the folders
+
+Create two neighbouring directories with one command:
 
 ```bash
+mkdir notes scripts
 ls
 ```
 
-Example output:
+You should see `notes` and `scripts`. Each name is a separate argument to `mkdir`.
 
-```text
-sandbox
-```
-
----
-
-### Create Multiple Directories
-
-`mkdir` can accept more than one directory name:
+Now create a deeper path:
 
 ```bash
-mkdir documents images scripts
+mkdir -pv projects/web/assets
 ```
 
-This creates all three directories with one command.
+| Option | What it adds |
+| :--- | :--- |
+| `-p` | Create missing parents and accept directories that already exist. |
+| `-v` | Print a message for each directory created. |
 
-Equivalent to:
+Here, `-pv` combines the two options. On the first run, you'll get creation messages for `projects`, `projects/web`, and `projects/web/assets`. Run it again: those directories already exist, so there is nothing new to report.
+
+**A useful distinction:** `mkdir notes` reports `File exists` if `notes` already exists. `mkdir -p notes` accepts an existing directory, but it still fails if `notes` is a regular file. A file and a directory cannot share the same name in the same parent.
+
+<details>
+<summary><strong>What happens without -p?</strong></summary>
+
+Suppose neither `drafts` nor `drafts/week-01` exists. Running:
 
 ```bash
-mkdir documents
-mkdir images
-mkdir scripts
+mkdir drafts/week-01
 ```
 
----
+fails because the parent `drafts` is missing. `mkdir` without `-p` creates the final directory, not the missing parents.
 
-## `mkdir -p`: Create Parent Directories
-
-The `-p` option means **parents**.
-
-It creates missing parent directories automatically.
+To create the whole path:
 
 ```bash
-mkdir -p projects/backend/spring
+mkdir -p drafts/week-01
 ```
 
-This can create the complete hierarchy:
+This optional example adds a `drafts` folder to your workspace.
 
-```text
-projects/
-└── backend/
-    └── spring/
-```
+</details>
 
-Without `-p`, `mkdir` fails if an intermediate parent directory does not already exist.
+## Give the folders some files
 
-Another useful property of `-p` is that it does not report an error if the requested directory already exists.
-
----
-
-## Useful `mkdir` Options
-
-| Option | Purpose |
-| --- | --- |
-| `-p` | Create missing parent directories |
-| `-v` | Display each directory as it is created |
-
-Example:
+Create three empty files:
 
 ```bash
-mkdir -pv projects/backend/spring
+touch notes/today.txt notes/questions.txt scripts/hello.sh
+ls -l notes/today.txt
 ```
 
-Possible output:
+For a newly created `today.txt`, the size column is **0 bytes**. The filename exists, but we haven't written anything inside it yet.
 
-```text
-mkdir: created directory 'projects'
-mkdir: created directory 'projects/backend'
-mkdir: created directory 'projects/backend/spring'
-```
+`touch` can take several filenames, just like `mkdir` can take several directory names. It doesn't create missing parent directories, so we made `notes` and `scripts` first.
 
-Single-letter options can be combined, so:
+### Touching a file doesn't empty it
+
+The main job of `touch` is to update **access and modification timestamps**. Creating an empty file is what it does when the named file doesn't exist.
+
+| Before `touch notes/today.txt` | What happens |
+| :--- | :--- |
+| The file doesn't exist, but `notes` does. | An empty file is created. |
+| The file already exists. | Its timestamps are updated; its contents are preserved. |
+| The parent `notes` doesn't exist. | The command fails. |
+
+So `touch` is useful for preparing a project, but it isn't a text editor. Naming an empty file `hello.sh` doesn't put a Bash program in it either.
+
+<details>
+<summary><strong>Other touch options, when you need them</strong></summary>
+
+| Command | Effect |
+| :--- | :--- |
+| `touch -a notes/today.txt` | Update access time, leaving modification time alone. |
+| `touch -m notes/today.txt` | Update modification time, leaving access time alone. |
+| `touch -c notes/not-created.txt` | Update the file if it exists; don't create it if it doesn't. |
+
+The filesystem's **change time** can still update with `-a` or `-m`. These flags select which of the access and modification times to set.
+
+For a deliberate timestamp experiment:
 
 ```bash
-mkdir -p -v projects/backend/spring
+touch -m -t 202401020930 notes/today.txt
+stat notes/today.txt
 ```
 
-and:
+This sets modification time to **2 January 2024 at 09:30**, using your current timezone. The form used here is `YYYYMMDDhhmm`: year, month, day, hour, minute.
+
+Bring access and modification times back to the current time afterwards:
 
 ```bash
-mkdir -pv projects/backend/spring
+touch notes/today.txt
 ```
 
-perform the same operation.
+You don't need to memorise the timestamp format for ordinary file creation.
 
----
+</details>
 
-# `touch`: Create or Update Files
+## Look beyond the filename
 
-A common use of `touch` is creating an empty file.
+Two questions call for two different commands:
+
+| What am I trying to find out? | Use |
+| :--- | :--- |
+| What kind of thing is this? | `file` |
+| What information does the filesystem keep about it? | `stat` |
+
+### File: what is it?
 
 ```bash
-touch notes.txt
+file notes/today.txt notes scripts/hello.sh
 ```
 
-Verify:
+On a fresh workspace, `file` reports:
+
+| Path | Result |
+| :--- | :--- |
+| `notes/today.txt` | `empty` |
+| `notes` | `directory` |
+| `scripts/hello.sh` | `empty` |
+
+That last result is worth checking. Even with a `.sh` extension, the file is empty. `file` uses filesystem information and tests of the contents to identify data; the extension alone isn't proof of its type.
+
+Extensions still help people and applications choose how to handle a file. They just don't guarantee what's inside.
+
+### Stat: what does Linux know about it?
 
 ```bash
-ls -l notes.txt
+stat notes/today.txt
 ```
 
-Example output:
+You'll get the file's size, type, permissions, owner, group, timestamps, and other metadata. The values belong to **your** file and system, so there's no need to match someone else's inode number or username.
 
-```text
--rw-r--r-- 1 mahad mahad 0 Sep  5 15:40 notes.txt
-```
+Start with these fields:
 
-The `0` indicates that the file currently contains zero bytes.
+| Field | What to look for |
+| :--- | :--- |
+| `Size` | `0` for the empty file we just made. |
+| File type | A regular empty file, rather than a directory. |
+| `Uid` / `Gid` | The owner and group. Usually your own account and group in this workspace. |
+| `Access`, `Modify`, `Change`, `Birth` | Different timestamps, explained below. |
 
----
+`stat` usually has **two lines labelled Access**. One shows permissions, such as `0644/-rw-r--r--`. The other shows the access timestamp. Read the value beside the label.
 
-## Create Multiple Files
+### Four timestamps, different questions
 
-Like `mkdir`, `touch` accepts multiple arguments.
+| Timestamp | The question it answers |
+| :--- | :--- |
+| **Access** (`atime`) | When was the file's data last accessed, as recorded by the filesystem? |
+| **Modify** (`mtime`) | When were the contents last modified? This can also be set by `touch`. |
+| **Change** (`ctime`) | When did the file's status last change, for example its permissions, timestamps, or contents? |
+| **Birth** | When was the file created, if the system exposes that information? |
+
+**The `c` in `ctime` is change, not creation.** Birth time is separate and may appear as `-` when unavailable. Access-time updates also depend on filesystem and mount settings, so reading a file won't always produce a new access timestamp immediately.
+
+Try this pair, then compare the timestamps:
 
 ```bash
-touch file1.txt file2.txt file3.txt
+touch notes/today.txt
+stat notes/today.txt
 ```
 
-This creates all three files if they do not already exist.
+The file stays empty. Its access and modification times are set to now, and its change time will normally update too. This is why a timestamp alone doesn't prove that someone edited the contents.
 
----
+<details>
+<summary><strong>What about blocks, inodes, and links?</strong></summary>
 
-## What `touch` Actually Does
+`Size` counts the file's bytes; `Blocks` describes allocated storage. These aren't the same measurement. An inode identifies a filesystem object within its filesystem, and `Links` counts hard links to it.
 
-`touch` is not fundamentally only a file-creation command.
+We'll return to storage and links when studying the filesystem in more depth. For this chapter, use `ls -l` for a quick listing and `stat` when you need a closer look.
 
-Its main purpose is to **update file timestamps**.
+</details>
 
-If the file does not exist:
+## See the shape with tree
 
 ```bash
-touch notes.txt
+tree -L 3 .
 ```
 
-an empty file is created.
+`tree` draws a directory listing. `-L 3` limits how many levels it explores; `.` starts at the current directory.
 
-If the file already exists:
-
-```bash
-touch notes.txt
-```
-
-its timestamps are updated without deleting or changing its contents.
-
----
-
-## Useful `touch` Options
-
-### `-a`: Update Access Time Only
-
-```bash
-touch -a notes.txt
-```
-
-Updates the file's **access time** without changing its modification time.
-
----
-
-### `-m`: Update Modification Time Only
-
-```bash
-touch -m notes.txt
-```
-
-Updates only the **modification time**.
-
----
-
-### `-c`: Do Not Create a Missing File
-
-Normally:
-
-```bash
-touch missing.txt
-```
-
-creates the file if it does not exist.
-
-Using:
-
-```bash
-touch -c missing.txt
-```
-
-updates the timestamps only if the file already exists.
-
-If it does not exist, no new file is created.
-
----
-
-### `-t`: Set a Specific Timestamp
-
-A timestamp can also be supplied manually.
-
-Example:
-
-```bash
-touch -t 202609051500 notes.txt
-```
-
-The timestamp format is generally:
-
-```text
-[[CC]YY]MMDDhhmm[.ss]
-```
-
-This is less common during everyday development, but useful when timestamp control is required.
-
----
-
-# `file`: Identify File Type
-
-The `file` command examines a filesystem object and reports what kind of data it contains.
-
-```bash
-file sandbox/notes.txt
-```
-
-Example output from the terminal:
-
-```text
-sandbox/notes.txt: empty
-```
-
-For a directory:
-
-```bash
-file sandbox
-```
-
-Example:
-
-```text
-sandbox: directory
-```
-
----
-
-## File Extensions Are Not Everything in Linux
-
-Linux does not rely entirely on filename extensions to determine file type.
-
-A filename such as:
-
-```text
-something.txt
-```
-
-does not guarantee that the contents are actually plain text.
-
-The `file` command examines the object rather than simply trusting its extension.
-
-This makes it useful when working with unfamiliar files.
-
----
-
-# `stat`: View Detailed File Metadata
-
-`stat` displays detailed information about a file or directory.
-
-```bash
-stat sandbox/notes.txt
-```
-
-Example from the actual terminal:
-
-```text
-  File: sandbox/notes.txt
-  Size: 0               Blocks: 0          IO Block: 4096   regular empty file
-Device: 8,48    Inode: 48961       Links: 1
-Access: (0644/-rw-r--r--)  Uid: ( 1000/   mahad)   Gid: ( 1000/   mahad)
-Access: 2026-09-05 15:40:24.255938107 +0500
-Modify: 2026-09-05 15:40:24.255938107 +0500
-Change: 2026-09-05 15:40:24.255938107 +0500
-Birth: 2026-09-05 15:40:24.255938107 +0500
-```
-
-Values such as the inode number and timestamps depend on the system and file.
-
----
-
-## Important Information Shown by `stat`
-
-`stat` can display:
-
-- file name,
-- file size,
-- file type,
-- inode number,
-- number of links,
-- permissions,
-- user ID and owner,
-- group ID and group,
-- access time,
-- modification time,
-- metadata-change time,
-- creation/birth time where supported.
-
-Some of these concepts, especially permissions and inodes, are explored in more detail in later topics.
-
-For quick inspection:
-
-```bash
-ls -l file
-```
-
-is usually enough.
-
-For detailed filesystem metadata:
-
-```bash
-stat file
-```
-
-is more useful.
-
----
-
-# File Timestamps
-
-The `stat` output introduces several different timestamps.
-
-### Access Time
-
-```text
-Access
-```
-
-Represents when the file's data was last accessed, depending on filesystem and mount behavior.
-
-### Modification Time
-
-```text
-Modify
-```
-
-Represents when the **file contents** were last modified.
-
-### Change Time
-
-```text
-Change
-```
-
-Represents when filesystem metadata associated with the file was last changed.
-
-For example, changing permissions can update this value even when the file contents remain unchanged.
-
-### Birth Time
-
-```text
-Birth
-```
-
-Represents the creation time of the file when the filesystem supports it.
-
----
-
-# `tree`: Display Directory Structure
-
-`tree` displays files and directories hierarchically.
-
-```bash
-tree
-```
-
-Example:
+If you followed the main examples in a fresh workspace, the listing looks like this, before `tree`'s summary line:
 
 ```text
 .
-├── documents
-│   ├── file1.txt
-│   └── file2.txt
-├── images
-├── notes.txt
-└── scripts
-
-3 directories, 3 files
-```
-
-This is often easier to understand than a flat `ls` listing when inspecting a project with several nested directories.
-
----
-
-## Display a Specific Directory
-
-Provide the directory as an argument:
-
-```bash
-tree sandbox
-```
-
-Example:
-
-```text
-sandbox
-├── documents
-│   ├── file1.txt
-│   └── file2.txt
-├── images
-├── notes.txt
+├── notes
+│   ├── questions.txt
+│   └── today.txt
 ├── projects
-│   └── backend
-│       └── spring
+│   └── web
+│       └── assets
 └── scripts
-
-7 directories, 3 files
+    └── hello.sh
 ```
 
----
+I find this much easier to check than opening each folder separately. It also makes a useful little map to include when asking someone for help with a project.
 
-## `tree -d`: Directories Only
+| Command | View |
+| :--- | :--- |
+| `tree -L 3 .` | Files and directories, up to three levels deep. |
+| `tree -d -L 3 .` | Only directories, with the same depth limit. |
+| `tree -a -L 3 .` | Include hidden entries too. |
+| `tree notes` | Start at `notes` instead of the current directory. |
 
-The `-d` option tells `tree` to display only directories.
+<details>
+<summary><strong>If tree or file isn't installed</strong></summary>
+
+On Ubuntu, including Ubuntu in WSL:
 
 ```bash
-tree -d
+sudo apt update
+sudo apt install tree file
 ```
 
-Example:
+`sudo` requests administrator privileges. `apt update` refreshes package information; `apt install` installs the named packages. These commands need a network connection and permission to install software. Other distributions use their own package managers.
 
-```text
-.
-├── assets
-├── automation
-│   ├── backups
-│   ├── developer-tools
-│   ├── file-management
-│   ├── log-processing
-│   └── system-utilities
-├── learning
-│   ├── bash-scripting
-│   └── linux-commands
-├── practice
-│   ├── bash-scripting
-│   └── linux-commands
-└── resources
-    ├── references
-    ├── roadmaps
-    └── university-lab
-```
+On a university machine where you can't install packages, keep going with `ls -R .` for a recursive listing. The layout differs from `tree`, but you can still check the folders. Skip the `file` examples until it is available.
 
-Here:
+</details>
 
-```text
--d = directories only
-```
+## Your turn: build a tiny project
 
----
+**Start in `~/linux-lab-practice/files`.** Create a new folder called `mini-project` containing:
 
-## Display Another Location with `tree`
+| Directory | Empty files inside it |
+| :--- | :--- |
+| `mini-project/src` | `main.sh` |
+| `mini-project/docs` | `notes.txt`, `questions.txt` |
 
-The path supplied to `tree` does not have to be the current directory.
+Then:
 
-For example:
+1. Show the project's structure.
+2. Ask `file` what `main.sh` contains.
+3. Use `stat` to check its size.
+4. Run the directory-creation command again with `-p`. Does anything get replaced?
+
+<details>
+<summary><strong>Compare with my commands</strong></summary>
 
 ```bash
-tree ~
+mkdir -p mini-project/src mini-project/docs
+touch mini-project/src/main.sh mini-project/docs/notes.txt mini-project/docs/questions.txt
+tree mini-project
+file mini-project/src/main.sh
+stat mini-project/src/main.sh
+mkdir -p mini-project/src mini-project/docs
 ```
 
-means:
+You should have **two directories inside `mini-project` and three files**. On the first run, `main.sh` is empty and has a size of 0 bytes. Running `mkdir -p` again keeps the existing directories and their contents.
 
-> Display the directory tree starting from the current user's home directory.
+If `file` calls `main.sh` empty, that's correct. We made a filename for a script; writing the script comes later.
 
-Since:
+</details>
 
-```text
-~ = /home/mahad
-```
+## When something doesn't work
 
-the command begins displaying the hierarchy under:
+| What you see | What to check |
+| :--- | :--- |
+| `mkdir: ... File exists` | Inspect the name with `ls -ld`. If it is already a directory, reuse it or use `mkdir -p`. |
+| `touch: ... No such file or directory` | Check that the parent folder exists. Create it with `mkdir -p` first. |
+| `Not a directory` | Part of the path may be a regular file. Check each component. |
+| `Permission denied` | Check `pwd`. The exercises belong in your home workspace, where you can create files. |
+| `command not found` | Check the spelling, then the optional installation note above. |
 
-```text
-/home/mahad
-```
+For a name containing spaces, remember the [quoting example](../01-navigation-and-paths/README.md#keep-a-path-with-spaces-together): `mkdir "OS Lab"` passes one directory name.
 
----
+## Quick revision
 
-# `tree` Installation
+| I want to… | Command pattern |
+| :--- | :--- |
+| Create a directory | `mkdir directory` |
+| Create a nested path | `mkdir -p parent/child` |
+| See what was created | `mkdir -pv parent/child` |
+| Create an empty file, or update its timestamps | `touch filename` |
+| Avoid creating a missing file | `touch -c filename` |
+| Identify data | `file filename` |
+| Inspect metadata | `stat filename` |
+| See a directory layout | `tree -L 3 directory` |
 
-`tree` may not be installed by default.
+The names in this table are placeholders. Use your own paths.
 
-If Ubuntu reports:
+**Before moving on:** explain why `touch` doesn't erase an existing file, why `.sh` doesn't make a file a script, and why change time isn't creation time.
 
-```text
-Command 'tree' not found
-```
+<details>
+<summary><strong>References behind these notes</strong></summary>
 
-it can be installed with:
+- GNU Coreutils: [mkdir](https://www.gnu.org/software/coreutils/manual/html_node/mkdir-invocation.html), [touch](https://www.gnu.org/software/coreutils/manual/html_node/touch-invocation.html), [stat](https://www.gnu.org/software/coreutils/manual/html_node/stat-invocation.html), and [file timestamps](https://www.gnu.org/software/coreutils/manual/html_node/File-timestamps.html).
+- Local manuals: `man file`, `man tree`, and each command's `--help` output.
+- [Chapter artwork and credits](../../../assets/README.md#lesson-covers).
 
-```bash
-sudo apt install tree
-```
+</details>
 
-Here:
+## We've made files. Let's read some.
 
-- `sudo` runs the command with administrative privileges.
-- `apt` is Ubuntu's package-management command.
-- `install` tells `apt` to install a package.
-- `tree` is the package being installed.
+Keep your practice folder for later. In the next chapter, we'll use small text files included in the repo to try `cat`, `head`, `tail`, and `less`. There will actually be something inside them this time.
 
----
+**[Continue to 03: Viewing File Content](../03-viewing-file-content/README.md)**
 
-# Practical Example
+[Previous: Navigation and Paths](../01-navigation-and-paths/README.md) · [All learning topics](../../../README.md#what-im-learning) · [Back to the top](#files-and-directories)
 
-Create a small directory structure:
-
-```bash
-mkdir sandbox
-mkdir -p sandbox/projects/backend/spring
-
-touch sandbox/notes.txt
-```
-
-Inspect it:
-
-```bash
-tree sandbox
-```
-
-Example:
-
-```text
-sandbox
-├── notes.txt
-└── projects
-    └── backend
-        └── spring
-
-4 directories, 1 file
-```
-
-Check the file type:
-
-```bash
-file sandbox/notes.txt
-```
-
-Output:
-
-```text
-sandbox/notes.txt: empty
-```
-
-Inspect its metadata:
-
-```bash
-stat sandbox/notes.txt
-```
-
-This workflow combines directory creation, file creation, structural inspection, file-type detection, and metadata inspection.
-
----
-
-# Quick Reference
-
-```bash
-# Directories
-mkdir sandbox
-mkdir dir1 dir2 dir3
-mkdir -p projects/backend/spring
-mkdir -pv projects/backend/spring
-
-# Files
-touch notes.txt
-touch file1.txt file2.txt
-touch -a notes.txt
-touch -m notes.txt
-touch -c notes.txt
-
-# File information
-file notes.txt
-stat notes.txt
-
-# Directory structure
-tree
-tree sandbox
-tree -d
-tree ~
-```
-
----
-
-# Key Takeaways
-
-- `mkdir` creates directories.
-- `mkdir -p` creates missing parent directories automatically.
-- `mkdir -v` reports directories as they are created.
-- `touch` can create empty files but is primarily used for managing timestamps.
-- `touch -a` updates access time.
-- `touch -m` updates modification time.
-- `touch -c` prevents creation of a missing file.
-- `file` identifies the type or contents of a filesystem object.
-- `stat` provides detailed filesystem metadata.
-- `tree` displays directory structures hierarchically.
-- `tree -d` displays directories without ordinary files.
-- Linux file types are not determined only by filename extensions.
+Notes by **Shaikh Mahad**. Found a mistake or a clearer example? [Tell me what you tried](https://github.com/codewithmahad/LINUX_LAB/issues). I'm learning this too.
