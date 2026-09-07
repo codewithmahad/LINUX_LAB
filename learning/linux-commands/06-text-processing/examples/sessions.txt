@@ -1,0 +1,5 @@
+navigation:12:done
+files:8:done
+viewing:20:review
+copying:5:review
+searching:15:done

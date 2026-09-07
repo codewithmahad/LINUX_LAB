@@ -1,0 +1,6 @@
+bash
+linux
+linux
+git
+bash
+linux
