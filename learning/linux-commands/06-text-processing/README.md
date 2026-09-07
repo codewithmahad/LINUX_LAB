@@ -407,10 +407,10 @@ awk -F ':' '$3 == "review" {total += $2} END {print total + 0}' examples/session
 
 ## Small commands start working together
 
-We used one pipe to count labels and one input redirection to feed `tr`. Next in the sequence is **07: Redirection and Pipes**, where I want to cover connecting commands and saving their output properly.
+We used one pipe to count labels and one input redirection to feed `tr`. **[07: Redirection and Pipes](../07-redirection-and-pipes/README.md)** builds on those: save a result, connect commands, and keep errors separately.
 
-That chapter isn't published yet. For now, [revisit Searching and Finding](../05-searching-and-finding/README.md), try changing a pattern in these examples, or [open the Bash notes on input and output](../../bash-scripting/03-input-and-output/README.md).
+For the scripting side of input and output, the [Bash notes](../../bash-scripting/03-input-and-output/README.md) cover prompts and formatted messages.
 
-[Previous: Searching and Finding](../05-searching-and-finding/README.md) · [All learning topics](../../../README.md#what-im-learning) · [Back to the top](#text-processing)
+[Previous: Searching and Finding](../05-searching-and-finding/README.md) · [Next: Redirection and Pipes](../07-redirection-and-pipes/README.md) · [All learning topics](../../../README.md#what-im-learning)
 
 Notes by **Shaikh Mahad**. Found a clearer way to explain a command? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues). That's useful feedback for my next revision too.

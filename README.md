@@ -23,7 +23,7 @@ I'm putting it here so it can help someone else too. **If you're taking an OS co
 
 > **Current Bash topic:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
-> **At a glance:** 6 Linux command chapters · 4 Bash chapters · 14 example scripts.
+> **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 example scripts.
 
 ## What I'm learning
 
@@ -34,7 +34,7 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 **First time here?** Start with [Navigation and Paths](learning/linux-commands/01-navigation-and-paths/README.md). Already comfortable moving around the terminal? Try [Shell and Script Basics](learning/bash-scripting/01-shell-and-script-basics/README.md).
 
 <details>
-<summary><strong>📂 Linux commands · 6 chapters available</strong></summary>
+<summary><strong>📂 Linux commands · 8 chapters available</strong></summary>
 
 | Chapter | What's inside |
 | :--- | :--- |
@@ -44,6 +44,8 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 | **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, destination paths, overwrite prompts, and a [lab session to pack up](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
 | **05 · [Searching and finding](learning/linux-commands/05-searching-and-finding/README.md)** | `grep`, `find`, patterns, file searches, and a [folder of clues to investigate](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues). |
 | **06 · [Text processing](learning/linux-commands/06-text-processing/README.md)** | `wc`, `cut`, `sort`, `uniq`, `tr`, `sed`, `awk`, and a [small study report](learning/linux-commands/06-text-processing/README.md#your-turn-make-a-small-study-report). |
+| **07 · [Redirection and pipes](learning/linux-commands/07-redirection-and-pipes/README.md)** | Input, output, errors, `>`, `>>`, `<`, pipes, `tee`, and a [review report to save](learning/linux-commands/07-redirection-and-pipes/README.md#your-turn-save-a-review-report). |
+| **08 · [Permissions and ownership](learning/linux-commands/08-permissions-and-ownership/README.md)** | `rwx`, `chmod`, numeric modes, directory access, `chown`, `chgrp`, and a [lab folder to configure](learning/linux-commands/08-permissions-and-ownership/README.md#your-turn-set-up-a-lab-folder). |
 
 </details>
 
@@ -66,9 +68,8 @@ These are the topics I want this notebook to grow into. I'll work through them o
 
 | Area | What I want to learn |
 | :--- | :--- |
-| **Connecting commands** | Pipes, redirection, saving output, and handling error output. |
 | **More Bash** | Conditions, loops, functions, script arguments, and arrays. |
-| **Working with the system** | Permissions, ownership, users, groups, processes, jobs, and signals. |
+| **Working with the system** | Users, groups, processes, jobs, signals, and more advanced access controls. |
 | **Everyday Linux** | System information, storage, archives, networking, and the shell environment. |
 | **Better scripts** | Handling errors, debugging, checking inputs, ShellCheck, formatting, and making scripts safer to rerun. |
 | **Useful automation** | Backups, file organisation, log processing, and small system utilities. |
@@ -142,6 +143,8 @@ These are the things I'm practising in the notes and scripts already here. Each 
 | :--- | :--- |
 | **Working with files and paths** | [Copy, rename, check, and remove a practice submission](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
 | **Finding and processing text** | [Find the useful lines in a log](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues), then [group and count repeated labels](learning/linux-commands/06-text-processing/README.md#uniq-repeated-lines-have-to-be-neighbours). |
+| **Saving results and handling errors** | [Separate output from diagnostics](learning/linux-commands/07-redirection-and-pipes/README.md#errors-have-their-own-stream), then [see and save a result with tee](learning/linux-commands/07-redirection-and-pipes/README.md#tee-see-it-and-save-it). |
+| **Understanding file access** | [Read and change permission modes](learning/linux-commands/08-permissions-and-ownership/README.md#the-numbers-are-just-permissions-added-up), then [test directory access](learning/linux-commands/08-permissions-and-ownership/README.md#directories-work-a-little-differently). |
 | **Bash variables, quoting, and input** | Compare [single and double quotes](learning/bash-scripting/02-variables-and-expansion/quoting.sh), and [read a value from the person running a script](learning/bash-scripting/03-input-and-output/input.sh). |
 | **Arithmetic and command results** | Follow [numeric comparisons and their exit statuses](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh), then [choose the next command based on success or failure](learning/bash-scripting/04-operators-and-expressions/command-chaining.sh). |
 | **Checking a script before running it** | Use [Bash's syntax check](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) before executing a file. |

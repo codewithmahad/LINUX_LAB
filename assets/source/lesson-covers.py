@@ -16,6 +16,7 @@ SANS = "Ubuntu, DejaVu Sans, Arial, sans-serif"
 MONO = "Ubuntu Mono, DejaVu Sans Mono, monospace"
 TUX = base64.b64encode((ASSETS / "tux.png").read_bytes()).decode("ascii")
 BASH_LOGO = base64.b64encode((ASSETS / "logos/bash-dark.svg").read_bytes()).decode("ascii")
+UBUNTU_LOGO = base64.b64encode((ASSETS / "logos/ubuntu.svg").read_bytes()).decode("ascii")
 
 
 def text(x, y, value, size=24, color="#172D42", weight=400, mono=False):
@@ -422,6 +423,112 @@ def bash_operators_cover(mobile=False):
         operators_example, mobile)
 
 
+def stream_destination(x, y, width, label, filename, colour):
+    return [
+        rect(x, y, width, 74, "#522532", 9),
+        text(x+18, y+27, label, 16, colour, 500),
+        text(x+18, y+56, filename, 24, "#FFF0DE", mono=True),
+    ]
+
+
+def redirection_cover(mobile=False):
+    """Route cat's normal text and missing-file diagnostic to separate files."""
+    w, h = (640, 510) if mobile else (1120, 370)
+    ink, muted, amber, rose = "#FFF0DE", "#E8B7BF", "#FFD16A", "#FA93A5"
+    parts = [rect(0, 0, w, h, "#361520", 18)]
+    if mobile:
+        parts += [text(28, 36, "LINUX_LAB / 07", 17, muted, 500),
+                  text(28, 94, "Good output.", 38, ink, 600),
+                  text(28, 139, "Useful errors.", 38, amber, 600),
+                  tux(531, 36, 92),
+                  rect(32, 184, 576, 66, "#522532", 9),
+                  text(52, 226, "cat notes.txt missing.txt", 25, ink, mono=True),
+                  '<path d="M160 250 V343 l-5 -6 m5 6 l5 -6" fill="none" '
+                  f'stroke="{amber}" stroke-width="3" stroke-linecap="round"/>',
+                  '<path d="M474 250 V343 l-5 -6 m5 6 l5 -6" fill="none" '
+                  f'stroke="{rose}" stroke-width="3" stroke-linecap="round"/>']
+        # Labels sit on the background so the routes don't run through the text.
+        parts += [rect(28, 284, 141, 29, "#361520", 0),
+                  text(32, 307, "1 / stdout", 20, amber, mono=True),
+                  rect(334, 284, 151, 29, "#361520", 0),
+                  text(338, 307, "2 / stderr", 20, rose, mono=True)]
+        parts += stream_destination(32, 350, 270, "SAVE WITH >", "report.txt", amber)
+        parts += stream_destination(338, 350, 270, "SAVE WITH 2>", "errors.txt", rose)
+        parts += [text(32, 468, "Same command. Two streams.", 22, muted),
+                  text(32, 494, "SHAIKH MAHAD", 14, ink, 500)]
+    else:
+        parts += [text(40, 42, "LINUX_LAB / 07", 18, muted, 500),
+                  text(40, 99, "Good output. Useful errors.", 43, ink, 600),
+                  text(41, 138, "Give each stream a destination.", 23, amber),
+                  tux(975, 29, 122),
+                  rect(40, 204, 377, 78, "#522532", 9),
+                  text(59, 252, "cat notes.txt missing.txt", 24, ink, mono=True),
+                  f'<path d="M417 225 H528 Q548 225 548 205 H788 l-7 -5 m7 5 l-7 5" '
+                  f'fill="none" stroke="{amber}" stroke-width="3" stroke-linecap="round"/>',
+                  f'<path d="M417 262 H528 Q548 262 548 307 H788 l-7 -5 m7 5 l-7 5" '
+                  f'fill="none" stroke="{rose}" stroke-width="3" stroke-linecap="round"/>',
+                  text(572, 190, "1 / stdout", 20, amber, mono=True),
+                  text(572, 290, "2 / stderr", 20, rose, mono=True),
+                  text(40, 335, "SHAIKH MAHAD", 17, ink, 500),
+                  text(223, 335, "Same command. Two streams.", 18, muted)]
+        parts += stream_destination(802, 167, 278, "SAVE WITH >", "report.txt", amber)
+        parts += stream_destination(802, 270, 278, "SAVE WITH 2>", "errors.txt", rose)
+    return svg(w, h, "Good output. Useful errors. Redirection and Pipes.",
+               "cat notes.txt missing.txt reads the supplied notes and reports a missing file. "
+               "Adding > report.txt sends standard output, descriptor 1, to report.txt. "
+               "Adding 2> errors.txt sends standard error, descriptor 2, to errors.txt. "
+               "Original Tux by Larry Ewing, created using The GIMP.", parts)
+
+
+def permission_columns(x, y, width):
+    """Decode the exact 640 mode applied to note.txt in the chapter."""
+    step = width / 3
+    parts = []
+    for i, (role, bits, access, digit, colour) in enumerate([
+            ("u / owner", "rw-", "read + write", "6", "#294A32"),
+            ("g / group", "r--", "read", "4", "#56621D"),
+            ("o / others", "---", "no access", "0", "#687058")]):
+        col = x + i * step
+        if i:
+            parts += [f'<path d="M{col-18} {y+11} v206" stroke="#B9C29F" '
+                      'stroke-width="1.5" stroke-dasharray="3 6"/>']
+        parts += [text(col, y, role, 18, "#526047", 500),
+                  text(col, y+64, bits, 43, colour, 500, True),
+                  text(col, y+99, access, 18, "#526047"),
+                  text(col+6, y+193, digit, 78, colour, 500, True)]
+    parts += [text(x, y+251, "chmod 640 note.txt", 26, "#294A32", mono=True)]
+    return parts
+
+
+def permissions_cover(mobile=False):
+    w, h = (640, 486) if mobile else (1120, 350)
+    parts = [rect(0, 0, w, h, "#F0F2D9", 18)]
+    logo_size = 84 if mobile else 73
+    logo_x, logo_y = (524, 38) if mobile else (42, 245)
+    logo = (f'<image x="{logo_x}" y="{logo_y}" width="{logo_size}" height="{logo_size}" '
+            f'href="data:image/svg+xml;base64,{UBUNTU_LOGO}"/>')
+    if mobile:
+        parts += [text(28, 36, "LINUX_LAB / 08", 17, "#526047", 500),
+                  text(28, 93, "Who gets to", 38, "#203C29", 600),
+                  text(28, 139, "do what?", 38, "#56621D", 600),
+                  logo]
+        parts += permission_columns(36, 206, 576)
+    else:
+        parts += [text(40, 42, "LINUX_LAB / 08", 18, "#526047", 500),
+                  text(40, 111, "Who gets to", 47, "#203C29", 600),
+                  text(40, 168, "do what?", 47, "#56621D", 600),
+                  text(41, 209, "A file. Three permission sets.", 24, "#526047"),
+                  logo,
+                  text(142, 276, "SHAIKH MAHAD", 17, "#203C29", 500),
+                  text(142, 306, "Read the mode before changing it.", 18, "#526047")]
+        parts += permission_columns(566, 62, 510)
+    return svg(w, h, "Who gets to do what? Permissions and Ownership.",
+               "For the regular file note.txt, chmod 640 gives the owner rw- (read and write, "
+               "4 plus 2 equals 6), the group r-- (read, 4), and others --- (no access, 0). "
+               "Parent-directory access is also needed to reach the file. "
+               "Original Ubuntu Circle of Friends logo by Canonical Ltd., embedded unchanged.", parts)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     for name, build in [("files-and-directories", files_cover),
@@ -429,6 +536,8 @@ def main():
                         ("copying-moving-and-deleting", copying_cover),
                         ("searching-and-finding", searching_cover),
                         ("text-processing", processing_cover),
+                        ("redirection-and-pipes", redirection_cover),
+                        ("permissions-and-ownership", permissions_cover),
                         ("bash-shell-and-script-basics", bash_basics_cover),
                         ("bash-variables-and-expansion", bash_variables_cover),
                         ("bash-input-and-output", bash_input_cover),

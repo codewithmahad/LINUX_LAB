@@ -172,7 +172,7 @@ You can keep several `%s` fields in one format. The arguments fill them in order
 | Why `%` behaves strangely | Keep the `printf` format separate from the value. |
 | Where the data goes | `read` uses standard input; `echo` and `printf` use standard output. The terminal is just their usual destination here. |
 
-Pipes and redirection can connect those streams to commands and files. I've already used some in [Text Processing](../../linux-commands/06-text-processing/README.md); I'll return to them as the scripts grow.
+Pipes and redirection connect those streams to commands and files. [Linux command chapter 07](../../linux-commands/07-redirection-and-pipes/README.md) puts that into practice: save a result, pass it to another command, and keep errors separately.
 
 <details>
 <summary><strong>References for the details</strong></summary>

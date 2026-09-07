@@ -17,7 +17,7 @@ The repository-specific layout code uses the [MIT license](../LICENSE). The thir
 
 ## Lesson covers
 
-The Linux command chapters use small explanatory covers, with cream, blue, warm orange, and dark terminal colours. The Bash covers use aubergine, peach, and green with the original Bash logo. Each has a compact version for narrow screens. The original Tux and Bash artwork are embedded unchanged, with [Larry Ewing's credit](#tux) and the [Bash logo credit](#project-logos).
+The Linux command chapters use explanatory covers with a palette chosen for each topic. Chapter 07 pairs dark cherry with amber and rose to separate output streams; chapter 08 uses pale pistachio and green to break down permission modes. The Bash covers use aubergine, peach, and green. Each has a compact version for narrow screens. The original Tux, Bash, and Ubuntu artwork are embedded unchanged, with [Larry Ewing's credit](#tux) and the [project logo credits](#project-logos).
 
 | Chapter | Wide cover | Compact cover | What the diagram shows |
 | :--- | :--- | :--- | :--- |
@@ -26,6 +26,8 @@ The Linux command chapters use small explanatory covers, with cream, blue, warm 
 | Copying, Moving, and Deleting | [SVG](lessons/copying-moving-and-deleting.svg) | [SVG](lessons/copying-moving-and-deleting-mobile.svg) | Copying keeps the original note and adds a backup; moving renames the backup. Directory prefixes are omitted for space. |
 | Searching and Finding | [SVG](lessons/searching-and-finding.svg) | [SVG](lessons/searching-and-finding-mobile.svg) | Finding a file, then selecting its two error lines. The path is shortened; timestamps and log levels are omitted. |
 | Text Processing | [SVG](lessons/text-processing.svg) | [SVG](lessons/text-processing-mobile.svg) | The six supplied labels become three frequency counts. Bar lengths show the counts. |
+| Redirection and Pipes | [SVG](lessons/redirection-and-pipes.svg) | [SVG](lessons/redirection-and-pipes-mobile.svg) | `cat` sends the note's contents and a missing-file diagnostic through separate stdout and stderr routes to two files. |
+| Permissions and Ownership | [SVG](lessons/permissions-and-ownership.svg) | [SVG](lessons/permissions-and-ownership-mobile.svg) | The actual `chmod 640 note.txt` example: owner read/write, group read, and no access for others. |
 | Bash 01: Shell and Script Basics | [SVG](lessons/bash-shell-and-script-basics.svg) | [SVG](lessons/bash-shell-and-script-basics-mobile.svg) | The complete `hello.sh` source, the command that runs it, and its actual greeting. |
 | Bash 02: Variables and Expansion | [SVG](lessons/bash-variables-and-expansion.svg) | [SVG](lessons/bash-variables-and-expansion-mobile.svg) | The two greetings from `quoting.sh`, showing expansion inside double quotes and literal text inside single quotes. |
 | Bash 03: Input and Output | [SVG](lessons/bash-input-and-output.svg) | [SVG](lessons/bash-input-and-output-mobile.svg) | One answer travels from `read` through a variable to `printf`. The course prompt and summary heading from `input.sh` are omitted. |
@@ -39,7 +41,7 @@ To rebuild the covers, using Python's standard library:
 python3 assets/source/lesson-covers.py
 ```
 
-The [source](source/lesson-covers.py) keeps the colours, labels, and layouts together. It reads the existing Tux image and Bash logo locally and needs no downloads or image-generation service.
+The [source](source/lesson-covers.py) keeps the colours, labels, and layouts together. It reads the existing Tux image, Bash logo, and Ubuntu logo locally and needs no downloads or image-generation service.
 
 ## Project logos
 
