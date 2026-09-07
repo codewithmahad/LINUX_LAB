@@ -7,7 +7,7 @@
 
 **Linux commands, Bash scripts, and the things I'll learn along the way.**
 
-[My story](#hey-im-shaikh-mahad-) · [Set up Linux](#get-a-linux-terminal) · [Learning map](#what-im-learning) · [Try a script](#lets-run-something)
+[Learning map](#what-im-learning) · [Try a script](#lets-run-something) · [Set up Linux](#get-a-linux-terminal) · [My story](#hey-im-shaikh-mahad-)
 
 </div>
 
@@ -21,9 +21,130 @@ But I want to keep going after the course. I want to understand the system I'm w
 
 I'm putting it here so it can help someone else too. **If you're taking an OS course, learning for a project, or just curious about Linux, come learn with me.** Open a chapter, try the examples, change a few things, and see what happens. You can start from zero.
 
-> **Currently at:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
+> **Current Bash topic:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
-> **In the notebook:** 4 Linux command chapters · 4 Bash chapters · 14 example scripts.
+> **At a glance:** 6 Linux command chapters · 4 Bash chapters · 14 example scripts.
+
+## What I'm learning
+
+<img src="assets/linux-lab-journey.svg" alt="My route: command-line basics, Bash now, then Linux systems, automation, and developer tools." width="100%">
+
+The route I have in mind is **commands → Bash → Linux systems → automation → developer tools**. I'll add explanations and examples as I study and practise them. The later topics below are plans; the linked chapters are the notes you can use today.
+
+**First time here?** Start with [Navigation and Paths](learning/linux-commands/01-navigation-and-paths/README.md). Already comfortable moving around the terminal? Try [Shell and Script Basics](learning/bash-scripting/01-shell-and-script-basics/README.md).
+
+<details>
+<summary><strong>📂 Linux commands · 6 chapters available</strong></summary>
+
+| Chapter | What's inside |
+| :--- | :--- |
+| **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, quoting names, and a [guided practice route](learning/linux-commands/01-navigation-and-paths/README.md#take-a-short-trip-through-the-repo). |
+| **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, timestamps, and a [tiny project to build](learning/linux-commands/02-files-and-directories/README.md#your-turn-build-a-tiny-project). |
+| **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `head`, `tail`, `less`, `more`, sample files, and a [live log experiment](learning/linux-commands/03-viewing-file-content/README.md#watch-a-file-grow). |
+| **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, destination paths, overwrite prompts, and a [lab session to pack up](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
+| **05 · [Searching and finding](learning/linux-commands/05-searching-and-finding/README.md)** | `grep`, `find`, patterns, file searches, and a [folder of clues to investigate](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues). |
+| **06 · [Text processing](learning/linux-commands/06-text-processing/README.md)** | `wc`, `cut`, `sort`, `uniq`, `tr`, `sed`, `awk`, and a [small study report](learning/linux-commands/06-text-processing/README.md#your-turn-make-a-small-study-report). |
+
+</details>
+
+<details>
+<summary><strong>🐚 Bash scripting · 4 chapters available</strong></summary>
+
+| Chapter | What's inside | A script to open |
+| :--- | :--- | :--- |
+| **01 · [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md)** | Shells, shebangs, comments, running scripts, and syntax checks. | [hello.sh](learning/bash-scripting/01-shell-and-script-basics/hello.sh) |
+| **02 · [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md)** | Variables, quoting, command substitution, and arithmetic expansion. | [quoting.sh](learning/bash-scripting/02-variables-and-expansion/quoting.sh) |
+| **03 · [Input and output](learning/bash-scripting/03-input-and-output/README.md)** | `echo`, `printf`, `read`, and prompts. | [formatted-output.sh](learning/bash-scripting/03-input-and-output/formatted-output.sh) |
+| **04 · [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md)** | Arithmetic, comparisons, logic, exit status, and command chaining. | [numeric-comparisons.sh](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh) |
+
+</details>
+
+<details>
+<summary><strong>🗺️ Where I want to take this next</strong></summary>
+
+These are the topics I want this notebook to grow into. I'll work through them over time; they aren't published lessons yet.
+
+| Area | What I want to learn |
+| :--- | :--- |
+| **Connecting commands** | Pipes, redirection, saving output, and handling error output. |
+| **More Bash** | Conditions, loops, functions, script arguments, and arrays. |
+| **Working with the system** | Permissions, ownership, users, groups, processes, jobs, and signals. |
+| **Everyday Linux** | System information, storage, archives, networking, and the shell environment. |
+| **Better scripts** | Handling errors, debugging, checking inputs, ShellCheck, formatting, and making scripts safer to rerun. |
+| **Useful automation** | Backups, file organisation, log processing, and small system utilities. |
+| **My developer workflow** | Command-line tools and scripts that help with everyday software projects. |
+
+The small examples come first. As I get further, I want to build on these exercises with scripts I can use in my own projects, and keep the notes here for revision.
+
+</details>
+
+<details>
+<summary><strong>🗂️ How the repository is organised</strong></summary>
+
+The published learning material is under `learning/`. The other areas below describe the layout I'm building towards.
+
+```text
+LINUX_LAB/
+    learning/
+        linux-commands/       # Command notes, one topic per folder
+        bash-scripting/       # Bash notes and example scripts
+    practice/                 # Planned: standalone practice sets
+    automation/               # Planned: scripts for useful tasks
+    resources/                # Planned: references and lab material
+    assets/                   # README artwork and terminal demos
+    README.md                 # You are here
+    LICENSE
+```
+
+Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter links above take you to the material already available.
+
+</details>
+
+<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="120"></a>
+
+## Let's run something
+
+Need a Linux terminal first? [Set one up below](#get-a-linux-terminal), then come back here. If yours is ready, you can go straight to the first script.
+
+Inside your Linux terminal, check that Git is available with `git --version`. If Ubuntu says the command is missing, install it:
+
+<br clear="right">
+
+<details>
+<summary><strong>Install Git on Ubuntu</strong></summary>
+
+```bash
+sudo apt update
+sudo apt install git
+```
+
+`sudo` asks for your Linux password. Nothing appears while you type it, even dots. That's normal.
+
+</details>
+
+Get the repository and run the first script:
+
+```bash
+git clone https://github.com/codewithmahad/LINUX_LAB.git
+cd LINUX_LAB
+bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
+```
+
+It prints `Hello From Bash`. Already cloned the repo? Open its directory and run the last command.
+
+My suggestion: read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
+
+## Skills I'm building here
+
+These are the things I'm practising in the notes and scripts already here. Each link opens an example you can read or try.
+
+| What I'm practising | See it in the repo |
+| :--- | :--- |
+| **Working with files and paths** | [Copy, rename, check, and remove a practice submission](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
+| **Finding and processing text** | [Find the useful lines in a log](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues), then [group and count repeated labels](learning/linux-commands/06-text-processing/README.md#uniq-repeated-lines-have-to-be-neighbours). |
+| **Bash variables, quoting, and input** | Compare [single and double quotes](learning/bash-scripting/02-variables-and-expansion/quoting.sh), and [read a value from the person running a script](learning/bash-scripting/03-input-and-output/input.sh). |
+| **Arithmetic and command results** | Follow [numeric comparisons and their exit statuses](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh), then [choose the next command based on success or failure](learning/bash-scripting/04-operators-and-expressions/command-chaining.sh). |
+| **Checking a script before running it** | Use [Bash's syntax check](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) before executing a file. |
 
 <img align="right" src="assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="160">
 
@@ -101,110 +222,19 @@ Ubuntu's [VirtualBox walkthrough](https://ubuntu.com/tutorials/how-to-run-ubuntu
 
 </details>
 
-## What I'm learning
+**Terminal ready?** [Clone the repo and run your first script](#lets-run-something), or [pick a chapter from the learning map](#what-im-learning).
 
-<img src="assets/linux-lab-journey.svg" alt="My route: command-line basics, Bash now, then Linux systems, automation, and developer tools." width="100%">
+<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="125"></a>
 
-The route I have in mind is **commands → Bash → Linux systems → automation → developer tools**. I'll add explanations and examples as I study and practise them. The later topics below are plans; the linked chapters are the notes you can use today.
+## A comfortable place to practise
 
-**First time here?** Start with [Navigation and Paths](learning/linux-commands/01-navigation-and-paths/README.md). Already comfortable moving around the terminal? Try [Shell and Script Basics](learning/bash-scripting/01-shell-and-script-basics/README.md).
+Use an editor you already like. If that's **VS Code**, a useful layout is the chapter notes beside your script, with a terminal underneath. Read a little, edit a little, run it, and keep the result in view.
 
-<details>
-<summary><strong>📂 Linux commands · 4 chapters available</strong></summary>
+Open the cloned `LINUX_LAB` folder. From **Terminal → New Terminal**, choose a Bash terminal. On Windows with WSL, open the project through the **WSL extension** so the commands run in Ubuntu.
 
-| Chapter | What's inside |
-| :--- | :--- |
-| **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, quoting names, and a [guided practice route](learning/linux-commands/01-navigation-and-paths/README.md#take-a-short-trip-through-the-repo). |
-| **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, timestamps, and a [tiny project to build](learning/linux-commands/02-files-and-directories/README.md#your-turn-build-a-tiny-project). |
-| **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `head`, `tail`, `less`, `more`, sample files, and a [live log experiment](learning/linux-commands/03-viewing-file-content/README.md#watch-a-file-grow). |
-| **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, and what their options change. |
-
-</details>
-
-<details>
-<summary><strong>🐚 Bash scripting · 4 chapters available</strong></summary>
-
-| Chapter | What's inside | A script to open |
-| :--- | :--- | :--- |
-| **01 · [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md)** | Shells, shebangs, comments, running scripts, and syntax checks. | [hello.sh](learning/bash-scripting/01-shell-and-script-basics/hello.sh) |
-| **02 · [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md)** | Variables, quoting, command substitution, and arithmetic expansion. | [quoting.sh](learning/bash-scripting/02-variables-and-expansion/quoting.sh) |
-| **03 · [Input and output](learning/bash-scripting/03-input-and-output/README.md)** | `echo`, `printf`, `read`, and prompts. | [formatted-output.sh](learning/bash-scripting/03-input-and-output/formatted-output.sh) |
-| **04 · [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md)** | Arithmetic, comparisons, logic, exit status, and command chaining. | [numeric-comparisons.sh](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh) |
-
-</details>
-
-<details>
-<summary><strong>🗺️ Where I want to take this next</strong></summary>
-
-These are the topics I want this notebook to grow into. I'll work through them over time; they aren't published lessons yet.
-
-| Area | What I want to learn |
-| :--- | :--- |
-| **More command-line tools** | Finding files, searching and processing text, pipes, and redirection. |
-| **More Bash** | Conditions, loops, functions, script arguments, and arrays. |
-| **Working with the system** | Permissions, ownership, users, groups, processes, jobs, and signals. |
-| **Everyday Linux** | System information, storage, archives, networking, and the shell environment. |
-| **Better scripts** | Handling errors, debugging, checking inputs, and making scripts safer to rerun. |
-| **Useful automation** | Backups, file organisation, log processing, and small system utilities. |
-| **My developer workflow** | Command-line tools and scripts that help with everyday software projects. |
-
-The small examples come first. As I get further, I want to turn them into exercises and useful scripts, and keep the notes here for revision.
-
-</details>
-
-<details>
-<summary><strong>🗂️ How the repository is organised</strong></summary>
-
-The published learning material is under `learning/`. The other areas below describe the layout I'm building towards.
-
-```text
-LINUX_LAB/
-    learning/
-        linux-commands/       # Command notes, one topic per folder
-        bash-scripting/       # Bash notes and example scripts
-    practice/                 # Planned: exercises to try yourself
-    automation/               # Planned: scripts for useful tasks
-    resources/                # Planned: references and lab material
-    assets/                   # README artwork and terminal demos
-    README.md                 # You are here
-    LICENSE
-```
-
-Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter links above take you to the material already available.
-
-</details>
-
-<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="120"></a>
-
-## Let's run something
-
-Inside your Linux terminal, check that Git is available with `git --version`. If Ubuntu says the command is missing, install it:
+The [VS Code terminal guide](https://code.visualstudio.com/docs/terminal/basics) and [WSL walkthrough](https://code.visualstudio.com/docs/remote/wsl) show how to set that up. The examples here also work in a separate Ubuntu terminal if you prefer.
 
 <br clear="right">
-
-<details>
-<summary><strong>Install Git on Ubuntu</strong></summary>
-
-```bash
-sudo apt update
-sudo apt install git
-```
-
-`sudo` asks for your Linux password. As during setup, the password stays invisible while you type.
-
-</details>
-
-Get the repository and run the first script:
-
-```bash
-git clone https://github.com/codewithmahad/LINUX_LAB.git
-cd LINUX_LAB
-bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
-```
-
-It prints `Hello From Bash`. Already cloned the repo? Open its directory and run the last command.
-
-My suggestion: read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
 
 <a href="https://www.gnu.org/software/bash/">
   <picture>
@@ -251,25 +281,6 @@ Change `>` to `<` and run the block again. The last number becomes `1`. `$?` rea
 
 </details>
 
-<div align="center">
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-playground.svg">
-  <img src="assets/terminal-playground.gif" alt="A looping terminal Easter egg: a steam train passes, then a cowsay cow says mahad is dumb." width="800">
-</picture>
-</div>
-
-<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="125"></a>
-
-## A comfortable place to practise
-
-Use an editor you already like. If that's **VS Code**, a useful layout is the chapter notes beside your script, with a terminal underneath. Read a little, edit a little, run it, and keep the result in view.
-
-Open the cloned `LINUX_LAB` folder. From **Terminal → New Terminal**, choose a Bash terminal. On Windows with WSL, open the project through the **WSL extension** so the commands run in Ubuntu.
-
-The [VS Code terminal guide](https://code.visualstudio.com/docs/terminal/basics) and [WSL walkthrough](https://code.visualstudio.com/docs/remote/wsl) show how to set that up. The examples here also work in a separate Ubuntu terminal if you prefer.
-
-<br clear="right">
-
 ### Three small wins to work towards
 
 | Try to do this without looking it up | Where to practise |
@@ -296,6 +307,13 @@ These reminders come from the current chapters. Follow the learning map when you
 
 </details>
 
+<div align="center">
+<picture>
+  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-playground.svg">
+  <img src="assets/terminal-playground.gif" alt="A looping terminal Easter egg: a steam train passes, then a cowsay cow says mahad is dumb." width="800">
+</picture>
+</div>
+
 <img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="120">
 
 ## If you're learning with me
@@ -314,9 +332,9 @@ If you want to come back as the notebook grows, **[give it a star](https://githu
 
 **Shaikh Mahad · Software Engineering student · UBIT, University of Karachi**
 
-I want my GitHub to show the work behind what I learn: the notes, the examples I can explain, and the useful things I eventually build with them. `LINUX_LAB` is part of that. It starts with the basics and has room to grow into the Linux tools and automation I'll use as a developer.
+I'm working towards becoming a **backend developer**. Alongside writing application code, I want to understand the databases it uses and the Linux system it runs on. This notebook is where I'm building that Linux foundation; my other repositories hold the rest of what I'm learning.
 
-If you like following a project as it takes shape, you're welcome to follow along. If you're here to study, I hope you leave with something you can use in your next lab or project.
+I want my GitHub to show the work behind that progress: examples I can explain, problems I work through, and useful projects I build as I get further. Over time, I'd like the commands here to become tools I reach for in my own development work. You can explore that wider journey through my profile and repositories below.
 
 **[Follow me on GitHub](https://github.com/codewithmahad)** · **[Explore my repositories](https://github.com/codewithmahad?tab=repositories)**
 
