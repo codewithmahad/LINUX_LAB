@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Build the lesson diagrams with the existing cover palette and original Tux.
+"""Build the lesson diagrams with the repository palette and original project artwork.
 
 Run from any directory: python3 assets/source/lesson-covers.py
-Uses only the Python standard library. Tux is embedded unchanged; see assets/README.md.
+Uses only the Python standard library. Artwork is embedded unchanged; see assets/README.md.
 These are explanatory layouts, not terminal screenshots.
 """
 
@@ -15,6 +15,7 @@ OUT = ASSETS / "lessons"
 SANS = "Ubuntu, DejaVu Sans, Arial, sans-serif"
 MONO = "Ubuntu Mono, DejaVu Sans Mono, monospace"
 TUX = base64.b64encode((ASSETS / "tux.png").read_bytes()).decode("ascii")
+BASH_LOGO = base64.b64encode((ASSETS / "logos/bash-dark.svg").read_bytes()).decode("ascii")
 
 
 def text(x, y, value, size=24, color="#172D42", weight=400, mono=False):
@@ -278,13 +279,160 @@ def processing_cover(mobile=False):
                "The bars represent those counts. Original Tux by Larry Ewing, created using The GIMP.", parts)
 
 
+def bash_logo(x, y, size):
+    return (f'<image x="{x}" y="{y}" width="{size}" height="{size}" '
+            f'href="data:image/svg+xml;base64,{BASH_LOGO}"/>')
+
+
+def first_script(x, y, width):
+    """The complete hello.sh source and its real output, with one blank source line."""
+    return [
+        text(x, y, "hello.sh / saved commands", 19, "#D1C2D6", mono=True),
+        rect(x, y+16, width, 112, "#34253B", 10, "#614469"),
+        text(x+20, y+52, "#!/usr/bin/env bash", 21, "#B8D19E", mono=True),
+        text(x+20, y+101, 'echo "Hello From Bash"', 23, "#FFD0AF", mono=True),
+        f'<path d="M{x+27} {y+135} v16 l-5 -5 m5 5 l5 -5" '
+        'fill="none" stroke="#BDDAA7" stroke-width="2" stroke-linecap="round"/>',
+        rect(x, y+160, width, 108, "#1E1E1E", 10),
+        text(x+20, y+198, "$", 23, "#B8D19E", mono=True),
+        text(x+51, y+198, "bash hello.sh", 23, "#E3D99C", mono=True),
+        text(x+20, y+243, "Hello From Bash", 27, "#E9E1ED", mono=True),
+    ]
+
+
+def bash_basics_cover(mobile=False):
+    w, h = (640, 464) if mobile else (1120, 340)
+    parts = [rect(0, 0, w, h, "#281A30", 18)]
+    if mobile:
+        parts += [text(28, 35, "LINUX_LAB / BASH 01", 17, "#CBBAD3", 500),
+                  text(28, 88, "A few commands.", 37, "#F8F2E9", 600),
+                  text(28, 132, "My first script.", 37, "#FFBE91", 600),
+                  bash_logo(521, 34, 106)]
+        parts += first_script(32, 174, 576)
+    else:
+        parts += [text(40, 47, "LINUX_LAB / BASH 01", 18, "#CBBAD3", 500),
+                  text(40, 112, "A few commands.", 43, "#F8F2E9", 600),
+                  text(40, 167, "My first script.", 43, "#FFBE91", 600),
+                  text(41, 207, "Write it. Check it. Run it again.", 22, "#CBBAD3"),
+                  bash_logo(42, 230, 85),
+                  text(145, 265, "SHAIKH MAHAD", 17, "#F8F2E9", 500),
+                  text(145, 293, "From the terminal to a file I can keep.", 17, "#CBBAD3")]
+        parts += first_script(570, 45, 510)
+    return svg(w, h, "A few commands. My first script. Shell and Script Basics.",
+               "hello.sh contains a Bash shebang, a blank line, and echo \"Hello From Bash\". "
+               "Running bash hello.sh prints Hello From Bash. The original Bash logo is by "
+               "Prospect One, copyright 2016 Free Software Foundation, under the Free Art License 1.3.", parts)
+
+
+def quoting_example(x, y, width):
+    """The greeting in quoting.sh, once expanded and once literal."""
+    return [
+        text(x, y, 'name="Shaikh Mahad"', 22, "#CBBAD3", mono=True),
+        rect(x, y+20, width, 103, "#34253B", 10),
+        text(x+20, y+55, 'echo "Hello, $name"', 23, "#FFD0AF", mono=True),
+        text(x+20, y+99, "Hello, Shaikh Mahad", 27, "#F8F2E9", mono=True),
+        text(x+20, y+149, "expand the name", 17, "#B8D19E"),
+        rect(x, y+168, width, 103, "#34253B", 10),
+        text(x+20, y+203, "echo 'Hello, $name'", 23, "#FFD0AF", mono=True),
+        text(x+20, y+247, "Hello, $name", 27, "#F8F2E9", mono=True),
+        text(x+width-164, y+247, "keep it literal", 17, "#B8D19E"),
+    ]
+
+
+def input_example(x, y, width):
+    """Follow one complete line from input.sh's name prompt to its output."""
+    return [
+        text(x, y, "read / from the terminal", 19, "#CBBAD3", mono=True),
+        text(x, y+48, "Enter your name:", 25, "#F8F2E9", mono=True),
+        text(x, y+86, "Shaikh Mahad", 29, "#B8D19E", mono=True),
+        f'<path d="M{x+15} {y+103} v40 l-5 -5 m5 5 l5 -5" '
+        'fill="none" stroke="#B8D19E" stroke-width="2" stroke-linecap="round"/>',
+        rect(x+42, y+108, 96, 36, "#45304B", 7),
+        text(x+57, y+133, "name", 23, "#FFD0AF", mono=True),
+        text(x+158, y+132, "one complete line", 19, "#CBBAD3"),
+        text(x, y+183, "printf / to the terminal", 19, "#CBBAD3", mono=True),
+        rect(x, y+202, width, 63, "#1E1E1E", 10, "#4A404B"),
+        text(x+20, y+243, "Name: Shaikh Mahad", 27, "#F8F2E9", mono=True),
+    ]
+
+
+def operators_example(x, y, width):
+    """An arithmetic value and a successful comparison's status are different."""
+    return [
+        text(x, y, "CALCULATED VALUE", 17, "#CBBAD3", 500),
+        text(x, y+48, "$((17 / 5))", 27, "#FFD0AF", mono=True),
+        text(x+width-75, y+53, "3", 58, "#FFD0AF", 500, True),
+        text(x, y+86, "Integer division keeps the whole part.", 19, "#CBBAD3"),
+        f'<path d="M{x} {y+121} h{width}" stroke="#604366" stroke-width="1"/>',
+        text(x, y+158, "COMMAND EXIT STATUS", 17, "#CBBAD3", 500),
+        text(x, y+206, "((17 > 5))", 27, "#B8D19E", mono=True),
+        text(x+width-75, y+211, "0", 58, "#B8D19E", 500, True),
+        text(x, y+249, 'echo "$?" shows 0: success.', 21, "#F8F2E9", mono=True),
+    ]
+
+
+def bash_topic_cover(number, title_lines, subtitle, signature, description, draw, mobile=False):
+    """A common Bash identity, with each cover explaining its own chapter."""
+    w, h = (640, 474) if mobile else (1120, 340)
+    parts = [rect(0, 0, w, h, "#281A30", 18)]
+    if mobile:
+        parts += [text(28, 35, f"LINUX_LAB / BASH {number}", 17, "#CBBAD3", 500),
+                  text(28, 88, title_lines[0], 37, "#F8F2E9", 600),
+                  text(28, 132, title_lines[1], 37, "#FFBE91", 600),
+                  bash_logo(521, 34, 106)]
+        parts += draw(32, 180, 576)
+    else:
+        parts += [text(40, 47, f"LINUX_LAB / BASH {number}", 18, "#CBBAD3", 500),
+                  text(40, 112, title_lines[0], 43, "#F8F2E9", 600),
+                  text(40, 167, title_lines[1], 43, "#FFBE91", 600),
+                  text(41, 207, subtitle, 22, "#CBBAD3"),
+                  bash_logo(42, 230, 85),
+                  text(145, 265, "SHAIKH MAHAD", 17, "#F8F2E9", 500),
+                  text(145, 293, signature, 17, "#CBBAD3")]
+        parts += draw(570, 45, 510)
+    credit = (" Original Bash logo by Prospect One, copyright 2016 Free Software Foundation, "
+              "under the Free Art License 1.3.")
+    return svg(w, h, " ".join(title_lines), description + credit, parts)
+
+
+def bash_variables_cover(mobile=False):
+    return bash_topic_cover(
+        "02", ("Same name.", "Different quotes."), "A small detail that changes the result.",
+        "The quotes are part of the command.",
+        'With name="Shaikh Mahad", echo "Hello, $name" prints Hello, Shaikh Mahad. '
+        "echo 'Hello, $name' prints Hello, $name literally, matching quoting.sh.",
+        quoting_example, mobile)
+
+
+def bash_input_cover(mobile=False):
+    return bash_topic_cover(
+        "03", ("Ask a question.", "Keep the answer."), "One prompt. One line. A useful reply.",
+        "My script can ask for the values now.",
+        'An excerpt from input.sh: read prompts Enter your name, stores Shaikh Mahad in name, '
+        'and printf prints Name: Shaikh Mahad. The course prompt and summary heading are omitted.',
+        input_example, mobile)
+
+
+def bash_operators_cover(mobile=False):
+    return bash_topic_cover(
+        "04", ("A value to use.", "A status to check."), "Familiar operators. A Bash detail to keep.",
+        "Zero can mean the command succeeded.",
+        '$((17 / 5)) produces integer value 3. The command ((17 > 5)) succeeds and leaves exit '
+        'status 0 in $?, which echo can print. The value and the exit status are different results.',
+        operators_example, mobile)
+
+
 def main():
     OUT.mkdir(exist_ok=True)
     for name, build in [("files-and-directories", files_cover),
                         ("viewing-file-content", reading_cover),
                         ("copying-moving-and-deleting", copying_cover),
                         ("searching-and-finding", searching_cover),
-                        ("text-processing", processing_cover)]:
+                        ("text-processing", processing_cover),
+                        ("bash-shell-and-script-basics", bash_basics_cover),
+                        ("bash-variables-and-expansion", bash_variables_cover),
+                        ("bash-input-and-output", bash_input_cover),
+                        ("bash-operators-and-expressions", bash_operators_cover)]:
         for mobile in (False, True):
             suffix = "-mobile" if mobile else ""
             path = OUT / f"{name}{suffix}.svg"

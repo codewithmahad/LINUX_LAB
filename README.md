@@ -52,7 +52,7 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 
 | Chapter | What's inside | A script to open |
 | :--- | :--- | :--- |
-| **01 · [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md)** | Shells, shebangs, comments, running scripts, and syntax checks. | [hello.sh](learning/bash-scripting/01-shell-and-script-basics/hello.sh) |
+| **01 · [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md)** | Shells, shebangs, execution order, syntax checks, and a [lab check-in script to write](learning/bash-scripting/01-shell-and-script-basics/README.md#your-turn-a-lab-check-in). | [hello.sh](learning/bash-scripting/01-shell-and-script-basics/hello.sh) · [sequential-commands.sh](learning/bash-scripting/01-shell-and-script-basics/sequential-commands.sh) |
 | **02 · [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md)** | Variables, quoting, command substitution, and arithmetic expansion. | [quoting.sh](learning/bash-scripting/02-variables-and-expansion/quoting.sh) |
 | **03 · [Input and output](learning/bash-scripting/03-input-and-output/README.md)** | `echo`, `printf`, `read`, and prompts. | [formatted-output.sh](learning/bash-scripting/03-input-and-output/formatted-output.sh) |
 | **04 · [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md)** | Arithmetic, comparisons, logic, exit status, and command chaining. | [numeric-comparisons.sh](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh) |
