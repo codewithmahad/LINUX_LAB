@@ -1,0 +1,3 @@
+Linux lab notes
+Check the source and destination.
+Read the copy before removing anything.
