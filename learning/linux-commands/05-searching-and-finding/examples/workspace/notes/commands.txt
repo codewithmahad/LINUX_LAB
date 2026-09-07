@@ -1,0 +1,3 @@
+pwd shows the current directory
+grep searches inside text files
+find searches for files and directories

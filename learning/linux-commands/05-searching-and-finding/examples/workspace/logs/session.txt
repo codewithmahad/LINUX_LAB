@@ -1,0 +1,8 @@
+09:00 INFO  Session started
+09:01 INFO  Reading notes.txt
+09:02 WARN  Backup folder is missing
+09:03 ERROR Could not save notes.txt
+09:04 INFO  Created the backup folder
+09:05 INFO  Retried the backup
+09:06 ERROR Permission denied for archive.txt
+09:07 INFO  Session finished
