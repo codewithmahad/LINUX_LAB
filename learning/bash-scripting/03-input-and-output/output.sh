@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-name="Mahad"
+name="Shaikh Mahad"
 course="Operating Systems"
 
 echo "Hello, $name"
 echo "Course: $course"
 echo
-echo "Bash scripting started."
+echo "Next: let the person running the script fill these in."
