@@ -1,0 +1,3 @@
+My Linux lab reminder
+Check who owns the file.
+Give each person only the access they need.

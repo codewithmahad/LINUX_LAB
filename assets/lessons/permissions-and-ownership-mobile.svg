@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="486" viewBox="0 0 640 486" role="img" aria-labelledby="title description">
+<title id="title">Who gets to do what? Permissions and Ownership.</title>
+<desc id="description">For the regular file note.txt, chmod 640 gives the owner rw- (read and write, 4 plus 2 equals 6), the group r-- (read, 4), and others --- (no access, 0). Parent-directory access is also needed to reach the file. Original Ubuntu Circle of Friends logo by Canonical Ltd., embedded unchanged.</desc>
+<rect x="0" y="0" width="640" height="486" rx="18" fill="#F0F2D9"/>
+<text x="28" y="36" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="17" font-weight="500" fill="#526047">LINUX_LAB / 08</text>
+<text x="28" y="93" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="38" font-weight="600" fill="#203C29">Who gets to</text>
+<text x="28" y="139" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="38" font-weight="600" fill="#56621D">do what?</text>
+<image x="524" y="38" width="84" height="84" href="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjcuNDA2NjggNzM4LjMxNDIxIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2U5NTAwZTt9PC9zdHlsZT48L2RlZnM+PGNpcmNsZSBjbGFzcz0iY2xzLTEiIGN4PSIxMDkuMDI2OTYiIGN5PSIzNDguMDk0MTIiIHI9IjEwOS4wMjY5NiIvPjxjaXJjbGUgY2xhc3M9ImNscy0xIiBjeD0iNTYzLjA4MzY5IiBjeT0iMTA5LjAyNjk4IiByPSIxMDkuMDI2OTgiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik00OTIuNDgxOTQsMTMzNi42NjU3N2EyNjUuNTI1MDUsMjY1LjUyNTA1LDAsMCwxLTE4MS4wNzEyLTEzOC4wOTgxNCwxNTYuOTQ3ODQsMTU2Ljk0Nzg0LDAsMCwxLTkzLjIxOTExLDExLjQ1ODI1LDM1NC45MzUyNCwzNTQuOTM1MjQsMCwwLDAsMjU1LjUzNzIzLDIxNC4xNjQ1NSwzNTkuMjA3NzcsMzU5LjIwNzc3LDAsMCwwLDc3LjQxOTQ5LDcuOTY3LDE1Ni4wMDMxMywxNTYuMDAzMTMsMCwwLDEtMzEuOTIyMzYtOTEuMTU0NjZDNTEwLjI0NjIyLDEzNDAuMDA1MjUsNTAxLjI3NzM1LDEzMzguNTQ4LDQ5Mi40ODE5NCwxMzM2LjY2NTc3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTEzNy41NjE1NSAtNzA3Ljk3OTk4KSIvPjxjaXJjbGUgY2xhc3M9ImNscy0xIiBjeD0iNTM4LjUyMDQ2IiBjeT0iNjI5LjI4NzIzIiByPSIxMDkuMDI2OTgiLz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik04MjcuNzk4LDEyOTcuMjIwOTVBMzU2LjcwMDU2LDM1Ni43MDA1NiwwLDAsMCw4NDUuNjcyODMsODc4LjcwMmExNTcuMTQ0NDEsMTU3LjE0NDQxLDAsMCwxLTYxLjMwOTc1LDcxLjgwMzEsMjY3LjI5MywyNjcuMjkzLDAsMCwxLTguNzM2ODgsMjY1LjQ4ODRBMTU2LjM0Njc3LDE1Ni4zNDY3NywwLDAsMSw4MjcuNzk4LDEyOTcuMjIwOTVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTM3LjU2MTU1IC03MDcuOTc5OTgpIi8+PHBhdGggY2xhc3M9ImNscy0xIiBkPSJNMjM4LjE3NjQ0LDg5OS43MTkwNnE0LjE1MDUtLjIyNzc5LDguMzA1MzMtLjIyNTUzQTE1Ny4zNDYyNiwxNTcuMzQ2MjYsMCwwLDEsMzI5LjE2NDE2LDkyMy4wMzksMjY1LjkwNjUzLDI2NS45MDY1MywwLDAsMSw1NDMuMjcyMzgsODA4LjUyOTY2YTE1OC4wODc3LDE1OC4wODc3LDAsMCwxLDMzLjA3Ni04OC40MjAyMkM0MzkuMjQ1NDksNzA5LjI1MTc3LDMwNi4wMjQyMSw3ODAuMDAxLDIzOC4xNzY0NCw4OTkuNzE5MDZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTM3LjU2MTU1IC03MDcuOTc5OTgpIi8+PC9zdmc+"/>
+<text x="36.0" y="206" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="500" fill="#526047">u / owner</text>
+<text x="36.0" y="270" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="43" font-weight="500" fill="#294A32">rw-</text>
+<text x="36.0" y="305" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#526047">read + write</text>
+<text x="42.0" y="399" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="78" font-weight="500" fill="#294A32">6</text>
+<path d="M210.0 217 v206" stroke="#B9C29F" stroke-width="1.5" stroke-dasharray="3 6"/>
+<text x="228.0" y="206" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="500" fill="#526047">g / group</text>
+<text x="228.0" y="270" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="43" font-weight="500" fill="#56621D">r--</text>
+<text x="228.0" y="305" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#526047">read</text>
+<text x="234.0" y="399" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="78" font-weight="500" fill="#56621D">4</text>
+<path d="M402.0 217 v206" stroke="#B9C29F" stroke-width="1.5" stroke-dasharray="3 6"/>
+<text x="420.0" y="206" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="500" fill="#526047">o / others</text>
+<text x="420.0" y="270" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="43" font-weight="500" fill="#687058">---</text>
+<text x="420.0" y="305" font-family="Ubuntu, DejaVu Sans, Arial, sans-serif" font-size="18" font-weight="400" fill="#526047">no access</text>
+<text x="426.0" y="399" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="78" font-weight="500" fill="#687058">0</text>
+<text x="36" y="457" font-family="Ubuntu Mono, DejaVu Sans Mono, monospace" font-size="26" font-weight="400" fill="#294A32">chmod 640 note.txt</text>
+</svg>
