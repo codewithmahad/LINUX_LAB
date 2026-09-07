@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-age=20
 role="student"
-active="yes"
+active="no"
+
+# This student is not active, so only the first test is false.
 
 [[ "$role" == "student" && "$active" == "yes" ]]
 status=$?

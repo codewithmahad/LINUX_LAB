@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-echo "Running first command" && echo "First command succeeded"
+# true returns 0; false returns 1. Neither prints anything itself.
+true && echo "Success: the command after && ran."
+false && echo "You will not see this line."
+false || echo "Failure: the fallback after || ran."
+true || echo "You will not see this line either."
 
-mkdir -p demo-directory && echo "Directory is ready"
+# The same rule works with a comparison. No files are created here.
+topic="Bash"
 
-ls demo-directory && echo "Directory can be accessed"
+[[ -n "$topic" ]] && echo "Topic: $topic"
 
-ls missing-directory || echo "Could not access missing-directory"
+[[ "$topic" == "Python" ]] || echo "Still working on Bash."

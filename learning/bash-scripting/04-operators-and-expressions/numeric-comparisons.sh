@@ -10,22 +10,26 @@ echo
 # Arithmetic comparisons return an exit status.
 # 0 means true/success, 1 means false.
 
-(( first > second ))
+((first > second))
 status=$?
 echo "first > second  -> $status"
 
-(( first < second ))
+((first < second))
 status=$?
 echo "first < second  -> $status"
 
-(( first == 20 ))
+((first == 20))
 status=$?
 echo "first == 20     -> $status"
 
-(( first != second ))
+((first != second))
 status=$?
 echo "first != second -> $status"
 
-(( first >= second ))
+((first >= second))
 status=$?
 echo "first >= second -> $status"
+
+((first <= second))
+status=$?
+echo "first <= second -> $status"
