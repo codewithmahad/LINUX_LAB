@@ -1,0 +1,3 @@
+Read the command.
+Predict the output.
+Try one change.

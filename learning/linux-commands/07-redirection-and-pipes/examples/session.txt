@@ -1,0 +1,6 @@
+INFO terminal ready
+INFO reading notes
+ERROR backup folder missing
+WARN notes need revision
+ERROR could not save report
+INFO session finished
