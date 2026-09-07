@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-name="Mahad"
-year=2026
+name="Shaikh Mahad"
+sessions=3
 
 # Parameter expansion
 echo "Student: ${name}"
@@ -10,12 +10,11 @@ echo "Student: ${name}"
 current_directory="$(pwd)"
 echo "Current directory: $current_directory"
 
-echo "Current directory: $(pwd)"
-
 # Arithmetic expansion
-next_year=$((year + 1))
-echo "Next year: $next_year"
+next_session=$((sessions + 1))
+echo "Next session: $next_session"
 
-# Tilde expansion
-echo "Home directory:"
+# An unquoted tilde expands. A quoted tilde stays literal.
 echo ~
+echo "~"
+echo "$HOME"

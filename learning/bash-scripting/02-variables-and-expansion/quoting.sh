@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-name="Mahad"
+name="Shaikh Mahad"
 
 echo "Hello, $name"
 echo 'Hello, $name'
 
 message="Linux and Bash"
-echo "$message"
+
+# %s prints one argument; \n ends the line. < > are just visible markers.
+echo "Without quotes:"
+# Deliberately unquoted to demonstrate word splitting.
+printf '<%s>\n' $message
+
+echo "With double quotes:"
+printf '<%s>\n' "$message"

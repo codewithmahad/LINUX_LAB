@@ -1,342 +1,168 @@
+[LINUX_LAB](../../../README.md) / [Bash scripting](../../../README.md#what-im-learning) / **02**
+
 # Variables and Expansion
 
-Notes and examples from learning how Bash stores values and expands them before executing commands.
+<picture>
+  <source media="(max-width: 620px)" srcset="../../../assets/lessons/bash-variables-and-expansion-mobile.svg">
+  <img src="../../../assets/lessons/bash-variables-and-expansion.svg" alt="Same variable, different quotes. Double quotes print Hello, Shaikh Mahad; single quotes print the literal Hello, $name." width="100%">
+</picture>
 
-## Variables
+My first scripts had every value written into the commands. Now I can name those values and reuse them. Coming from C++ and Java, variables are familiar; the bit I need to pay attention to is what Bash does with them **before a command runs**.
 
-Bash normally creates variables through assignment:
+[Assignment](#give-a-value-a-name) · [Quotes](#the-quotes-change-the-command) · [Expansion](#what-bash-replaces) · [Try it](#your-turn-a-note-for-the-next-session) · [Revision](#quick-revision)
 
-```bash
-name="Mahad"
-age=20
-course="Operating Systems"
-```
+## Open the chapter
 
-Unlike C++/Java, a separate declaration is usually unnecessary.
-
-```bash
-name="Mahad"
-```
-
-There must be no spaces around `=`:
+From the repo root, in a Bash terminal:
 
 ```bash
-name="Mahad"      # correct
-name = "Mahad"    # incorrect
+cd learning/bash-scripting/02-variables-and-expansion
 ```
 
-Whitespace separates command words in Bash, so the second form is interpreted as a command rather than an assignment.
+Read the file, run it, then change a value. These three scripts only print output.
 
-## Using Variables
+| In order | Run it | What to watch |
+| :--- | :--- | :--- |
+| [variables.sh](variables.sh) | `bash variables.sh` | Assign, reuse, and replace a value. |
+| [quoting.sh](quoting.sh) | `bash quoting.sh` | Quotes change expansion and the arguments a command receives. |
+| [expansions.sh](expansions.sh) | `bash expansions.sh` | Get a variable, command output, a calculation, or the home directory. |
+
+Need a reminder on running `.sh` files? [Chapter 01](../01-shell-and-script-basics/README.md) has that setup.
+
+## Give a value a name
 
 ```bash
-echo "$name"
-echo "${name}"
+name="Shaikh Mahad"
+topic="Bash"
+notebook="${topic}_notes"
+
+echo "Student: $name"
+echo "Notebook: $notebook"
 ```
 
-Both expand the variable.
+This prints `Student: Shaikh Mahad` and `Notebook: Bash_notes`.
 
-Braces are useful when text follows the variable name:
+Three differences I keep in mind:
+
+- **No type declaration needed.** `topic="Bash"` creates or updates the variable.
+- **No spaces around `=`.** `topic = "Bash"` tries to run a command named `topic`.
+- **Use `$` to read, not assign.** `$topic` and `${topic}` read the same value. Braces separate the name from a suffix: `$topic_notes` would look for a different variable.
+
+An assignment stores the value at that moment. Changing `topic` later doesn't change the existing `notebook` value.
+
+## The quotes change the command
 
 ```bash
-language="linux"
-
-echo "${language}_lab"
+name="Shaikh Mahad"
+echo "Hello, $name"    # Hello, Shaikh Mahad
+echo 'Hello, $name'    # Hello, $name
 ```
 
-Output:
+Double quotes allow variable expansion. Single quotes keep the text literal. Leaving quotes out introduces another problem: one value can become several arguments.
 
-```text
-linux_lab
-```
-
-Without braces:
+`echo` hides that difference by joining its arguments with spaces. Here, `printf '<%s>\n'` makes it visible: `%s` prints a string, `\n` ends the line, and `< >` are just markers. The format repeats for each argument:
 
 ```bash
-echo "$language_lab"
-```
-
-Bash would look for a variable named `language_lab`.
-
-## Declaration with `declare`
-
-Bash also provides `declare`:
-
-```bash
-declare message
-message="Assigned later"
-```
-
-For ordinary variables this is usually unnecessary, but `declare` becomes useful for variable attributes.
-
-Examples:
-
-```bash
-declare -i number=10
-declare -a names
-declare -A users
-```
-
-These represent an integer-attributed variable, indexed array, and associative array respectively.
-
-## Unset vs Empty
-
-An empty variable:
-
-```bash
-name=""
-```
-
-has been assigned an empty string.
-
-An unset variable:
-
-```bash
-unset name
-```
-
-has no assigned value.
-
-These are different states and become important when checking configuration and environment variables.
-
-## Bash Values and Types
-
-Bash is primarily string-oriented.
-
-```bash
-name="Mahad"
-age=20
-path="/home/mahad"
 message="Linux and Bash"
+printf '<%s>\n' $message      # Deliberately unquoted for this comparison.
+printf '<%s>\n' "$message"
 ```
-
-Even numeric-looking scalar values are normally handled as shell data until used in an arithmetic context.
-
-Bash does not use the normal C++/Java type system:
 
 ```text
-int
-float
-double
-char
-bool
-String
+<Linux>
+<and>
+<Bash>
+<Linux and Bash>
 ```
 
-It also supports:
+The first command receives three words; the second receives one string. Quoting the original assignment doesn't protect later uses of `$message`.
 
-```text
-scalar variables
-indexed arrays
-associative arrays
-integer attributes
-```
+| Form | What happens |
+| :--- | :--- |
+| `"$message"` | Expands the value and keeps it as one argument, even if it's empty. |
+| `'$message'` | Passes the literal text `$message`. |
+| `$message` | Expands, then may split into words and expand wildcard patterns into filenames. An empty value can disappear. |
 
-## Quoting
+My default when passing a string to a command is **`"$variable"`**. [Chapter 03](../03-input-and-output/README.md#printf-when-the-output-needs-a-shape) builds on this with more `printf` formats.
 
-Double quotes allow expansion:
+## What Bash replaces
+
+Expansion means Bash replaces a piece of shell syntax with its result. These are the forms I'm using so far:
+
+| Form | Where the value comes from | Example |
+| :--- | :--- | :--- |
+| `$name` or `${name}` | A parameter, such as a variable | `echo "${topic}_notes"` |
+| `$(command)` | The command's standard output | `current_directory="$(pwd)"` |
+| `$((expression))` | An integer calculation | `next_session=$((sessions + 1))` |
+| `~` | My home directory | `echo ~` |
 
 ```bash
-name="Mahad"
-
-echo "Hello, $name"
-```
-
-Output:
-
-```text
-Hello, Mahad
-```
-
-Single quotes preserve text literally:
-
-```bash
-echo 'Hello, $name'
-```
-
-Output:
-
-```text
-Hello, $name
-```
-
-Variables should generally be quoted when used as strings:
-
-```bash
-echo "$name"
-```
-
-## Parameter Expansion
-
-```bash
-$name
-${name}
-```
-
-Both retrieve the value of a parameter.
-
-Example:
-
-```bash
-name="Mahad"
-
-echo "${name}"
-```
-
-Output:
-
-```text
-Mahad
-```
-
-## Command Substitution
-
-Command substitution runs a command and substitutes its output:
-
-```bash
+sessions=3
 current_directory="$(pwd)"
+next_session=$((sessions + 1))
 
-echo "$current_directory"
+echo "Working in: $current_directory"
+echo "Next session: $next_session"
 ```
 
-Example output:
+The directory depends on where you run this. The next session is `4`. Writing `next_session="sessions + 1"` would just store that text, without calculating anything.
 
-```text
-/home/mahad/Github-Repo-Clones/LINUX_LAB
-```
+`$(pwd)` runs `pwd` and captures its output, removing trailing newlines. It doesn't save the command to run again later.
 
-Preferred syntax:
+One exception to my quoting habit: `~` needs to be unquoted to expand. `echo "~"` prints a tilde. For a home path inside quotes, use `"$HOME"`, such as `"$HOME/linux-lab-practice"`.
+
+<details>
+<summary><strong>For revision: empty, unset, and declare</strong></summary>
+
+`note=""` assigns an empty string. `unset note` removes the variable. With Bash's usual settings, `echo "$note"` looks blank in both cases, but they are different states. That matters later when a script needs to distinguish a missing setting from an intentionally empty one.
+
+`declare message` is valid, but ordinary assignments don't need it. `declare` also supports attributes and arrays; I'll give those space when I reach those topics.
+
+</details>
+
+## Your turn: a note for the next session
+
+Before running this, predict the last three lines:
 
 ```bash
-$(command)
+topic="Bash"
+session=3
+note="${topic}_session_$((session + 1))"
+topic="Linux"
+
+echo "$note"
+echo '$note'
+echo "$topic"
 ```
 
-## Arithmetic Expansion
-
-Bash needs an explicit arithmetic context:
-
-```bash
-number=10
-result=$((number + 5))
-
-echo "$result"
-```
-
-Output:
+<details>
+<summary><strong>Check your prediction</strong></summary>
 
 ```text
-15
+Bash_session_4
+$note
+Linux
 ```
 
-`$(( ... ))` evaluates an arithmetic expression and substitutes its resulting value.
+`note` was built when `topic` was `Bash`. Single quotes keep `$note` literal. The final line reads the updated topic. Move the `topic="Linux"` assignment above the `note` assignment and try again.
 
-Coming from C++:
+</details>
 
-```cpp
-int result = number + 5;
-```
+## Quick revision
 
-Bash instead uses:
+| If I forget… | The reminder I need |
+| :--- | :--- |
+| Why an assignment fails | Check spaces around `=` before anything else. |
+| Why a value became separate words | Quote the expansion where I use it. |
+| Which parentheses to use | `$(...)` captures output; `$((...))` calculates. `((...))` and its status come in [chapter 04](../04-operators-and-expressions/README.md#exit-status). |
 
-```bash
-result=$((number + 5))
-```
+<details>
+<summary><strong>References for the details</strong></summary>
 
-because normal shell syntax is centered around commands and words rather than typed arithmetic expressions.
+GNU Bash manual: [quoting](https://www.gnu.org/software/bash/manual/html_node/Quoting.html), [shell expansions](https://www.gnu.org/software/bash/manual/html_node/Shell-Expansions.html), and [command substitution](https://www.gnu.org/software/bash/manual/html_node/Command-Substitution.html). Offline, `man bash` has the same topics.
 
-## Arithmetic Evaluation
+</details>
 
-Bash also supports:
+[← Bash 01: Shell and Script Basics](../01-shell-and-script-basics/README.md) · [Back to the learning map](../../../README.md#what-im-learning)
 
-```bash
-(( ... ))
-```
-
-Example:
-
-```bash
-count=5
-((count++))
-
-echo "$count"
-```
-
-Output:
-
-```text
-6
-```
-
-Useful distinction:
-
-```text
-$((expression))    produce/substitute an arithmetic value
-((expression))     evaluate an arithmetic expression
-```
-
-This becomes especially useful in loops and conditions.
-
-## Integer Arithmetic
-
-Bash's built-in arithmetic is integer-based.
-
-```bash
-result=$((10 / 3))
-
-echo "$result"
-```
-
-Output:
-
-```text
-3
-```
-
-Normal Bash arithmetic does not provide C++/Java-style floating-point types such as `float` or `double`.
-
-## Tilde Expansion
-
-```bash
-echo ~
-```
-
-Example output:
-
-```text
-/home/mahad
-```
-
-`~` expands to the current user's home directory.
-
-## Expansion Summary
-
-```text
-$name             parameter expansion
-${name}           explicit parameter expansion
-$(command)        command substitution
-$((expression))   arithmetic expansion
-((expression))    arithmetic evaluation
-~                 tilde expansion
-```
-
-A useful Bash mental model is:
-
-```text
-shell syntax
-    ↓
-expansion
-    ↓
-resulting command
-    ↓
-execution
-```
-
-## Examples
-
-See:
-
-```text
-variables.sh
-quoting.sh
-expansions.sh
-```
+**[Next: Bash 03, Input and Output →](../03-input-and-output/README.md)** Now the person running the script can supply the values.
