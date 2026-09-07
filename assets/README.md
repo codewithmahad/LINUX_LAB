@@ -15,6 +15,28 @@ The covers and closing banner embed the original Tux PNG. These are layouts buil
 
 The repository-specific layout code uses the [MIT license](../LICENSE). The third-party artwork and logos below retain their own terms.
 
+## Lesson covers
+
+The Linux command chapters use small explanatory covers, with cream, blue, warm orange, and dark terminal colours. Each has a compact version for narrow screens. The original Tux is embedded unchanged, with [Larry Ewing's credit](#tux).
+
+| Chapter | Wide cover | Compact cover | What the diagram shows |
+| :--- | :--- | :--- | :--- |
+| Files and Directories | [SVG](lessons/files-and-directories.svg) | [SVG](lessons/files-and-directories-mobile.svg) | A `notes` folder containing two empty files, matching the chapter's commands. |
+| Viewing File Content | [SVG](lessons/viewing-file-content.svg) | [SVG](lessons/viewing-file-content-mobile.svg) | The first and last three lines of the supplied 12-line session. Excerpts omit timestamps and log levels for space. |
+| Copying, Moving, and Deleting | [SVG](lessons/copying-moving-and-deleting.svg) | [SVG](lessons/copying-moving-and-deleting-mobile.svg) | Copying keeps the original note and adds a backup; moving renames the backup. Directory prefixes are omitted for space. |
+| Searching and Finding | [SVG](lessons/searching-and-finding.svg) | [SVG](lessons/searching-and-finding-mobile.svg) | Finding a file, then selecting its two error lines. The path is shortened; timestamps and log levels are omitted. |
+| Text Processing | [SVG](lessons/text-processing.svg) | [SVG](lessons/text-processing-mobile.svg) | The six supplied labels become three frequency counts. Bar lengths show the counts. |
+
+These are diagrams, not terminal screenshots. Their meaning is also explained in the lessons and image descriptions. The layout code uses the repository's MIT license; Tux retains its original terms.
+
+To rebuild the covers, using Python's standard library:
+
+```bash
+python3 assets/source/lesson-covers.py
+```
+
+The [source](source/lesson-covers.py) keeps the colours, labels, and layouts together. It reads the existing Tux image locally and needs no downloads or image-generation service.
+
 ## Project logos
 
 Downloaded logos are stored unmodified. Their presence identifies the tools discussed in the notes.
