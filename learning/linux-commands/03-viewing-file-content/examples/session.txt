@@ -1,0 +1,12 @@
+09:00 INFO  Session started
+09:01 INFO  Opened the Linux terminal
+09:02 INFO  Checked location with pwd
+09:03 INFO  Listed the practice folder
+09:04 WARN  notes.txt was not found
+09:05 INFO  Created notes.txt
+09:06 INFO  Wrote the first note
+09:07 ERROR Backup folder is missing
+09:08 INFO  Created the backup folder
+09:09 INFO  Retried the backup
+09:10 INFO  Backup completed
+09:11 INFO  Session finished
