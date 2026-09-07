@@ -25,9 +25,9 @@ I'm putting it here so it can help someone else too. **If you're taking an OS co
 >
 > **In the notebook:** 4 Linux command chapters · 4 Bash chapters · 14 example scripts.
 
-## First, a little about Linux
+<img align="right" src="assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="160">
 
-<img align="right" src="assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="120">
+## First, a little about Linux
 
 You'll see these three names a lot here:
 
@@ -41,9 +41,9 @@ For me, that's the interesting part: learning a command today, then finding a wa
 
 <br clear="right">
 
-## Get a Linux terminal
+<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="120"></a>
 
-<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="85"></a>
+## Get a Linux terminal
 
 You can keep your current operating system. Pick the setup that fits what you want to try. The steps below use Ubuntu, so we have a common starting point for commands, package names, and examples.
 
@@ -115,8 +115,8 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 | Chapter | What's inside |
 | :--- | :--- |
 | **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, quoting names, and a [guided practice route](learning/linux-commands/01-navigation-and-paths/README.md#take-a-short-trip-through-the-repo). |
-| **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, and timestamps. |
-| **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `less`, `more`, `head`, and `tail`. |
+| **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, timestamps, and a [tiny project to build](learning/linux-commands/02-files-and-directories/README.md#your-turn-build-a-tiny-project). |
+| **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `head`, `tail`, `less`, `more`, sample files, and a [live log experiment](learning/linux-commands/03-viewing-file-content/README.md#watch-a-file-grow). |
 | **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, and what their options change. |
 
 </details>
@@ -174,9 +174,9 @@ Empty planned folders may not appear in a fresh clone; Git starts tracking them 
 
 </details>
 
-## Let's run something
+<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="120"></a>
 
-<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="80"></a>
+## Let's run something
 
 Inside your Linux terminal, check that Git is available with `git --version`. If Ubuntu says the command is missing, install it:
 
@@ -206,14 +206,14 @@ It prints `Hello From Bash`. Already cloned the repo? Open its directory and run
 
 My suggestion: read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
 
-### Make the first script your own
-
 <a href="https://www.gnu.org/software/bash/">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/logos/bash-dark.svg">
-    <img align="right" src="assets/logos/bash.svg" alt="GNU Bash logo." width="100">
+    <img align="right" src="assets/logos/bash.svg" alt="GNU Bash logo." width="125">
   </picture>
 </a>
+
+## Make the first script your own
 
 Open `hello.sh` in your editor. Change the greeting, save it, and run the same command again. Then try printing two lines instead of one. That's a small change, but now you're editing a program and checking what it does.
 
@@ -258,9 +258,9 @@ Change `>` to `<` and run the block again. The last number becomes `1`. `$?` rea
 </picture>
 </div>
 
-## A comfortable place to practise
+<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="125"></a>
 
-<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="100"></a>
+## A comfortable place to practise
 
 Use an editor you already like. If that's **VS Code**, a useful layout is the chapter notes beside your script, with a terminal underneath. Read a little, edit a little, run it, and keep the result in view.
 
@@ -296,9 +296,9 @@ These reminders come from the current chapters. Follow the learning map when you
 
 </details>
 
-## If you're learning with me
+<img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="120">
 
-<img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="85">
+## If you're learning with me
 
 Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, please tell me. I'm learning this too.
 
@@ -308,9 +308,9 @@ If you want to come back as the notebook grows, **[give it a star](https://githu
 
 <br clear="right">
 
-## A little about the person keeping these notes
+<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="180"></a>
 
-<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="150"></a>
+## A little about the person keeping these notes
 
 **Shaikh Mahad · Software Engineering student · UBIT, University of Karachi**
 
