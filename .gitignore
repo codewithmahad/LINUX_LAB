@@ -26,3 +26,6 @@ secrets/
 
 # Cache
 .cache/
+
+# VS Code Code Runner temporary files
+tempCodeRunnerFile*
