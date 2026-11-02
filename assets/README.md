@@ -1,6 +1,6 @@
 # Artwork and terminal demos
 
-The README uses local images, established project logos, and a terminal Easter egg. The source files and credits are kept here so the page can be maintained alongside the notes.
+The README and getting-started guide use local images, established project logos, and a terminal Easter egg. The source files and credits are kept here so the page can be maintained alongside the notes.
 
 ## Cover and journey
 

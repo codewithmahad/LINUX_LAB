@@ -7,7 +7,7 @@
 
 **Linux commands, Bash scripts, and the things I'll learn along the way.**
 
-[Learning map](#what-im-learning) · [Course project](#course-project-deploylatch) · [Try a script](#lets-run-something) · [Set up Linux](#get-a-linux-terminal) · [My story](#hey-im-shaikh-mahad-)
+[Learning map](#what-im-learning) · [Course project](#course-project-deploylatch) · [Try a script](#lets-run-something) · [Setup guide](docs/GETTING_STARTED.md)
 
 </div>
 
@@ -15,23 +15,22 @@
 
 ## Hey, I'm Shaikh Mahad 👋
 
-I'm a **BS Software Engineering student at UBIT, University of Karachi**. I started this repo at the beginning of the semester while learning Linux commands and Bash scripting for my **Operating Systems lab**. I wanted somewhere to keep my notes, practise the commands, and come back to them before a lab or exam.
+I'm a **BS Software Engineering student at UBIT, University of Karachi**. I started this repo while learning Linux commands and Bash scripting for my **Operating Systems lab**. It holds my notes, example scripts, and exercises for practice and revision.
 
-But I want to keep going after the course. I want to understand the system I'm writing code on: how files and permissions work, what a process is doing, and how to write a script that saves me doing the same job again tomorrow. This is where I'll work through that, one topic at a time.
-
-I'm putting it here so it can help someone else too. **If you're taking an OS course, learning for a project, or just curious about Linux, come learn with me.** Open a chapter, try the examples, change a few things, and see what happens. You can start from zero.
+I want to keep going after the course and build scripts that help with everyday work. **If you're taking an OS course or just curious about Linux, come learn with me.** You can start from zero.
 
 > **Current Bash topic:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
 > **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 example scripts.
 
+> **New to Linux? [Start here: terminal and editor setup →](docs/GETTING_STARTED.md)**
+> Follow the Ubuntu setup steps, install Git, and get your workspace ready for the examples below.
+
 ## Course project: DeployLatch
 
-For my final **Operating Systems course project**, I built **[DeployLatch](https://github.com/codewithmahad/deploylatch)**, a Bash tool for deploying a Java service on Ubuntu and recovering from failed updates. It installs each release in its own directory, switches the active release, and checks the service's health and version. If an update fails, it attempts to restore and verify the previous working release.
+For my final **Operating Systems course project**, I built **[DeployLatch](https://github.com/codewithmahad/deploylatch)**, a Bash tool that deploys a Java service on Ubuntu, checks its health and version, and attempts to restore the previous working release if an update fails.
 
-The project gave the practice here a purpose: file paths and permissions help organise and protect releases, Bash runs the deployment steps, and exit statuses report whether an update succeeded. It also took me into topics I'm still building towards in these notes, including symbolic links, systemd services, and locking to prevent overlapping deployments.
-
-This repo is where I keep the learning notes and small exercises; DeployLatch is where I applied that foundation alongside my Java backend work.
+It connects the file paths, permissions, Bash, and exit statuses practised here to my Java backend work. It also took me into symbolic links, systemd services, and deployment locking—topics I'm still building towards in these notes.
 
 [See the deployment demo](https://github.com/codewithmahad/deploylatch#deployment-demo) · [Read the deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh)
 
@@ -102,6 +101,7 @@ LINUX_LAB/
     practice/                 # Planned: standalone practice sets
     automation/               # Planned: scripts for useful tasks
     resources/                # Planned: references and lab material
+    docs/                     # Terminal and editor setup guide
     assets/                   # README artwork and terminal demos
     README.md                 # You are here
     LICENSE
@@ -115,25 +115,7 @@ Empty planned folders may not appear in a fresh clone; Git starts tracking them 
 
 ## Let's run something
 
-Need a Linux terminal first? [Set one up below](#get-a-linux-terminal), then come back here. If yours is ready, you can go straight to the first script.
-
-Inside your Linux terminal, check that Git is available with `git --version`. If Ubuntu says the command is missing, install it:
-
-<br clear="right">
-
-<details>
-<summary><strong>Install Git on Ubuntu</strong></summary>
-
-```bash
-sudo apt update
-sudo apt install git
-```
-
-`sudo` asks for your Linux password. Nothing appears while you type it, even dots. That's normal.
-
-</details>
-
-Get the repository and run the first script:
+You'll need a Linux terminal with Bash and Git.
 
 ```bash
 git clone https://github.com/codewithmahad/LINUX_LAB.git
@@ -143,11 +125,14 @@ bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
 
 It prints `Hello From Bash`. Already cloned the repo? Open its directory and run the last command.
 
-My suggestion: read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
+<br clear="right">
 
 ## Skills I'm building here
 
-These are the things I'm practising in the notes and scripts already here. Each link opens an example you can read or try.
+Files and permissions, text processing, Bash variables, exit statuses, and script checks. Each example below comes from a published chapter.
+
+<details>
+<summary><strong>See 7 skills with examples from the chapters</strong></summary>
 
 | What I'm practising | See it in the repo |
 | :--- | :--- |
@@ -158,6 +143,8 @@ These are the things I'm practising in the notes and scripts already here. Each 
 | **Bash variables, quoting, and input** | Compare [single and double quotes](learning/bash-scripting/02-variables-and-expansion/quoting.sh), and [read a value from the person running a script](learning/bash-scripting/03-input-and-output/input.sh). |
 | **Arithmetic and command results** | Follow [numeric comparisons and their exit statuses](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh), then [choose the next command based on success or failure](learning/bash-scripting/04-operators-and-expressions/command-chaining.sh). |
 | **Checking a script before running it** | Use [Bash's syntax check](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) before executing a file. |
+
+</details>
 
 <img align="right" src="assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="160">
 
@@ -175,79 +162,26 @@ For me, that's the interesting part: learning a command today, then finding a wa
 
 <br clear="right">
 
-<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="120"></a>
+<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="100"></a>
 
 ## Get a Linux terminal
 
-You can keep your current operating system. Pick the setup that fits what you want to try. The steps below use Ubuntu, so we have a common starting point for commands, package names, and examples.
+The examples use Ubuntu. Choose a setup, then follow the full instructions in the getting-started guide.
 
-<br clear="right">
-
-| If you want… | Start with… |
+| Your setup | Where to start |
 | :--- | :--- |
-| Linux commands and Bash on a Windows computer | **Ubuntu in WSL** is enough for the current lessons. |
-| The full Ubuntu desktop to explore alongside the terminal | **Ubuntu in a virtual machine** runs a separate OS in a window. |
-| To use Linux you already have installed | Open a terminal, run `bash --version`, and [jump to the examples](#lets-run-something). |
-
-<details>
-<summary><strong>🪟 Windows + WSL: set up the terminal</strong></summary>
-
-These steps are for **Windows 11**, or **Windows 10 version 2004 / build 19041 or later**.
-
-1. Open **PowerShell as administrator**. Run:
-
-   ```powershell
-   wsl --install -d Ubuntu
-   ```
-
-2. Restart when prompted, then open **Ubuntu** from the Start menu.
-3. Create your Linux username and password. Nothing appears while you type the password, even dots. That's normal.
-4. In the Ubuntu terminal, check Bash:
-
-   ```bash
-   bash --version
-   ```
-
-Run this repo's Linux commands in that Ubuntu terminal. The PowerShell command above is just for setting it up.
-
-If installation needs troubleshooting, Microsoft's [WSL installation guide](https://learn.microsoft.com/en-us/windows/wsl/install) and [first-time setup guide](https://learn.microsoft.com/en-us/windows/wsl/setup/environment) cover the details.
-
-</details>
-
-<details>
-<summary><strong>🖥️ Ubuntu in a virtual machine: set up the desktop</strong></summary>
-
-A virtual machine lets you explore Ubuntu while your usual operating system is still running.
-
-1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads). If your lab uses VMware, [Workstation or Fusion](https://www.vmware.com/products/desktop-hypervisor/workstation-and-fusion) is another option.
-2. Download **Ubuntu Desktop LTS** from [Ubuntu's download page](https://ubuntu.com/download/desktop). LTS means *long-term support*. Choose the image for your computer: Intel/AMD 64-bit for Intel/AMD machines, or ARM64 for an Apple Silicon VM.
-3. Create a new VM and select the downloaded ISO as its installation image. Allocate memory and virtual disk space using Ubuntu's listed requirements, leaving enough memory for your main OS. In VirtualBox's creation wizard, choose **Skip Unattended Installation** if that option appears and you want to go through the installer yourself.
-4. Start the VM and follow Ubuntu's installer.
-5. Create your account, finish the installation, and restart the VM when asked. Open Ubuntu's **Terminal** app and run:
-
-   ```bash
-   bash --version
-   ```
-
-Do the installation **inside the VM window**; its virtual disk is where Ubuntu goes.
-
-Ubuntu's [VirtualBox walkthrough](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox) shows the screens. Use a VM application and Ubuntu image that both support your computer's architecture.
-
-</details>
-
-**Terminal ready?** [Clone the repo and run your first script](#lets-run-something), or [pick a chapter from the learning map](#what-im-learning).
-
-<a href="https://code.visualstudio.com/"><img align="right" src="assets/logos/vscode.svg" alt="Visual Studio Code logo." width="125"></a>
-
-## A comfortable place to practise
-
-Use an editor you already like. If that's **VS Code**, a useful layout is the chapter notes beside your script, with a terminal underneath. Read a little, edit a little, run it, and keep the result in view.
-
-Open the cloned `LINUX_LAB` folder. From **Terminal → New Terminal**, choose a Bash terminal. On Windows with WSL, open the project through the **WSL extension** so the commands run in Ubuntu.
-
-The [VS Code terminal guide](https://code.visualstudio.com/docs/terminal/basics) and [WSL walkthrough](https://code.visualstudio.com/docs/remote/wsl) show how to set that up. The examples here also work in a separate Ubuntu terminal if you prefer.
+| Windows, with Linux commands and Bash | [Set up Ubuntu in WSL](docs/GETTING_STARTED.md#ubuntu-in-wsl). |
+| A full Ubuntu desktop alongside your usual OS | [Set up Ubuntu in a virtual machine](docs/GETTING_STARTED.md#ubuntu-in-a-virtual-machine). |
+| Linux already installed | Open a terminal, check `bash --version` and `git --version`, then [run the first script](#lets-run-something). |
 
 <br clear="right">
+
+## Learning resources and practice
+
+Read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
+
+<details>
+<summary><strong>Practice: change a script, predict its output, and review lab reminders</strong></summary>
 
 <a href="https://www.gnu.org/software/bash/">
   <picture>
@@ -256,7 +190,7 @@ The [VS Code terminal guide](https://code.visualstudio.com/docs/terminal/basics)
   </picture>
 </a>
 
-## Make the first script your own
+### Make the first script your own
 
 Open `hello.sh` in your editor. Change the greeting, save it, and run the same command again. Then try printing two lines instead of one. That's a small change, but now you're editing a program and checking what it does.
 
@@ -266,8 +200,7 @@ When you move on to variables, replace the fixed greeting with a name stored in 
 
 <br clear="right">
 
-<details>
-<summary><strong>Try this from my current chapter: why does “true” give 0?</strong></summary>
+### Why does “true” give 0?
 
 Run this in Bash:
 
@@ -292,8 +225,6 @@ Change `>` to `<` and run the block again. The last number becomes `1`. `$?` rea
 
 [Open the full chapter →](learning/bash-scripting/04-operators-and-expressions/README.md)
 
-</details>
-
 ### Three small wins to work towards
 
 | Try to do this without looking it up | Where to practise |
@@ -304,8 +235,7 @@ Change `>` to `<` and run the block again. The last number becomes `1`. `$?` rea
 
 Being able to explain the result is a good reason to move on. If you can't yet, change the example and try again. There's no deadline here.
 
-<details>
-<summary><strong>📌 A few reminders for the next lab</strong></summary>
+### A few reminders for the next lab
 
 | Easy to forget | A useful reminder |
 | :--- | :--- |
@@ -327,29 +257,17 @@ These reminders come from the current chapters. Follow the learning map when you
 </picture>
 </div>
 
-<img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="120">
-
 ## If you're learning with me
 
-Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, please tell me. I'm learning this too.
+Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, [open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the chapter, the command you tried, and what happened. Corrections and clearer examples are welcome as pull requests.
 
-[Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the chapter, the command you tried, and what happened. Corrections and clearer examples are welcome as pull requests.
+<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="96"></a>
 
-If you want to come back as the notebook grows, **[give it a star](https://github.com/codewithmahad/LINUX_LAB/stargazers)**. You can also **[follow me, @codewithmahad](https://github.com/codewithmahad)**, for what I build next.
+## About
 
-<br clear="right">
+I'm working towards becoming a **backend developer**, with a focus on Java, databases, and Linux. My other repositories show what I'm learning and building alongside this notebook.
 
-<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="180"></a>
-
-## A little about the person keeping these notes
-
-**Shaikh Mahad · Software Engineering student · UBIT, University of Karachi**
-
-I'm working towards becoming a **backend developer**. Alongside writing application code, I want to understand the databases it uses and the Linux system it runs on. This notebook is where I'm building that Linux foundation; my other repositories hold the rest of what I'm learning.
-
-I want my GitHub to show the work behind that progress: examples I can explain, problems I work through, and useful projects I build as I get further. Over time, I'd like the commands here to become tools I reach for in my own development work. You can explore that wider journey through my profile and repositories below.
-
-**[Follow me on GitHub](https://github.com/codewithmahad)** · **[Explore my repositories](https://github.com/codewithmahad?tab=repositories)**
+[GitHub profile](https://github.com/codewithmahad) · [More projects](https://github.com/codewithmahad?tab=repositories)
 
 <br clear="right">
 
