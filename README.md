@@ -19,9 +19,9 @@ I'm a **BS Software Engineering student at UBIT, University of Karachi**. I star
 
 I want to keep going after the course and build scripts that help with everyday work. **If you're taking an OS course or just curious about Linux, come learn with me.** You can start from zero.
 
-> **Current Bash topic:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
+> **Latest published Bash chapter:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
-> **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 example scripts.
+> **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 chapter scripts · 11 practice scripts.
 
 > **New to Linux? [Start here: terminal and editor setup →](docs/GETTING_STARTED.md)**
 > Follow the Ubuntu setup steps, install Git, and get your workspace ready for the examples below.
@@ -38,7 +38,7 @@ It connects the file paths, permissions, Bash, and exit statuses practised here 
 
 <img src="assets/linux-lab-journey.svg" alt="My route: command-line basics, Bash now, then Linux systems, automation, and developer tools." width="100%">
 
-The route I have in mind is **commands → Bash → Linux systems → automation → developer tools**. I'll add explanations and examples as I study and practise them. The later topics below are plans; the linked chapters are the notes you can use today.
+The route I have in mind is **commands → Bash → Linux systems → automation → developer tools**. The linked chapters are published notes; the separate practice exercises below sometimes go ahead of the lessons. The roadmap shows topics I want to write about next.
 
 **First time here?** Start with [Navigation and Paths](learning/linux-commands/01-navigation-and-paths/README.md). Already comfortable moving around the terminal? Try [Shell and Script Basics](learning/bash-scripting/01-shell-and-script-basics/README.md).
 
@@ -59,7 +59,7 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 </details>
 
 <details>
-<summary><strong>🐚 Bash scripting · 4 chapters available</strong></summary>
+<summary><strong>🐚 Bash scripting · 4 published chapters</strong></summary>
 
 | Chapter | What's inside | A script to open |
 | :--- | :--- | :--- |
@@ -70,14 +70,27 @@ The route I have in mind is **commands → Bash → Linux systems → automation
 
 </details>
 
+**Beyond the chapters:** [Browse 11 Bash practice exercises](practice/bash-scripting/) covering basics, conditions, loops, and arrays. These are standalone scripts; full lesson notes on conditions, loops, and arrays are still to come.
+
+<details>
+<summary><strong>🧪 Bash practice · topics and example scripts</strong></summary>
+
+| Practice folder | What I'm practising | Examples |
+| :--- | :--- | :--- |
+| [Basics · 4 scripts](practice/bash-scripting/01-basics/) | Reports, input, arithmetic, percentages, and conditions. | [System report](practice/bash-scripting/01-basics/01-system-report.sh) · [Percentage and pass/fail](practice/bash-scripting/01-basics/04-percentage.sh) |
+| [Loops · 3 scripts](practice/bash-scripting/03-loops/) | Input validation, conditions, iteration, and menu choices. | [Menu calculator](practice/bash-scripting/03-loops/03-menu-calculator.sh) |
+| [Arrays · 4 scripts](practice/bash-scripting/04-arrays/) | Indexed and associative arrays, iteration, and statistics. | [Marks statistics](practice/bash-scripting/04-arrays/02-marks-statistics.sh) · [Product lookup](practice/bash-scripting/04-arrays/04-product-lookup.sh) |
+
+</details>
+
 <details>
 <summary><strong>🗺️ Where I want to take this next</strong></summary>
 
-These are the topics I want this notebook to grow into. I'll work through them over time; they aren't published lessons yet.
+These are topics I want to turn into full chapters. Some already appear in the practice scripts; they aren't published lessons yet.
 
-| Area | What I want to learn |
+| Area | Planned chapter coverage |
 | :--- | :--- |
-| **More Bash** | Conditions, loops, functions, script arguments, and arrays. |
+| **More Bash lessons** | Conditions, loops, functions, script arguments, and arrays. |
 | **Working with the system** | Users, groups, processes, jobs, signals, and more advanced access controls. |
 | **Everyday Linux** | System information, storage, archives, networking, and the shell environment. |
 | **Better scripts** | Handling errors, debugging, checking inputs, ShellCheck, formatting, and making scripts safer to rerun. |
@@ -91,14 +104,15 @@ The small examples come first. As I get further, I want to build on these exerci
 <details>
 <summary><strong>🗂️ How the repository is organised</strong></summary>
 
-The published learning material is under `learning/`. The other areas below describe the layout I'm building towards.
+Published chapters and their examples live under `learning/`; standalone exercises live under `practice/`. Planned areas are marked below.
 
 ```text
 LINUX_LAB/
     learning/
         linux-commands/       # Command notes, one topic per folder
         bash-scripting/       # Bash notes and example scripts
-    practice/                 # Planned: standalone practice sets
+    practice/
+        bash-scripting/       # Exercises: basics, conditions, loops, and arrays
     automation/               # Planned: scripts for useful tasks
     resources/                # Planned: references and lab material
     docs/                     # Terminal and editor setup guide
@@ -107,7 +121,7 @@ LINUX_LAB/
     LICENSE
 ```
 
-Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter links above take you to the material already available.
+Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter and practice links above take you to the material already available.
 
 </details>
 
