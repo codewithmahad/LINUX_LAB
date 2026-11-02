@@ -7,7 +7,7 @@
 
 **Linux commands, Bash scripts, and the things I'll learn along the way.**
 
-[Learning map](#what-im-learning) · [Try a script](#lets-run-something) · [Set up Linux](#get-a-linux-terminal) · [My story](#hey-im-shaikh-mahad-)
+[Learning map](#what-im-learning) · [Course project](#course-project-deploylatch) · [Try a script](#lets-run-something) · [Set up Linux](#get-a-linux-terminal) · [My story](#hey-im-shaikh-mahad-)
 
 </div>
 
@@ -15,7 +15,7 @@
 
 ## Hey, I'm Shaikh Mahad 👋
 
-I'm a **BS Software Engineering student at UBIT, University of Karachi**. This repo started with the Linux and shell scripting part of my **Operating Systems lab**. I wanted somewhere to keep my notes, practise the commands, and come back to them before a lab or exam.
+I'm a **BS Software Engineering student at UBIT, University of Karachi**. I started this repo at the beginning of the semester while learning Linux commands and Bash scripting for my **Operating Systems lab**. I wanted somewhere to keep my notes, practise the commands, and come back to them before a lab or exam.
 
 But I want to keep going after the course. I want to understand the system I'm writing code on: how files and permissions work, what a process is doing, and how to write a script that saves me doing the same job again tomorrow. This is where I'll work through that, one topic at a time.
 
@@ -24,6 +24,16 @@ I'm putting it here so it can help someone else too. **If you're taking an OS co
 > **Current Bash topic:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
 >
 > **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 example scripts.
+
+## Course project: DeployLatch
+
+For my final **Operating Systems course project**, I built **[DeployLatch](https://github.com/codewithmahad/deploylatch)**, a Bash tool for deploying a Java service on Ubuntu and recovering from failed updates. It installs each release in its own directory, switches the active release, and checks the service's health and version. If an update fails, it attempts to restore and verify the previous working release.
+
+The project gave the practice here a purpose: file paths and permissions help organise and protect releases, Bash runs the deployment steps, and exit statuses report whether an update succeeded. It also took me into topics I'm still building towards in these notes, including symbolic links, systemd services, and locking to prevent overlapping deployments.
+
+This repo is where I keep the learning notes and small exercises; DeployLatch is where I applied that foundation alongside my Java backend work.
+
+[See the deployment demo](https://github.com/codewithmahad/deploylatch#deployment-demo) · [Read the deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh)
 
 ## What I'm learning
 
@@ -342,8 +352,6 @@ I want my GitHub to show the work behind that progress: examples I can explain, 
 **[Follow me on GitHub](https://github.com/codewithmahad)** · **[Explore my repositories](https://github.com/codewithmahad?tab=repositories)**
 
 <br clear="right">
-
-<img src="assets/linux-lab-closing.svg" alt="Keep learning. Keep building. Shaikh Mahad, UBIT, Karachi." width="100%">
 
 <div align="center">
 

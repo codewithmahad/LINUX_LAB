@@ -9,9 +9,8 @@ The README uses local images, established project logos, and a terminal Easter e
 | [linux-lab-hero.svg](linux-lab-hero.svg) | Wide cover with classic Tux and a dark terminal. |
 | [linux-lab-hero-mobile.svg](linux-lab-hero-mobile.svg) | Compact cover for narrow screens. |
 | [linux-lab-journey.svg](linux-lab-journey.svg) | The purple learning route, with current and future topics. |
-| [linux-lab-closing.svg](linux-lab-closing.svg) | Dark closing banner and Shaikh Mahad's signature. |
 
-The covers and closing banner embed the original Tux PNG. These are layouts built for the repository, not screenshots of a personal desktop. The SVG text and geometry are editable; the embedded Tux artwork retains its creator credit and original terms.
+The covers embed the original Tux PNG. These are layouts built for the repository, not screenshots of a personal desktop. The SVG text and geometry are editable; the embedded Tux artwork retains its creator credit and original terms.
 
 The repository-specific layout code uses the [MIT license](../LICENSE). The third-party artwork and logos below retain their own terms.
 
@@ -65,7 +64,7 @@ The Bash source files are [the dark-outline variant](https://bashlogo.com/img/sy
 - [Downloaded PNG](https://upload.wikimedia.org/wikipedia/commons/a/af/Tux.png)
 - [The Linux Kernel Archives' Tux attribution](https://origin.kernel.org/faq.html)
 
-The PNG is unmodified, including where it is embedded in the cover and closing SVGs. Its original reuse terms and creator credit apply.
+The PNG is unmodified, including where it is embedded in the cover SVGs. Its original reuse terms and creator credit apply.
 
 ## Illustrated avatar
 
