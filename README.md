@@ -1,222 +1,214 @@
-<a id="top"></a>
-
 <h1 id="linux_lab">
-  <a href="assets/README.md#tux"><img src="assets/tux.png" align="right" width="18%" alt="Tux, the original Linux penguin by Larry Ewing."></a>
+  <a id="top"></a>
+  <a href="assets/README.md#tux"><img src="assets/tux.png" align="right" width="108" alt="Tux, the original Linux penguin by Larry Ewing."></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/linux-title-dark.svg">
-    <img src="assets/readme/linux-title-light.svg" width="60%" height="44" align="texttop" alt="LINUX_LAB">
+    <img src="assets/readme/linux-title-light.svg" width="60%" height="42" align="texttop" alt="LINUX_LAB">
   </picture>
 </h1>
 
 **Linux commands, Bash scripts, and the notes I come back to.**
 
-I started this repo for my **Operating Systems lab at UBIT, University of Karachi**. I'm working towards **Java and Spring Boot backend development**, and I want the Linux side to feel familiar too: running an application, reading its logs, finding what went wrong, and writing a script when I keep repeating a task.
-
-I keep my attempts here, along with enough explanation to remember what I tried. The map below helps me pick up where I left off.
+This is the Linux and Bash side of my **Java/Spring Boot backend work**: working with files, running an application, reading its logs, and automating repeated tasks. I started it during my **Operating Systems lab at UBIT, University of Karachi**, and keep the useful notes and scripts here for revision.
 
 <p>
-  <a href="#current-work">Current work</a> &nbsp;·&nbsp;
+  <a href="#current-work">Work so far</a> &nbsp;·&nbsp;
   <a href="#learning-map">Learning map</a> &nbsp;·&nbsp;
-  <a href="#backend-practice">Backend practice</a> &nbsp;·&nbsp;
+  <a href="#backend-practice">Practical work</a> &nbsp;·&nbsp;
   <a href="#working-in-this-lab">Use the lab</a>
 </p>
 
-<br clear="right">
-
-<a id="lab-record"></a>
-
 <h2 id="current-work">
+  <a id="lab-record"></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/bash-dark.svg">
-    <img src="assets/readme/bash-light.svg" align="right" width="14%" alt="GNU Bash logo in grayscale.">
+    <img src="assets/readme/bash-light.svg" align="right" width="72" alt="GNU Bash logo in grayscale.">
   </picture>
-  Current work
+  Work so far
 </h2>
 
-**Current focus · conditions, loops, and arrays**
+The Linux notes reach permissions. The Bash notes cover the fundamentals; the exercises go further into conditions, loops, and arrays.
 
-The Bash exercises go ahead of my chapter notes. I'm revisiting those attempts before adding arguments and functions.
-
-<br clear="right">
-
-| Area | Work saved | Open it |
-| :--- | :--- | :--- |
-| Linux commands | 8 chapters, from paths to permissions | [Command notes](learning/linux-commands/) |
-| Bash fundamentals | 4 chapters, through operators and exit statuses | [Bash notes](learning/bash-scripting/) |
-| Bash practice | 11 scripts across basics, loops, and arrays | [Practice folder](practice/bash-scripting/) |
-
-<details>
-<summary><strong>Next session · corrections and the next exercise</strong></summary>
-
-- [ ] Correct the Bash version in the [session audit](practice/bash-scripting/01-basics/02-session-audit.sh), then check its output.
-- [ ] Revisit duplicate values in the [second-largest exercise](practice/bash-scripting/04-arrays/03-second-largest.sh) and try invalid input in the early arithmetic scripts.
-- [ ] Write short conditions and loops notes from the exercises I've attempted.
-- [ ] Turn the [system report](practice/bash-scripting/01-basics/01-system-report.sh) into a script that accepts a project name, practising arguments and functions.
-
-</details>
-
-<a id="what-im-learning"></a>
+<table width="100%" border="0" cellspacing="0" style="border:0;border-collapse:collapse;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;">
+  <thead>
+    <tr style="border:0;background:transparent;">
+      <th align="left" width="24%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Area</th>
+      <th align="left" width="56%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Work saved</th>
+      <th align="left" width="20%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Open it</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border:0;background:transparent;">
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Linux commands</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">8 chapters, from paths to permissions</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="learning/linux-commands/">Command notes</a></td>
+    </tr>
+    <tr style="border:0;background:transparent;">
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Bash fundamentals</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">4 chapters, through operators and exit statuses</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="learning/bash-scripting/">Bash notes</a></td>
+    </tr>
+    <tr style="border:0;background:transparent;">
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Bash practice</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">12 scripts across basics, loops, and arrays</td>
+      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="practice/bash-scripting/">Practice folder</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <h2 id="learning-map">
+  <a id="what-im-learning"></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/filesystem-dark.svg">
-    <img src="assets/readme/filesystem-light.svg" align="right" width="20%" alt="Linux filesystem sketch: the root directory branches into home, var, and opt.">
+    <img src="assets/readme/filesystem-light.svg" align="right" width="94" alt="Linux filesystem sketch: the root directory branches into home, var, and opt.">
   </picture>
   Learning map
 </h2>
 
-The command notes start with files, paths, and permissions. Next I want to get comfortable with processes, ports, application configuration, and working on another Linux machine.
-
-**Recorded** means notes and examples are saved here; **Practising** means exercises exist and need more review; **Next** is still ahead in this lab. I'll update the map as I add work I can run and explain.
-
-<br clear="right">
+The Linux and Bash topics I want for backend development. **Linked topics open recorded notes, exercises, or project code. Plain text is coverage still to add.** The links show where the work is, so the index can grow with the repository.
 
 <details>
-<summary><strong>Linux · command notes and the skills to cover next</strong></summary>
+<summary><strong>01 · Files, paths, and permissions</strong></summary>
 
-The recorded rows link to all eight command chapters. Each row also names a job I expect to use it for.
+- [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md) — `pwd`, `ls`, `cd`, absolute and relative paths.
+- [Files and directories](learning/linux-commands/02-files-and-directories/README.md) — `mkdir`, `touch`, `file`, `stat`, `tree`.
+- [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md) — source and destination paths, overwrites, and practice copies.
+- [Permissions and ownership](learning/linux-commands/08-permissions-and-ownership/README.md) — `rwx`, `chmod`, `chown`, `chgrp`, `id`, `umask`.
+- Users, groups, service accounts, and when `sudo` is needed.
+- [Symbolic links and resolved paths](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) — `ln -s` and `readlink` in the release-switching code.
+- Archives and disk space — `tar`, `zip`, `unzip`, `df`, `du`.
 
-| Progress | What to learn or revisit | Where I'll use it |
-| :--- | :--- | :--- |
-| Recorded | **Paths and files:** `pwd`, `ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `rm`, `file`, `stat`, `tree`. [Paths](learning/linux-commands/01-navigation-and-paths/README.md) · [Creation](learning/linux-commands/02-files-and-directories/README.md) · [File operations](learning/linux-commands/04-copying-moving-and-deleting/README.md). | Move around projects, inspect files, and organise source, configuration, and build output. |
-| Recorded | **Reading and finding:** `cat`, `less`, `head`, `tail`, `grep`, `find`. [Reading files](learning/linux-commands/03-viewing-file-content/README.md) · [Searching](learning/linux-commands/05-searching-and-finding/README.md). | Find a configuration file, follow application logs, and locate the error behind a failed startup. |
-| Recorded | **Text processing:** `wc`, `cut`, `sort`, `uniq`, `tr`, basic `sed` and `awk`. [Notes and examples](learning/linux-commands/06-text-processing/README.md). | Filter a log, count repeated errors, and turn command output into a small report. |
-| Recorded | **Streams and pipes:** stdin, stdout, stderr, `>`, `>>`, `2>`, `2>&1`, pipes, `tee`. [Notes and examples](learning/linux-commands/07-redirection-and-pipes/README.md). | Save build output, keep diagnostics, and pass results between commands. |
-| Recorded | **Basic access:** file and directory `rwx`, `chmod`, ownership, `chown`, `chgrp`, `id`, `umask`. [Permissions notes](learning/linux-commands/08-permissions-and-ownership/README.md). | Understand an access error and choose the permissions a script, config file, or service needs. |
-| Next | **Processes and signals:** `ps`, `pgrep`, `top`, `kill`, `jobs`, `fg`, `bg`, `&`; foreground/background work and graceful termination. | Identify the Java process I started, inspect it, and stop it cleanly. |
-| Next | **HTTP and networking:** `curl`, `ss`, `ping`, `hostname`, basic DNS lookup; localhost, ports, binding addresses, HTTP status, and timeouts. | Test an endpoint and distinguish an occupied port, a connection failure, and an application error response. |
-| Next | **Environment and configuration:** `export`, `printenv`, `PATH`, `JAVA_HOME`, inherited variables, and Spring profiles. | Configure the JDK and application settings for a particular environment; keep real credentials out of Git. |
-| Next | **Packages and Java tools:** `apt`, `command -v`, `java -version`, `javac -version`, Maven Wrapper, and `java -jar`. | Prepare Ubuntu for a project, check the selected Java version, and build and run outside the IDE. |
-| Next | **Remote work:** `ssh`, keys, host verification, `~/.ssh/config`, `scp`, and basic `rsync`. | Connect to a development VM, transfer a JAR, and investigate a problem on that machine. |
-| Next | **Archives and storage:** `tar`, `zip`, `unzip`, `df`, `du`. | Package files, check available space, and find which logs or artifacts are taking it up. |
-| Next | **Services and filesystem links:** `systemctl`, `journalctl`, `ln -s`, `readlink`, service users, and when `sudo` is needed. | Inspect a Java service's status and logs, understand its startup configuration, and follow the active release. |
-
-Some later topics already appear in [DeployLatch](#already-applied-deploylatch). I want focused exercises here that I can return to individually.
+Use these to organise projects, inspect application files, understand access errors, and manage artifacts.
 
 </details>
 
 <details>
-<summary><strong>Bash · fundamentals, practice, and the next scripting skills</strong></summary>
+<summary><strong>02 · Logs and text processing</strong></summary>
 
-| Progress | What to learn or revisit | Where I'll use it |
-| :--- | :--- | :--- |
-| Recorded | **Script basics:** shebangs, `bash script.sh`, executable permissions, working directory, and `bash -n`. [Chapter 01](learning/bash-scripting/01-shell-and-script-basics/README.md). | Run a helper script and understand why it behaves differently from an interactive terminal command. |
-| Recorded | **Variables and expansion:** assignment, quoting, `${name}`, `$(command)`, integer arithmetic, word splitting, and globbing. [Chapter 02](learning/bash-scripting/02-variables-and-expansion/README.md). | Handle paths and configuration values correctly, including names with spaces. |
-| Recorded | **Input and output:** `IFS= read -r`, `printf`, fixed formats, and failed reads. [Chapter 03](learning/bash-scripting/03-input-and-output/README.md). | Read input intact and produce predictable output. |
-| Recorded | **Expressions and command results:** numeric and string comparisons, `$?`, `&&`, `\|\|`. [Chapter 04](learning/bash-scripting/04-operators-and-expressions/README.md). | Choose the next action based on a command's result. |
-| Practising | **Conditions and loops:** `if`, `case`, `for`, `while`, `break`, `continue`, and validation. [Basics](practice/bash-scripting/01-basics/) · [Loops](practice/bash-scripting/03-loops/). | Validate an argument, retry a check, or repeat a task across files. |
-| Practising | **Arrays:** indexed and associative arrays, `"${items[@]}"`, iteration, and duplicate cases. [Array exercises](practice/bash-scripting/04-arrays/). | Keep a list of files or arguments together without losing their boundaries. |
-| Next | **Arguments and defaults:** `$1`, `$#`, `"$@"`, `shift`, `${name:-default}`, and usage messages. | Accept a JAR path, environment, or URL without editing the script each time. |
-| Next | **Functions and scope:** parameters, `local` variables, return statuses, and separating output from diagnostics. | Reuse validation, logging, and health checks as a script grows. |
-| Next | **Failure handling and cleanup:** explicit status checks, `exit`, stderr, `set -e`, `set -u`, `pipefail`, `trap`, and `mktemp`. Learn the limits of each option. | Report a failed build or request, clean up temporary files, and avoid continuing with an invalid result. |
-| Next | **Debugging and checks:** `bash -x`, ShellCheck, formatting, and tests for missing input, EOF, spaces, leading zeros, and failed commands. | Find a script's mistake and check the failure paths before relying on it. |
+- [Reading files and following logs](learning/linux-commands/03-viewing-file-content/README.md) — `cat`, `less`, `head`, `tail`.
+- [Searching text and finding files](learning/linux-commands/05-searching-and-finding/README.md) — `grep`, `find`, literal text, and patterns.
+- [Text processing](learning/linux-commands/06-text-processing/README.md) — `wc`, `cut`, `sort`, `uniq`, `tr`, basic `sed` and `awk`.
+- [Pipes and redirection](learning/linux-commands/07-redirection-and-pipes/README.md) — stdin, stdout, stderr, `|`, `>`, `>>`, `2>`, `tee`.
+- Service logs and journal filters — `journalctl`.
 
-The exercises are grouped into [basics](practice/bash-scripting/01-basics/), [loops](practice/bash-scripting/03-loops/), and [arrays](practice/bash-scripting/04-arrays/). They include reports, a menu calculator, input validation, and array statistics.
+Use these to find a startup error, follow a request through logs, and save or summarise useful output.
 
 </details>
 
 <details>
-<summary>How far I want to take it</summary>
+<summary><strong>03 · Processes and the Java runtime</strong></summary>
 
-My target is to **build, run, and troubleshoot a Java service comfortably on Linux**, and write small Bash scripts I can explain and repair. Looking up an option is fine; I want to know which tool to reach for and what its result tells me.
+- Process inspection — `ps`, `pgrep`, `top`, process IDs, and resource use.
+- Foreground and background jobs — `jobs`, `fg`, `bg`, `&`.
+- Signals and graceful termination — `kill`, SIGTERM, and SIGKILL.
+- Environment variables — `export`, `printenv`, `PATH`, `JAVA_HOME`, and inheritance.
+- Packages and JDK selection — `apt`, `command -v`, `java -version`, `javac -version`.
+- Running an executable JAR — `java -jar`, arguments, and process exit status.
 
-I'll learn Docker and Compose alongside an application when I'm ready to containerise it. Kernel development, deep system administration, advanced networking, Kubernetes, Terraform, and Ansible can wait until a project or role calls for them. OS-course exercises can still live here; the backend path helps me choose what to practise beyond the lab.
+Use these to prepare a Linux development environment, identify a Java process, and stop or investigate it.
 
 </details>
 
-<a id="learning-resources-and-practice"></a>
+<details>
+<summary><strong>04 · Networking and remote access</strong></summary>
+
+- HTTP requests — `curl`, headers, response bodies, status codes, timeouts, and failed requests.
+- Listening ports and binding addresses — `ss`, localhost, and port conflicts.
+- Basic connectivity and name resolution — `ping`, `hostname`, DNS, and hostnames.
+- SSH access — keys, host verification, and `~/.ssh/config`.
+- File transfer — `scp` and basic `rsync`.
+
+Use these to test an API, distinguish a network problem from an application error, and work on a development VM.
+
+</details>
+
+<details>
+<summary><strong>05 · Bash fundamentals</strong></summary>
+
+- [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md) — shebangs, execution order, working directories, and executable permissions.
+- [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md) — quoting, `${name}`, `$(command)`, arithmetic, splitting, and globbing.
+- [Input and output](learning/bash-scripting/03-input-and-output/README.md) — `IFS= read -r`, `printf`, fixed formats, and failed reads.
+- [Operators and exit statuses](learning/bash-scripting/04-operators-and-expressions/README.md) — numeric and string tests, `$?`, `&&`, `||`.
+- [Conditions and menus](practice/bash-scripting/03-loops/03-menu-calculator.sh) — `if`, `else`, `case`.
+- [Loops](practice/bash-scripting/03-loops/) — `for`, `while`, `break`, `continue`.
+- [Arrays](practice/bash-scripting/04-arrays/) — indexed and associative arrays, iteration, lookup, and `"${items[@]}"`.
+- Arguments and defaults — `$1`, `$#`, `"$@"`, `shift`, `${name:-default}`, and usage messages.
+- Functions and scope — parameters, `local`, return statuses, and reusable operations.
+
+Use these to turn repeated terminal work into a small script that accepts inputs and produces predictable results.
+
+</details>
+
+<details>
+<summary><strong>06 · Bash reliability and debugging</strong></summary>
+
+- [Input validation](practice/bash-scripting/03-loops/01-validated-marks.sh) — numeric formats, decimal conversion, ranges, and retry loops.
+- [Syntax checks and tracing](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) — `bash -n` and `bash -x`.
+- [Static checks and regression tests](tests/check.sh) — ShellCheck and tests for normal input, invalid values, EOF, whitespace, and duplicates.
+- Failure handling — explicit status checks, `exit`, stderr, `set -e`, `set -u`, `pipefail`, and their limits.
+- Cleanup — `trap`, temporary files, and `mktemp`.
+- Repeatable runs — checking dependencies, guarding file changes, and handling existing output.
+
+Use these to understand a failed command and check a helper script before relying on it.
+
+</details>
+
+<details>
+<summary><strong>07 · Practical backend workflows</strong></summary>
+
+- Build and test a Java project with its Maven Wrapper.
+- Run a Spring Boot JAR outside the IDE with the intended profile and environment.
+- Test an API and write a health check with a clear HTTP success condition.
+- Diagnose startup failures, occupied ports, and database connection errors.
+- [Deploy and recover a Java service](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) — versioned releases, health and version checks, and rollback.
+- [Run Java under systemd](https://github.com/codewithmahad/deploylatch/blob/main/systemd/deploylatch-demo.service) — service configuration and restart behaviour.
+- Write a build/test/run helper and reuse its build and test steps in CI.
+- Archive sample configuration and logs, restore them elsewhere, and verify the contents.
+
+Docker and Compose come with a later application exercise. Deep administration, advanced networking, Kubernetes, Terraform, and Ansible sit outside this lab's current scope.
+
+</details>
 
 <h2 id="backend-practice">
+  <a id="learning-resources-and-practice"></a>
   <a href="https://github.com/codewithmahad/deploylatch">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/readme/deploylatch-dark.svg">
-      <img src="assets/readme/deploylatch-light.svg" align="right" width="14%" alt="DeployLatch emblem: a server lock with deployment and recovery arrows.">
+      <img src="assets/readme/deploylatch-light.svg" align="right" width="72" alt="DeployLatch emblem: a server lock with deployment and recovery arrows.">
     </picture>
   </a>
-  Backend practice
+  Practical work
 </h2>
 
-<a id="already-applied-deploylatch"></a>
+<a id="already-applied-deploylatch"></a>**Applied · [DeployLatch](https://github.com/codewithmahad/deploylatch)**
 
-**Already applied · [DeployLatch](https://github.com/codewithmahad/deploylatch)**
-
-For my OS course project, I built a Bash tool that deploys one Java service on an Ubuntu VM. It manages versioned JARs, switches the active release through a symbolic link, and checks health and version after restarting the systemd service. I tested both a working update and recovery from a failed one.
-
-The most useful lesson was checking process state, application health, and release identity separately. A running process can still be unhealthy or running the wrong release.
+For my OS project, I built a Bash tool that deploys a Java service on Ubuntu and verifies its health and version. I tested a working update and recovery from a failed one. It made one distinction clear: a running process can still be unhealthy or running the wrong release.
 
 [Deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) · [Update and rollback demo](https://github.com/codewithmahad/deploylatch#deployment-demo)
 
-<br clear="right">
+The smaller exercises are saved here:
 
-The next tasks are for my Java/Spring Boot projects. I want to practise them alongside the application work and keep a short record of what happened.
+- **Reports:** [system report](practice/bash-scripting/01-basics/01-system-report.sh) · [session audit](practice/bash-scripting/01-basics/02-session-audit.sh).
+- **Control flow:** [validated marks](practice/bash-scripting/03-loops/01-validated-marks.sh) · [menu calculator](practice/bash-scripting/03-loops/03-menu-calculator.sh).
+- **Arrays:** [marks statistics](practice/bash-scripting/04-arrays/02-marks-statistics.sh) · [second-largest distinct value](practice/bash-scripting/04-arrays/03-second-largest.sh) · [name collection](practice/bash-scripting/04-arrays/05-name-collection.sh).
 
-<details>
-<summary><strong>Six tasks to practise in a Java/Spring Boot project</strong></summary>
-
-I'll check a task off when there's a working example I can repeat.
-
-- [ ] **Run without the IDE.** Build and test with the project's wrapper, select its executable JAR, start it with a profile, and explain the startup output.
-- [ ] **Investigate a failed startup.** Find the useful log lines, check the process and listening port, and work out whether the cause is configuration, connectivity, or application code.
-- [ ] **Test an API from Bash.** Send requests with `curl`, inspect status and response data, and make a health check return failure when the request or HTTP result fails.
-- [ ] **Work on a remote Linux machine.** Connect with SSH, copy an artifact, inspect a service and its journal, and verify the application after a restart.
-- [ ] **Automate my development loop.** Write a build/test/run helper with arguments, quoted paths, useful errors, and deliberate handling of failed commands. Reuse the build and test steps in CI.
-- [ ] **Archive and restore files.** Back up sample configuration and logs, restore them into a different directory, and verify the restored contents.
-
-</details>
-
-<details>
-<summary><strong>Spring Boot commands · build, run, inspect</strong></summary>
-
-These examples belong in a **separate Spring Boot project**. That project needs a configured Maven Wrapper and an executable JAR; `target/app.jar` stands for the actual artifact path.
-
-In the project directory:
-
-```bash
-./mvnw verify
-SPRING_PROFILES_ACTIVE=dev java -jar target/app.jar
-```
-
-While the application is running, use another terminal:
-
-```bash
-curl -i --max-time 5 http://localhost:8080/api/users
-ss -ltnp 'sport = :8080'
-```
-
-The URL must match an endpoint the application exposes. `curl -i` shows response headers as well as the body; this is an inspection command. A scripted check needs an explicit HTTP success condition, such as `curl --fail` for HTTP 400+ responses. `ss` shows listening TCP sockets on port 8080; process details depend on access permissions.
-
-If the application is configured to write `app.log`:
-
-```bash
-tail -n 50 -f app.log
-```
-
-Spring Boot's [running guide](https://docs.spring.io/spring-boot/reference/using/running-your-application.html) and [configuration reference](https://docs.spring.io/spring-boot/reference/features/external-config.html), the [Maven Wrapper guide](https://maven.apache.org/tools/wrapper/), and the [curl manual](https://curl.se/docs/manpage.html) explain the details.
-
-</details>
-
-<a id="get-a-linux-terminal"></a>
-<a id="working-setup"></a>
+[Browse the practice scripts and their expected behaviour →](practice/bash-scripting/README.md)
 
 <h2 id="working-in-this-lab">
-  <a href="https://ubuntu.com/"><img src="assets/logos/ubuntu.svg" align="right" width="11%" alt="Ubuntu Circle of Friends."></a>
-  Working in this lab
+  <a id="get-a-linux-terminal"></a>
+  <a id="working-setup"></a>
+  <a href="https://ubuntu.com/"><img src="assets/logos/ubuntu.svg" align="right" width="56" alt="Ubuntu Circle of Friends."></a>
+  Using the lab
 </h2>
 
 **Ubuntu · Bash · Git · VS Code**
 
-I use Ubuntu for the command examples, Bash for scripting, and VS Code with Git for the files and history. Ubuntu in WSL or a VM works for the exercises too.
-
-The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
-
-<br clear="right">
-
-<a id="lets-run-something"></a>
+Learn a topic, try it, change the input, check the result, and commit the useful part. Short notes and corrections stay with the code so I can return to them later.
 
 <details>
-<summary><strong>Clone the repo and run the first script</strong></summary>
+<summary><a id="lets-run-something"></a><strong>Setup, first run, and checks</strong></summary>
 
-With Bash and Git available:
+Ubuntu in WSL or a VM works for the exercises. The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
 
 ```bash
 git clone https://github.com/codewithmahad/LINUX_LAB.git
@@ -224,55 +216,31 @@ cd LINUX_LAB
 bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
 ```
 
-It prints `Hello From Bash`. Then open a topic in the learning map or try a practice script.
+The greeting is `Hello From Bash`. Run the script checks from the repo root:
 
-</details>
-
-<details>
-<summary><strong>Folders and how I record my practice</strong></summary>
-
-The main folders with recorded work:
-
-```text
-LINUX_LAB/
-├── learning/
-│   ├── linux-commands/       # Command notes and supplied example files
-│   └── bash-scripting/       # Bash notes and chapter scripts
-├── practice/
-│   └── bash-scripting/       # Standalone exercises and attempts
-├── docs/                    # Environment setup
-├── assets/                  # README and chapter artwork
-├── README.md                # Progress, next work, and links
-└── LICENSE
+```bash
+bash tests/check.sh
 ```
 
-I'll add automation tools when I have a useful script to keep. Existing chapters stay available for revision; new entries can be a small script and a few notes about the result.
+The checks need Bash, Python 3, and ShellCheck. On Ubuntu, install ShellCheck with `sudo apt install shellcheck` if needed. The same checks are configured for pushes and pull requests in [GitHub Actions](.github/workflows/bash-checks.yml).
 
-For each topic, I try the example, change something, and explain the result. Before treating a script as finished, I check its normal input and at least one failure case. A mistake and its correction belong here too.
-
-`bash -n path/to/script.sh` checks syntax; `shellcheck path/to/script.sh` helps review common mistakes. I still need to run the script and check what happened. The quoting lesson deliberately includes examples with quotes removed.
+Notes and chapter examples live in `learning/`; standalone exercises in `practice/`; checks in `tests/`. Existing chapters remain available for revision.
 
 </details>
 
 <details>
-<summary><strong>References for the next time I forget</strong></summary>
+<summary><strong>References</strong></summary>
 
-| When I need | Where I'll look |
-| :--- | :--- |
-| A command's options | Local `man` pages, `command --help` where supported, and `help read` or `help set` for Bash builtins. |
-| Bash syntax and behaviour | [GNU Bash manual](https://www.gnu.org/software/bash/manual/) |
-| Spring Boot startup and configuration | [Running an application](https://docs.spring.io/spring-boot/reference/using/running-your-application.html) · [External configuration](https://docs.spring.io/spring-boot/reference/features/external-config.html) |
-| Building with the project's Maven version | [Apache Maven Wrapper](https://maven.apache.org/tools/wrapper/) |
-| HTTP requests and scripted checks | [curl manual](https://curl.se/docs/manpage.html) |
-| A service's state and logs | [systemctl](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html) · [journalctl](https://www.freedesktop.org/software/systemd/man/latest/journalctl.html) |
-| My own applied example | [DeployLatch](https://github.com/codewithmahad/deploylatch) |
+- **Bash and command options:** [GNU Bash manual](https://www.gnu.org/software/bash/manual/), local `man` pages, `command --help`, and Bash's `help` builtin.
+- **Spring Boot:** [Running an application](https://docs.spring.io/spring-boot/reference/using/running-your-application.html) · [External configuration](https://docs.spring.io/spring-boot/reference/features/external-config.html).
+- **Application command reference:** [Build, run, and inspect a separate Spring Boot project](practice/linux-commands/java-service-reference.md).
+- **Builds and HTTP:** [Maven Wrapper](https://maven.apache.org/tools/wrapper/) · [curl manual](https://curl.se/docs/manpage.html).
+- **Services and logs:** [systemctl](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html) · [journalctl](https://www.freedesktop.org/software/systemd/man/latest/journalctl.html).
 
 </details>
 
-<br>
+Other backend practice: [**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**My projects**](https://github.com/codewithmahad?tab=repositories)
 
-The other parts of my backend practice: [**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**My projects**](https://github.com/codewithmahad?tab=repositories)
-
-If something here helps with your own revision, use it. Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the file, command, and result.
+Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the file, command, and result.
 
 <p><sub>Shaikh Mahad · BSSE, UBIT &nbsp;·&nbsp; <a href="LICENSE">MIT License</a> &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a> &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a></sub></p>

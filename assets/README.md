@@ -1,6 +1,6 @@
-# Artwork and terminal demos
+# Artwork and sources
 
-The main README pairs the original Tux with a small title, then uses separate illustrations alongside the current work, learning map, applied project, and setup sections. This page records their sources alongside the older chapter artwork and terminal demos.
+The main README pairs the original Tux with a small title, then uses separate illustrations alongside the current work, learning map, applied project, and setup sections. This page records their sources and the chapter illustration credits.
 
 ## README artwork
 
@@ -26,18 +26,6 @@ Original sources: [official logo project](https://github.com/odb/official-bash-l
 ### DeployLatch emblem
 
 The [light](readme/deploylatch-light.svg) and [dark](readme/deploylatch-dark.svg) emblems are copied unchanged from [DeployLatch's light mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark.svg) and [dark mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark-on-dark.svg). They are project-authored vector adaptations of my supplied logo, with its lock, server, upload arrow, and recovery arrows. The project records their origin in its [artwork notes](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/THIRD_PARTY.md).
-
-## Earlier cover and journey
-
-| Asset | Purpose |
-| :--- | :--- |
-| [linux-lab-hero.svg](linux-lab-hero.svg) | Earlier wide cover with classic Tux and a dark terminal. |
-| [linux-lab-hero-mobile.svg](linux-lab-hero-mobile.svg) | Compact version of the earlier cover. |
-| [linux-lab-journey.svg](linux-lab-journey.svg) | Earlier purple learning route; the main README now holds the progress map. |
-
-The covers embed the original Tux PNG. These are layouts built for the repository, not screenshots of a personal desktop. The SVG text and geometry are editable; the embedded Tux artwork retains its creator credit and original terms.
-
-The repository-specific layout code uses the [MIT license](../LICENSE). The third-party artwork and logos below retain their own terms.
 
 ## Lesson covers
 
@@ -90,39 +78,3 @@ The Bash source files are [the dark-outline variant](https://bashlogo.com/img/sy
 - [The Linux Kernel Archives' Tux attribution](https://origin.kernel.org/faq.html)
 
 The PNG is unmodified, including where it is embedded in the cover SVGs. Its original reuse terms and creator credit apply.
-
-## Illustrated avatar
-
-[shaikh-mahad-avatar.png](shaikh-mahad-avatar.png) uses the hooded character illustration supplied for an earlier README. The built-in imagegen tool was used to create a transparent cutout, replacing the real profile photograph. This supplied artwork is separate from the repository's MIT-licensed code.
-
-The [edit instructions](source/avatar-edit.md) record the requested transformation and tool used.
-
-## Terminal Easter egg
-
-[terminal-playground.gif](terminal-playground.gif) loops actual `sl` character output followed by `cowsay "mahad is dumb"`. [terminal-playground.svg](terminal-playground.svg) is its static counterpart. These were used in an earlier README. The animation is a styled replay of captured output with illustrative typing and timing.
-
-The [renderer](source/terminal-playground.py) captures the train in a temporary tmux session and reads the cow's output. It does not access an existing tmux session.
-
-Credits:
-
-- **sl**, by Toyoda Masashi. Copyright 1993, 1998, 2014. [Original project and permission notice](https://github.com/mtoyoda/sl). The permission notice is retained in the renderer source.
-- **cowsay**, by Tony Monroe. Copyright 1999-2000. [Original project](https://github.com/tnalpgge/rank-amateur-cowsay), [license copy](licenses/cowsay-LICENSE.txt). The renderer invokes the program; its program code is not bundled here.
-
-To rebuild the Easter egg on Ubuntu:
-
-```bash
-sudo apt install sl cowsay tmux librsvg2-2 libcairo2 fonts-dejavu-core
-python3 assets/source/terminal-playground.py
-```
-
-These are asset-maintenance commands. Readers do not need these packages for the lessons.
-
-## Command replay source
-
-[terminal-demo.py](source/terminal-demo.py) contains the shared SVG and GIF rendering utilities. It can also regenerate [terminal-demo.gif](terminal-demo.gif) and [terminal-demo.svg](terminal-demo.svg), which show the existing `hello.sh` example, remainder arithmetic, and an exit status.
-
-```bash
-python3 assets/source/terminal-demo.py
-```
-
-This uses Python 3, Bash, native librsvg and Cairo, and DejaVu fonts on Linux. It needs no Python packages or network access. The main README uses the title and section artwork described above.

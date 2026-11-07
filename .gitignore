@@ -29,3 +29,10 @@ secrets/
 
 # VS Code Code Runner temporary files
 tempCodeRunnerFile*
+
+# Local scratch work
+/temp/
+
+# Python test caches
+__pycache__/
+*.pyc

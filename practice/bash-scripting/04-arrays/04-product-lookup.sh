@@ -6,7 +6,7 @@ declare -A prices=(
 	[Bag]=1500
 )
 
-read -r -p "Enter product: " product || exit 1
+IFS= read -r -p "Enter product: " product || exit 1
 
 if [[ -v prices[$product] ]]; then
 	printf 'Price: Rs. %d\n' "${prices[$product]}"

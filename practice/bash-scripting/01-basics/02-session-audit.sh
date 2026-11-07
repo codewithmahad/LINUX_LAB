@@ -1,20 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-
-# Write a script that asks for an application name and environment name, then prints a formatted audit report containing the application, environment, current user, operating-system name, Bash version and current date/time.
-
-# Use the Linux command uname -s for the operating-system/kernel name and the Bash variable $BASH_VERSION for the interpreter version.
-
-read -rp "Enter the application name: " app_name
-read -rp "Enter the environment name: " env_name
+# Read two labels and report the shell and system running this session.
+IFS= read -r -p "Enter the application name: " app_name || exit 1
+IFS= read -r -p "Enter the environment name: " env_name || exit 1
 current_user=$(whoami)
 os_name=$(uname -s)
-bash_version=$(Bash_Version)
 current_date_time=$(date '+%F %T')
 
-echo "============Session Audit Report============="
-echo "Application Name      : $app_name"
-echo "Environment Name      : $env_name"
-echo "Current User          : $current_user"
-echo "Operating System Name : $os_name"
-echo "Current Date/Time     : $current_date_time"
+printf '\nSESSION AUDIT REPORT\n'
+printf 'Application Name      : %s\n' "$app_name"
+printf 'Environment Name      : %s\n' "$env_name"
+printf 'Current User          : %s\n' "$current_user"
+printf 'Operating System Name : %s\n' "$os_name"
+printf 'Bash Version          : %s\n' "$BASH_VERSION"
+printf 'Current Date/Time     : %s\n' "$current_date_time"
