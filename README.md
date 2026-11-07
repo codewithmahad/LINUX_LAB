@@ -1,10 +1,10 @@
 <a id="top"></a>
 
 <h1 id="linux_lab">
-  <img src="assets/linux-terminal.svg" align="right" width="26%" alt="A small Bash terminal showing the lab's hello.sh greeting.">
+  <a href="assets/README.md#tux"><img src="assets/tux.png" align="right" width="18%" alt="Tux, the original Linux penguin by Larry Ewing."></a>
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/linux-lab-title-dark.svg">
-    <img src="assets/linux-lab-title-light.svg" width="60%" height="44" align="texttop" alt="LINUX_LAB">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/linux-title-dark.svg">
+    <img src="assets/readme/linux-title-light.svg" width="60%" height="44" align="texttop" alt="LINUX_LAB">
   </picture>
 </h1>
 
@@ -25,11 +25,19 @@ I keep my attempts here, along with enough explanation to remember what I tried.
 
 <a id="lab-record"></a>
 
-## Current work
+<h2 id="current-work">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/bash-dark.svg">
+    <img src="assets/readme/bash-light.svg" align="right" width="14%" alt="GNU Bash logo in grayscale.">
+  </picture>
+  Current work
+</h2>
 
 **Current focus · conditions, loops, and arrays**
 
 The Bash exercises go ahead of my chapter notes. I'm revisiting those attempts before adding arguments and functions.
+
+<br clear="right">
 
 | Area | Work saved | Open it |
 | :--- | :--- | :--- |
@@ -49,9 +57,19 @@ The Bash exercises go ahead of my chapter notes. I'm revisiting those attempts b
 
 <a id="what-im-learning"></a>
 
-## Learning map
+<h2 id="learning-map">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/filesystem-dark.svg">
+    <img src="assets/readme/filesystem-light.svg" align="right" width="20%" alt="Linux filesystem sketch: the root directory branches into home, var, and opt.">
+  </picture>
+  Learning map
+</h2>
 
-This is the Linux and Bash I want for my backend work. **Recorded** means notes and examples are saved here; **Practising** means exercises exist and need more review; **Next** is still ahead in this lab. I'll update the map as I add work I can run and explain.
+The command notes start with files, paths, and permissions. Next I want to get comfortable with processes, ports, application configuration, and working on another Linux machine.
+
+**Recorded** means notes and examples are saved here; **Practising** means exercises exist and need more review; **Next** is still ahead in this lab. I'll update the map as I add work I can run and explain.
+
+<br clear="right">
 
 <details>
 <summary><strong>Linux · command notes and the skills to cover next</strong></summary>
@@ -108,9 +126,29 @@ I'll learn Docker and Compose alongside an application when I'm ready to contain
 
 <a id="learning-resources-and-practice"></a>
 
-## Backend practice
+<h2 id="backend-practice">
+  <a href="https://github.com/codewithmahad/deploylatch">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/readme/deploylatch-dark.svg">
+      <img src="assets/readme/deploylatch-light.svg" align="right" width="14%" alt="DeployLatch emblem: a server lock with deployment and recovery arrows.">
+    </picture>
+  </a>
+  Backend practice
+</h2>
 
-I want to use these skills in my Java projects as I learn them. These are the tasks I'll work through, with examples and a short record of what happened.
+<a id="already-applied-deploylatch"></a>
+
+**Already applied · [DeployLatch](https://github.com/codewithmahad/deploylatch)**
+
+For my OS course project, I built a Bash tool that deploys one Java service on an Ubuntu VM. It manages versioned JARs, switches the active release through a symbolic link, and checks health and version after restarting the systemd service. I tested both a working update and recovery from a failed one.
+
+The most useful lesson was checking process state, application health, and release identity separately. A running process can still be unhealthy or running the wrong release.
+
+[Deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) · [Update and rollback demo](https://github.com/codewithmahad/deploylatch#deployment-demo)
+
+<br clear="right">
+
+The next tasks are for my Java/Spring Boot projects. I want to practise them alongside the application work and keep a short record of what happened.
 
 <details>
 <summary><strong>Six tasks to practise in a Java/Spring Boot project</strong></summary>
@@ -157,24 +195,21 @@ Spring Boot's [running guide](https://docs.spring.io/spring-boot/reference/using
 
 </details>
 
-<a id="already-applied-deploylatch"></a>
-
-**Already applied · [DeployLatch](https://github.com/codewithmahad/deploylatch)**
-
-For my OS course project, I built a Bash tool that deploys one Java service on an Ubuntu VM. It manages versioned JARs, switches the active release through a symbolic link, and checks health and version after restarting the systemd service. I tested both a working update and recovery from a failed one.
-
-The most useful lesson was checking process state, application health, and release identity separately. A running process can still be unhealthy or running the wrong release.
-
-[Deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) · [Update and rollback demo](https://github.com/codewithmahad/deploylatch#deployment-demo)
-
 <a id="get-a-linux-terminal"></a>
 <a id="working-setup"></a>
 
-## Working in this lab
+<h2 id="working-in-this-lab">
+  <a href="https://ubuntu.com/"><img src="assets/logos/ubuntu.svg" align="right" width="11%" alt="Ubuntu Circle of Friends."></a>
+  Working in this lab
+</h2>
 
 **Ubuntu · Bash · Git · VS Code**
 
-The examples use Ubuntu, including Ubuntu in WSL or a VM. The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
+I use Ubuntu for the command examples, Bash for scripting, and VS Code with Git for the files and history. Ubuntu in WSL or a VM works for the exercises too.
+
+The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
+
+<br clear="right">
 
 <a id="lets-run-something"></a>
 

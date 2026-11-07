@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="710" viewBox="310 190 640 710" role="img" aria-labelledby="title desc">
+<title id="title">DeployLatch emblem</title>
+<desc id="desc">The creator's lock, server, upload arrow, and circular recovery arrows, adapted as a clean vector in the project's blue palette.</desc>
+<defs>
+    <mask id="release-servers" maskUnits="userSpaceOnUse" x="400" y="390" width="450" height="400">
+      <rect x="400" y="390" width="450" height="400" fill="white"/>
+      <rect x="506" y="554" width="235" height="50" rx="15" fill="black"/>
+      <rect x="506" y="620" width="235" height="50" rx="15" fill="black"/>
+      <rect x="506" y="686" width="235" height="50" rx="15" fill="black"/>
+    </mask>
+  </defs>
+  <path fill="#F5F6F8" d="M486 443V344C486 269 548 208 625 208C702 208 764 269 764 344V443L705 399V344C705 299 669 262 625 262C581 262 544 299 544 344V399Z"/>
+  <path fill="#F5F6F8" mask="url(#release-servers)" d="M428 669V545C428 501 460 467 504 466C530 423 572 397 625 397C678 397 720 424 746 466C790 469 824 502 824 546V686C824 737 783 777 732 777H520C483 777 453 751 439 708L465 693Z"/>
+  <g fill="#F5F6F8">
+    <circle cx="709" cy="579" r="10.5"/><circle cx="709" cy="645" r="10.5"/><circle cx="709" cy="711" r="10.5"/>
+  </g>
+  <g fill="#1F6FEB">
+    <path d="M625 428C626 427 627 427 628 429L697 512Q700 516 695 516H658V581Q658 589 650 589H601Q593 589 593 581V516H557Q551 516 555 511L622 430Q624 428 625 428Z"/>
+    <path d="M462 366V405C397 444 357 520 361 608L332 622C318 518 366 412 462 366Z"/>
+    <path d="M786 366V405C816 426 840 453 855 486L822 502L905 560L929 454L891 472C866 426 831 389 786 366Z"/>
+    <path d="M889 584H919C919 746 787 875 625 875C517 875 418 823 371 739L335 742L356 636L443 693L409 712C457 787 537 836 625 836C770 836 889 727 889 584Z"/>
+  </g>
+</svg>

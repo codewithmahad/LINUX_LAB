@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="176" viewBox="0 0 220 176" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">A few paths under the Linux root</title>
+  <desc id="description">A small filesystem sketch. The root directory, slash, connects to three example subdirectories: home, var, and opt. It shows only selected paths.</desc>
+  <path d="M110 58v21M37 79h146M37 79v25M110 79v25M183 79v25" stroke="#7A8492" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="110" cy="79" r="3.5" fill="#7A8492"/>
+  <g transform="translate(85 9)">
+    <path d="M0 9a5 5 0 0 1 5-5h13l6 6h23a4 4 0 0 1 4 4v28H0Z" fill="#727C8B"/>
+    <path d="M0 17h51v25a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5Z" fill="#4B5563" stroke="#7A8492" stroke-width="1.2"/>
+    <text x="25.5" y="36" text-anchor="middle" fill="#FFFFFF" font-family="DejaVu Sans Mono, monospace" font-size="18">/</text>
+  </g>
+  <g transform="translate(12 100)">
+    <path d="M0 8a4 4 0 0 1 4-4h13l6 6h24a4 4 0 0 1 4 4v24H0Z" fill="#727C8B"/>
+    <path d="M0 17h51v21a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5Z" fill="#4B5563" stroke="#7A8492" stroke-width="1.2"/>
+    <path d="M12 28h27M12 33h18" stroke="#7A8492" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(85 100)">
+    <path d="M0 8a4 4 0 0 1 4-4h13l6 6h24a4 4 0 0 1 4 4v24H0Z" fill="#727C8B"/>
+    <path d="M0 17h51v21a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5Z" fill="#4B5563" stroke="#7A8492" stroke-width="1.2"/>
+    <path d="M12 28h27M12 33h18" stroke="#7A8492" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(158 100)">
+    <path d="M0 8a4 4 0 0 1 4-4h13l6 6h24a4 4 0 0 1 4 4v24H0Z" fill="#727C8B"/>
+    <path d="M0 17h51v21a5 5 0 0 1-5 5H5a5 5 0 0 1-5-5Z" fill="#4B5563" stroke="#7A8492" stroke-width="1.2"/>
+    <path d="M12 28h27M12 33h18" stroke="#7A8492" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <g font-family="DejaVu Sans Mono, monospace" font-size="13" text-anchor="middle" fill="#F1F3F5">
+    <text x="37" y="165">home</text>
+    <text x="110" y="165">var</text>
+    <text x="183" y="165">opt</text>
+  </g>
+</svg>

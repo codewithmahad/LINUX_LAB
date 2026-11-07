@@ -1,14 +1,31 @@
 # Artwork and terminal demos
 
-The main README uses a small title and a terminal illustration alongside the introduction. Existing chapter artwork, logos, and earlier terminal demos are also kept here, with their source files and credits.
+The main README pairs the original Tux with a small title, then uses separate illustrations alongside the current work, learning map, applied project, and setup sections. This page records their sources alongside the older chapter artwork and terminal demos.
 
-## README title and terminal
+## README artwork
 
-[linux-lab-title-light.svg](linux-lab-title-light.svg) and [linux-lab-title-dark.svg](linux-lab-title-dark.svg) are transparent title treatments for GitHub's light and dark themes. [linux-terminal.svg](linux-terminal.svg) is the separate terminal illustration aligned to the right of the introduction.
+| Artwork | Files | Source |
+| :--- | :--- | :--- |
+| Title | [Light](readme/linux-title-light.svg) · [Dark](readme/linux-title-dark.svg) | Text-only wordmark drawn for this repository, in charcoal and silver. |
+| Linux filesystem | [Light](readme/filesystem-light.svg) · [Dark](readme/filesystem-dark.svg) | Original sketch of selected directories under `/`: `home`, `var`, and `opt`. |
+| Bash | [Light](readme/bash-light.svg) · [Dark](readme/bash-dark.svg) | Grayscale presentations of the GNU Bash logo; attribution and terms below. |
+| DeployLatch | [Light](readme/deploylatch-light.svg) · [Dark](readme/deploylatch-dark.svg) | Existing project emblems, copied unchanged from my DeployLatch repository. |
+| Tux | [Original PNG](tux.png) | Larry Ewing's Linux penguin, displayed unchanged beside the introduction. [Credit and source](#tux). |
+| Ubuntu | [Original SVG](logos/ubuntu.svg) | Canonical's Circle of Friends, displayed unchanged beside the setup section. [Credit and terms](#project-logos). |
 
-The terminal shows `bash hello.sh` and its actual greeting, `Hello From Bash`, as run from the script's chapter directory. It is an illustration rather than a screenshot. All three files are directly editable SVGs using system fonts, with no external images or downloads.
+The title and filesystem sketches are directly editable SVGs using system fonts. Those original layouts use the repository's [MIT license](../LICENSE). The logos retain their own attribution and terms.
 
-The layouts use the repository's [MIT license](../LICENSE).
+### Grayscale Bash marks
+
+The GNU Bash logo was designed by **Prospect One**, copyright **2016 Free Software Foundation**, under the [Free Art License 1.3](https://artlibre.org/licence/lal/en/).
+
+The README's two grayscale presentations come from the [original light-background](logos/bash.svg) and [original dark-background](logos/bash-dark.svg) versions already stored here. Only the colors were changed to gray, charcoal, and silver; the logo geometry is unchanged. These presentations retain the original attribution and Free Art License.
+
+Original sources: [official logo project](https://github.com/odb/official-bash-logo) · [designer's downloads](https://bashlogo.com/).
+
+### DeployLatch emblem
+
+The [light](readme/deploylatch-light.svg) and [dark](readme/deploylatch-dark.svg) emblems are copied unchanged from [DeployLatch's light mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark.svg) and [dark mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark-on-dark.svg). They are project-authored vector adaptations of my supplied logo, with its lock, server, upload arrow, and recovery arrows. The project records their origin in its [artwork notes](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/THIRD_PARTY.md).
 
 ## Earlier cover and journey
 
@@ -108,4 +125,4 @@ These are asset-maintenance commands. Readers do not need these packages for the
 python3 assets/source/terminal-demo.py
 ```
 
-This uses Python 3, Bash, native librsvg and Cairo, and DejaVu fonts on Linux. It needs no Python packages or network access. The main README uses the separate title and terminal illustration described above.
+This uses Python 3, Bash, native librsvg and Cairo, and DejaVu fonts on Linux. It needs no Python packages or network access. The main README uses the title and section artwork described above.
