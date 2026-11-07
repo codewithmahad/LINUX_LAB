@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="190" viewBox="0 0 260 190" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">A little Bash terminal</title>
+  <desc id="description">Terminal illustration showing bash hello.sh and its real output, Hello From Bash. The command is run from the script's chapter directory. This is an illustration, not a screenshot.</desc>
+  <g transform="rotate(-3 130 95)">
+    <rect x="14" y="24" width="234" height="145" rx="13" fill="#17111D" fill-opacity=".13"/>
+    <rect x="10" y="18" width="234" height="145" rx="13" fill="#241D2D" stroke="#695772" stroke-width="1.5"/>
+    <path d="M23 18h208a13 13 0 0 1 13 13v21H10V31a13 13 0 0 1 13-13Z" fill="#382B43"/>
+    <circle cx="27" cy="35" r="3.5" fill="#EDAE91"/>
+    <circle cx="40" cy="35" r="3.5" fill="#DCC585"/>
+    <circle cx="53" cy="35" r="3.5" fill="#C7E58B"/>
+    <text x="226" y="39" fill="#C9BDCE" font-family="DejaVu Sans Mono, monospace" font-size="10" text-anchor="end">bash / linux-lab</text>
+    <g font-family="DejaVu Sans Mono, monospace" font-size="14" xml:space="preserve">
+      <text x="25" y="83" fill="#F0EDE5"><tspan fill="#C7E58B">$ </tspan>bash hello.sh</text>
+      <text x="25" y="110" fill="#EDAE91">Hello From Bash</text>
+      <text x="25" y="141" fill="#C7E58B">$</text>
+    </g>
+    <path d="M42 130v14" stroke="#C7E58B" stroke-width="7"/>
+  </g>
+</svg>

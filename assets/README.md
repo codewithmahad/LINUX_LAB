@@ -1,14 +1,22 @@
 # Artwork and terminal demos
 
-The README and getting-started guide use local images, established project logos, and a terminal Easter egg. The source files and credits are kept here so the page can be maintained alongside the notes.
+The main README uses a small title and a terminal illustration alongside the introduction. Existing chapter artwork, logos, and earlier terminal demos are also kept here, with their source files and credits.
 
-## Cover and journey
+## README title and terminal
+
+[linux-lab-title-light.svg](linux-lab-title-light.svg) and [linux-lab-title-dark.svg](linux-lab-title-dark.svg) are transparent title treatments for GitHub's light and dark themes. [linux-terminal.svg](linux-terminal.svg) is the separate terminal illustration aligned to the right of the introduction.
+
+The terminal shows `bash hello.sh` and its actual greeting, `Hello From Bash`, as run from the script's chapter directory. It is an illustration rather than a screenshot. All three files are directly editable SVGs using system fonts, with no external images or downloads.
+
+The layouts use the repository's [MIT license](../LICENSE).
+
+## Earlier cover and journey
 
 | Asset | Purpose |
 | :--- | :--- |
-| [linux-lab-hero.svg](linux-lab-hero.svg) | Wide cover with classic Tux and a dark terminal. |
-| [linux-lab-hero-mobile.svg](linux-lab-hero-mobile.svg) | Compact cover for narrow screens. |
-| [linux-lab-journey.svg](linux-lab-journey.svg) | The purple learning route, with current and future topics. |
+| [linux-lab-hero.svg](linux-lab-hero.svg) | Earlier wide cover with classic Tux and a dark terminal. |
+| [linux-lab-hero-mobile.svg](linux-lab-hero-mobile.svg) | Compact version of the earlier cover. |
+| [linux-lab-journey.svg](linux-lab-journey.svg) | Earlier purple learning route; the main README now holds the progress map. |
 
 The covers embed the original Tux PNG. These are layouts built for the repository, not screenshots of a personal desktop. The SVG text and geometry are editable; the embedded Tux artwork retains its creator credit and original terms.
 
@@ -68,13 +76,13 @@ The PNG is unmodified, including where it is embedded in the cover SVGs. Its ori
 
 ## Illustrated avatar
 
-[shaikh-mahad-avatar.png](shaikh-mahad-avatar.png) uses the hooded character illustration supplied for this README. The built-in imagegen tool was used to create a transparent cutout, replacing the real profile photograph. This supplied artwork is separate from the repository's MIT-licensed code.
+[shaikh-mahad-avatar.png](shaikh-mahad-avatar.png) uses the hooded character illustration supplied for an earlier README. The built-in imagegen tool was used to create a transparent cutout, replacing the real profile photograph. This supplied artwork is separate from the repository's MIT-licensed code.
 
 The [edit instructions](source/avatar-edit.md) record the requested transformation and tool used.
 
 ## Terminal Easter egg
 
-[terminal-playground.gif](terminal-playground.gif) loops actual `sl` character output followed by `cowsay "mahad is dumb"`. [terminal-playground.svg](terminal-playground.svg) is the static version used for reduced motion. It is a styled replay of captured output with illustrative typing and timing.
+[terminal-playground.gif](terminal-playground.gif) loops actual `sl` character output followed by `cowsay "mahad is dumb"`. [terminal-playground.svg](terminal-playground.svg) is its static counterpart. These were used in an earlier README. The animation is a styled replay of captured output with illustrative typing and timing.
 
 The [renderer](source/terminal-playground.py) captures the train in a temporary tmux session and reads the cow's output. It does not access an existing tmux session.
 
@@ -100,4 +108,4 @@ These are asset-maintenance commands. Readers do not need these packages for the
 python3 assets/source/terminal-demo.py
 ```
 
-This uses Python 3, Bash, native librsvg and Cairo, and DejaVu fonts on Linux. It needs no Python packages or network access. The main README uses the train-and-cow Easter egg.
+This uses Python 3, Bash, native librsvg and Cairo, and DejaVu fonts on Linux. It needs no Python packages or network access. The main README uses the separate title and terminal illustration described above.

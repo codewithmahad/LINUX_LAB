@@ -1,135 +1,187 @@
-<div align="center">
+<a id="top"></a>
 
-<picture>
-  <source media="(max-width: 600px)" srcset="assets/linux-lab-hero-mobile.svg">
-  <img src="assets/linux-lab-hero.svg" alt="LINUX_LAB. Come learn Linux with me. Classic Tux beside a colourful Bash terminal." width="100%">
-</picture>
+<h1 id="linux_lab">
+  <img src="assets/linux-terminal.svg" align="right" width="26%" alt="A small Bash terminal showing the lab's hello.sh greeting.">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/linux-lab-title-dark.svg">
+    <img src="assets/linux-lab-title-light.svg" width="60%" height="44" align="texttop" alt="LINUX_LAB">
+  </picture>
+</h1>
 
-**Linux commands, Bash scripts, and the things I'll learn along the way.**
+**Linux commands, Bash scripts, and the notes I come back to.**
 
-[Learning map](#what-im-learning) · [Course project](#course-project-deploylatch) · [Try a script](#lets-run-something) · [Setup guide](docs/GETTING_STARTED.md)
+I started this repo for my **Operating Systems lab at UBIT, University of Karachi**. I'm working towards **Java and Spring Boot backend development**, and I want the Linux side to feel familiar too: running an application, reading its logs, finding what went wrong, and writing a script when I keep repeating a task.
 
-</div>
+I keep my attempts here, along with enough explanation to remember what I tried. The map below helps me pick up where I left off.
 
-# LINUX_LAB
+<p>
+  <a href="#current-work">Current work</a> &nbsp;·&nbsp;
+  <a href="#learning-map">Learning map</a> &nbsp;·&nbsp;
+  <a href="#backend-practice">Backend practice</a> &nbsp;·&nbsp;
+  <a href="#working-in-this-lab">Use the lab</a>
+</p>
 
-## Hey, I'm Shaikh Mahad 👋
+<br clear="right">
 
-I'm a **BS Software Engineering student at UBIT, University of Karachi**. I started this repo while learning Linux commands and Bash scripting for my **Operating Systems lab**. It holds my notes, example scripts, and exercises for practice and revision.
+<a id="lab-record"></a>
 
-I want to keep going after the course and build scripts that help with everyday work. **If you're taking an OS course or just curious about Linux, come learn with me.** You can start from zero.
+## Current work
 
-> **Latest published Bash chapter:** [Bash 04: Operators and Expressions](learning/bash-scripting/04-operators-and-expressions/README.md)
->
-> **At a glance:** 8 Linux command chapters · 4 Bash chapters · 15 chapter scripts · 11 practice scripts.
+**Current focus · conditions, loops, and arrays**
 
-> **New to Linux? [Start here: terminal and editor setup →](docs/GETTING_STARTED.md)**
-> Follow the Ubuntu setup steps, install Git, and get your workspace ready for the examples below.
+The Bash exercises go ahead of my chapter notes. I'm revisiting those attempts before adding arguments and functions.
 
-## Course project: DeployLatch
-
-For my final **Operating Systems course project**, I built **[DeployLatch](https://github.com/codewithmahad/deploylatch)**, a Bash tool that deploys a Java service on Ubuntu, checks its health and version, and attempts to restore the previous working release if an update fails.
-
-It connects the file paths, permissions, Bash, and exit statuses practised here to my Java backend work. It also took me into symbolic links, systemd services, and deployment locking—topics I'm still building towards in these notes.
-
-[See the deployment demo](https://github.com/codewithmahad/deploylatch#deployment-demo) · [Read the deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh)
-
-## What I'm learning
-
-<img src="assets/linux-lab-journey.svg" alt="My route: command-line basics, Bash now, then Linux systems, automation, and developer tools." width="100%">
-
-The route I have in mind is **commands → Bash → Linux systems → automation → developer tools**. The linked chapters are published notes; the separate practice exercises below sometimes go ahead of the lessons. The roadmap shows topics I want to write about next.
-
-**First time here?** Start with [Navigation and Paths](learning/linux-commands/01-navigation-and-paths/README.md). Already comfortable moving around the terminal? Try [Shell and Script Basics](learning/bash-scripting/01-shell-and-script-basics/README.md).
-
-<details>
-<summary><strong>📂 Linux commands · 8 chapters available</strong></summary>
-
-| Chapter | What's inside |
-| :--- | :--- |
-| **01 · [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md)** | `pwd`, `ls`, `cd`, paths, hidden files, quoting names, and a [guided practice route](learning/linux-commands/01-navigation-and-paths/README.md#take-a-short-trip-through-the-repo). |
-| **02 · [Files and directories](learning/linux-commands/02-files-and-directories/README.md)** | `mkdir`, `touch`, `file`, `stat`, `tree`, timestamps, and a [tiny project to build](learning/linux-commands/02-files-and-directories/README.md#your-turn-build-a-tiny-project). |
-| **03 · [Viewing file content](learning/linux-commands/03-viewing-file-content/README.md)** | `cat`, `head`, `tail`, `less`, `more`, sample files, and a [live log experiment](learning/linux-commands/03-viewing-file-content/README.md#watch-a-file-grow). |
-| **04 · [Copying, moving, and deleting](learning/linux-commands/04-copying-moving-and-deleting/README.md)** | `cp`, `mv`, `rm`, `rmdir`, destination paths, overwrite prompts, and a [lab session to pack up](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
-| **05 · [Searching and finding](learning/linux-commands/05-searching-and-finding/README.md)** | `grep`, `find`, patterns, file searches, and a [folder of clues to investigate](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues). |
-| **06 · [Text processing](learning/linux-commands/06-text-processing/README.md)** | `wc`, `cut`, `sort`, `uniq`, `tr`, `sed`, `awk`, and a [small study report](learning/linux-commands/06-text-processing/README.md#your-turn-make-a-small-study-report). |
-| **07 · [Redirection and pipes](learning/linux-commands/07-redirection-and-pipes/README.md)** | Input, output, errors, `>`, `>>`, `<`, pipes, `tee`, and a [review report to save](learning/linux-commands/07-redirection-and-pipes/README.md#your-turn-save-a-review-report). |
-| **08 · [Permissions and ownership](learning/linux-commands/08-permissions-and-ownership/README.md)** | `rwx`, `chmod`, numeric modes, directory access, `chown`, `chgrp`, and a [lab folder to configure](learning/linux-commands/08-permissions-and-ownership/README.md#your-turn-set-up-a-lab-folder). |
-
-</details>
-
-<details>
-<summary><strong>🐚 Bash scripting · 4 published chapters</strong></summary>
-
-| Chapter | What's inside | A script to open |
+| Area | Work saved | Open it |
 | :--- | :--- | :--- |
-| **01 · [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md)** | Shells, shebangs, execution order, syntax checks, and a [lab check-in script to write](learning/bash-scripting/01-shell-and-script-basics/README.md#your-turn-a-lab-check-in). | [hello.sh](learning/bash-scripting/01-shell-and-script-basics/hello.sh) · [sequential-commands.sh](learning/bash-scripting/01-shell-and-script-basics/sequential-commands.sh) |
-| **02 · [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md)** | Variables, quoting, command substitution, and arithmetic expansion. | [quoting.sh](learning/bash-scripting/02-variables-and-expansion/quoting.sh) |
-| **03 · [Input and output](learning/bash-scripting/03-input-and-output/README.md)** | `echo`, `printf`, `read`, and prompts. | [formatted-output.sh](learning/bash-scripting/03-input-and-output/formatted-output.sh) |
-| **04 · [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md)** | Arithmetic, comparisons, logic, exit status, and command chaining. | [numeric-comparisons.sh](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh) |
+| Linux commands | 8 chapters, from paths to permissions | [Command notes](learning/linux-commands/) |
+| Bash fundamentals | 4 chapters, through operators and exit statuses | [Bash notes](learning/bash-scripting/) |
+| Bash practice | 11 scripts across basics, loops, and arrays | [Practice folder](practice/bash-scripting/) |
+
+<details>
+<summary><strong>Next session · corrections and the next exercise</strong></summary>
+
+- [ ] Correct the Bash version in the [session audit](practice/bash-scripting/01-basics/02-session-audit.sh), then check its output.
+- [ ] Revisit duplicate values in the [second-largest exercise](practice/bash-scripting/04-arrays/03-second-largest.sh) and try invalid input in the early arithmetic scripts.
+- [ ] Write short conditions and loops notes from the exercises I've attempted.
+- [ ] Turn the [system report](practice/bash-scripting/01-basics/01-system-report.sh) into a script that accepts a project name, practising arguments and functions.
 
 </details>
 
-**Beyond the chapters:** [Browse 11 Bash practice exercises](practice/bash-scripting/) covering basics, conditions, loops, and arrays. These are standalone scripts; full lesson notes on conditions, loops, and arrays are still to come.
+<a id="what-im-learning"></a>
+
+## Learning map
+
+This is the Linux and Bash I want for my backend work. **Recorded** means notes and examples are saved here; **Practising** means exercises exist and need more review; **Next** is still ahead in this lab. I'll update the map as I add work I can run and explain.
 
 <details>
-<summary><strong>🧪 Bash practice · topics and example scripts</strong></summary>
+<summary><strong>Linux · command notes and the skills to cover next</strong></summary>
 
-| Practice folder | What I'm practising | Examples |
+The recorded rows link to all eight command chapters. Each row also names a job I expect to use it for.
+
+| Progress | What to learn or revisit | Where I'll use it |
 | :--- | :--- | :--- |
-| [Basics · 4 scripts](practice/bash-scripting/01-basics/) | Reports, input, arithmetic, percentages, and conditions. | [System report](practice/bash-scripting/01-basics/01-system-report.sh) · [Percentage and pass/fail](practice/bash-scripting/01-basics/04-percentage.sh) |
-| [Loops · 3 scripts](practice/bash-scripting/03-loops/) | Input validation, conditions, iteration, and menu choices. | [Menu calculator](practice/bash-scripting/03-loops/03-menu-calculator.sh) |
-| [Arrays · 4 scripts](practice/bash-scripting/04-arrays/) | Indexed and associative arrays, iteration, and statistics. | [Marks statistics](practice/bash-scripting/04-arrays/02-marks-statistics.sh) · [Product lookup](practice/bash-scripting/04-arrays/04-product-lookup.sh) |
+| Recorded | **Paths and files:** `pwd`, `ls`, `cd`, `mkdir`, `touch`, `cp`, `mv`, `rm`, `file`, `stat`, `tree`. [Paths](learning/linux-commands/01-navigation-and-paths/README.md) · [Creation](learning/linux-commands/02-files-and-directories/README.md) · [File operations](learning/linux-commands/04-copying-moving-and-deleting/README.md). | Move around projects, inspect files, and organise source, configuration, and build output. |
+| Recorded | **Reading and finding:** `cat`, `less`, `head`, `tail`, `grep`, `find`. [Reading files](learning/linux-commands/03-viewing-file-content/README.md) · [Searching](learning/linux-commands/05-searching-and-finding/README.md). | Find a configuration file, follow application logs, and locate the error behind a failed startup. |
+| Recorded | **Text processing:** `wc`, `cut`, `sort`, `uniq`, `tr`, basic `sed` and `awk`. [Notes and examples](learning/linux-commands/06-text-processing/README.md). | Filter a log, count repeated errors, and turn command output into a small report. |
+| Recorded | **Streams and pipes:** stdin, stdout, stderr, `>`, `>>`, `2>`, `2>&1`, pipes, `tee`. [Notes and examples](learning/linux-commands/07-redirection-and-pipes/README.md). | Save build output, keep diagnostics, and pass results between commands. |
+| Recorded | **Basic access:** file and directory `rwx`, `chmod`, ownership, `chown`, `chgrp`, `id`, `umask`. [Permissions notes](learning/linux-commands/08-permissions-and-ownership/README.md). | Understand an access error and choose the permissions a script, config file, or service needs. |
+| Next | **Processes and signals:** `ps`, `pgrep`, `top`, `kill`, `jobs`, `fg`, `bg`, `&`; foreground/background work and graceful termination. | Identify the Java process I started, inspect it, and stop it cleanly. |
+| Next | **HTTP and networking:** `curl`, `ss`, `ping`, `hostname`, basic DNS lookup; localhost, ports, binding addresses, HTTP status, and timeouts. | Test an endpoint and distinguish an occupied port, a connection failure, and an application error response. |
+| Next | **Environment and configuration:** `export`, `printenv`, `PATH`, `JAVA_HOME`, inherited variables, and Spring profiles. | Configure the JDK and application settings for a particular environment; keep real credentials out of Git. |
+| Next | **Packages and Java tools:** `apt`, `command -v`, `java -version`, `javac -version`, Maven Wrapper, and `java -jar`. | Prepare Ubuntu for a project, check the selected Java version, and build and run outside the IDE. |
+| Next | **Remote work:** `ssh`, keys, host verification, `~/.ssh/config`, `scp`, and basic `rsync`. | Connect to a development VM, transfer a JAR, and investigate a problem on that machine. |
+| Next | **Archives and storage:** `tar`, `zip`, `unzip`, `df`, `du`. | Package files, check available space, and find which logs or artifacts are taking it up. |
+| Next | **Services and filesystem links:** `systemctl`, `journalctl`, `ln -s`, `readlink`, service users, and when `sudo` is needed. | Inspect a Java service's status and logs, understand its startup configuration, and follow the active release. |
+
+Some later topics already appear in [DeployLatch](#already-applied-deploylatch). I want focused exercises here that I can return to individually.
 
 </details>
 
 <details>
-<summary><strong>🗺️ Where I want to take this next</strong></summary>
+<summary><strong>Bash · fundamentals, practice, and the next scripting skills</strong></summary>
 
-These are topics I want to turn into full chapters. Some already appear in the practice scripts; they aren't published lessons yet.
+| Progress | What to learn or revisit | Where I'll use it |
+| :--- | :--- | :--- |
+| Recorded | **Script basics:** shebangs, `bash script.sh`, executable permissions, working directory, and `bash -n`. [Chapter 01](learning/bash-scripting/01-shell-and-script-basics/README.md). | Run a helper script and understand why it behaves differently from an interactive terminal command. |
+| Recorded | **Variables and expansion:** assignment, quoting, `${name}`, `$(command)`, integer arithmetic, word splitting, and globbing. [Chapter 02](learning/bash-scripting/02-variables-and-expansion/README.md). | Handle paths and configuration values correctly, including names with spaces. |
+| Recorded | **Input and output:** `IFS= read -r`, `printf`, fixed formats, and failed reads. [Chapter 03](learning/bash-scripting/03-input-and-output/README.md). | Read input intact and produce predictable output. |
+| Recorded | **Expressions and command results:** numeric and string comparisons, `$?`, `&&`, `\|\|`. [Chapter 04](learning/bash-scripting/04-operators-and-expressions/README.md). | Choose the next action based on a command's result. |
+| Practising | **Conditions and loops:** `if`, `case`, `for`, `while`, `break`, `continue`, and validation. [Basics](practice/bash-scripting/01-basics/) · [Loops](practice/bash-scripting/03-loops/). | Validate an argument, retry a check, or repeat a task across files. |
+| Practising | **Arrays:** indexed and associative arrays, `"${items[@]}"`, iteration, and duplicate cases. [Array exercises](practice/bash-scripting/04-arrays/). | Keep a list of files or arguments together without losing their boundaries. |
+| Next | **Arguments and defaults:** `$1`, `$#`, `"$@"`, `shift`, `${name:-default}`, and usage messages. | Accept a JAR path, environment, or URL without editing the script each time. |
+| Next | **Functions and scope:** parameters, `local` variables, return statuses, and separating output from diagnostics. | Reuse validation, logging, and health checks as a script grows. |
+| Next | **Failure handling and cleanup:** explicit status checks, `exit`, stderr, `set -e`, `set -u`, `pipefail`, `trap`, and `mktemp`. Learn the limits of each option. | Report a failed build or request, clean up temporary files, and avoid continuing with an invalid result. |
+| Next | **Debugging and checks:** `bash -x`, ShellCheck, formatting, and tests for missing input, EOF, spaces, leading zeros, and failed commands. | Find a script's mistake and check the failure paths before relying on it. |
 
-| Area | Planned chapter coverage |
-| :--- | :--- |
-| **More Bash lessons** | Conditions, loops, functions, script arguments, and arrays. |
-| **Working with the system** | Users, groups, processes, jobs, signals, and more advanced access controls. |
-| **Everyday Linux** | System information, storage, archives, networking, and the shell environment. |
-| **Better scripts** | Handling errors, debugging, checking inputs, ShellCheck, formatting, and making scripts safer to rerun. |
-| **Useful automation** | Backups, file organisation, log processing, and small system utilities. |
-| **My developer workflow** | Command-line tools and scripts that help with everyday software projects. |
-
-The small examples come first. As I get further, I want to build on these exercises with scripts I can use in my own projects, and keep the notes here for revision.
+The exercises are grouped into [basics](practice/bash-scripting/01-basics/), [loops](practice/bash-scripting/03-loops/), and [arrays](practice/bash-scripting/04-arrays/). They include reports, a menu calculator, input validation, and array statistics.
 
 </details>
 
 <details>
-<summary><strong>🗂️ How the repository is organised</strong></summary>
+<summary>How far I want to take it</summary>
 
-Published chapters and their examples live under `learning/`; standalone exercises live under `practice/`. Planned areas are marked below.
+My target is to **build, run, and troubleshoot a Java service comfortably on Linux**, and write small Bash scripts I can explain and repair. Looking up an option is fine; I want to know which tool to reach for and what its result tells me.
 
-```text
-LINUX_LAB/
-    learning/
-        linux-commands/       # Command notes, one topic per folder
-        bash-scripting/       # Bash notes and example scripts
-    practice/
-        bash-scripting/       # Exercises: basics, conditions, loops, and arrays
-    automation/               # Planned: scripts for useful tasks
-    resources/                # Planned: references and lab material
-    docs/                     # Terminal and editor setup guide
-    assets/                   # README artwork and terminal demos
-    README.md                 # You are here
-    LICENSE
+I'll learn Docker and Compose alongside an application when I'm ready to containerise it. Kernel development, deep system administration, advanced networking, Kubernetes, Terraform, and Ansible can wait until a project or role calls for them. OS-course exercises can still live here; the backend path helps me choose what to practise beyond the lab.
+
+</details>
+
+<a id="learning-resources-and-practice"></a>
+
+## Backend practice
+
+I want to use these skills in my Java projects as I learn them. These are the tasks I'll work through, with examples and a short record of what happened.
+
+<details>
+<summary><strong>Six tasks to practise in a Java/Spring Boot project</strong></summary>
+
+I'll check a task off when there's a working example I can repeat.
+
+- [ ] **Run without the IDE.** Build and test with the project's wrapper, select its executable JAR, start it with a profile, and explain the startup output.
+- [ ] **Investigate a failed startup.** Find the useful log lines, check the process and listening port, and work out whether the cause is configuration, connectivity, or application code.
+- [ ] **Test an API from Bash.** Send requests with `curl`, inspect status and response data, and make a health check return failure when the request or HTTP result fails.
+- [ ] **Work on a remote Linux machine.** Connect with SSH, copy an artifact, inspect a service and its journal, and verify the application after a restart.
+- [ ] **Automate my development loop.** Write a build/test/run helper with arguments, quoted paths, useful errors, and deliberate handling of failed commands. Reuse the build and test steps in CI.
+- [ ] **Archive and restore files.** Back up sample configuration and logs, restore them into a different directory, and verify the restored contents.
+
+</details>
+
+<details>
+<summary><strong>Spring Boot commands · build, run, inspect</strong></summary>
+
+These examples belong in a **separate Spring Boot project**. That project needs a configured Maven Wrapper and an executable JAR; `target/app.jar` stands for the actual artifact path.
+
+In the project directory:
+
+```bash
+./mvnw verify
+SPRING_PROFILES_ACTIVE=dev java -jar target/app.jar
 ```
 
-Empty planned folders may not appear in a fresh clone; Git starts tracking them when files are added. The chapter and practice links above take you to the material already available.
+While the application is running, use another terminal:
+
+```bash
+curl -i --max-time 5 http://localhost:8080/api/users
+ss -ltnp 'sport = :8080'
+```
+
+The URL must match an endpoint the application exposes. `curl -i` shows response headers as well as the body; this is an inspection command. A scripted check needs an explicit HTTP success condition, such as `curl --fail` for HTTP 400+ responses. `ss` shows listening TCP sockets on port 8080; process details depend on access permissions.
+
+If the application is configured to write `app.log`:
+
+```bash
+tail -n 50 -f app.log
+```
+
+Spring Boot's [running guide](https://docs.spring.io/spring-boot/reference/using/running-your-application.html) and [configuration reference](https://docs.spring.io/spring-boot/reference/features/external-config.html), the [Maven Wrapper guide](https://maven.apache.org/tools/wrapper/), and the [curl manual](https://curl.se/docs/manpage.html) explain the details.
 
 </details>
 
-<a href="https://git-scm.com/"><img align="right" src="assets/logos/git.svg" alt="Git logo." width="120"></a>
+<a id="already-applied-deploylatch"></a>
 
-## Let's run something
+**Already applied · [DeployLatch](https://github.com/codewithmahad/deploylatch)**
 
-You'll need a Linux terminal with Bash and Git.
+For my OS course project, I built a Bash tool that deploys one Java service on an Ubuntu VM. It manages versioned JARs, switches the active release through a symbolic link, and checks health and version after restarting the systemd service. I tested both a working update and recovery from a failed one.
+
+The most useful lesson was checking process state, application health, and release identity separately. A running process can still be unhealthy or running the wrong release.
+
+[Deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) · [Update and rollback demo](https://github.com/codewithmahad/deploylatch#deployment-demo)
+
+<a id="get-a-linux-terminal"></a>
+<a id="working-setup"></a>
+
+## Working in this lab
+
+**Ubuntu · Bash · Git · VS Code**
+
+The examples use Ubuntu, including Ubuntu in WSL or a VM. The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
+
+<a id="lets-run-something"></a>
+
+<details>
+<summary><strong>Clone the repo and run the first script</strong></summary>
+
+With Bash and Git available:
 
 ```bash
 git clone https://github.com/codewithmahad/LINUX_LAB.git
@@ -137,156 +189,55 @@ cd LINUX_LAB
 bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
 ```
 
-It prints `Hello From Bash`. Already cloned the repo? Open its directory and run the last command.
-
-<br clear="right">
-
-## Skills I'm building here
-
-Files and permissions, text processing, Bash variables, exit statuses, and script checks. Each example below comes from a published chapter.
-
-<details>
-<summary><strong>See 7 skills with examples from the chapters</strong></summary>
-
-| What I'm practising | See it in the repo |
-| :--- | :--- |
-| **Working with files and paths** | [Copy, rename, check, and remove a practice submission](learning/linux-commands/04-copying-moving-and-deleting/README.md#your-turn-pack-up-a-lab-session). |
-| **Finding and processing text** | [Find the useful lines in a log](learning/linux-commands/05-searching-and-finding/README.md#your-turn-follow-the-clues), then [group and count repeated labels](learning/linux-commands/06-text-processing/README.md#uniq-repeated-lines-have-to-be-neighbours). |
-| **Saving results and handling errors** | [Separate output from diagnostics](learning/linux-commands/07-redirection-and-pipes/README.md#errors-have-their-own-stream), then [see and save a result with tee](learning/linux-commands/07-redirection-and-pipes/README.md#tee-see-it-and-save-it). |
-| **Understanding file access** | [Read and change permission modes](learning/linux-commands/08-permissions-and-ownership/README.md#the-numbers-are-just-permissions-added-up), then [test directory access](learning/linux-commands/08-permissions-and-ownership/README.md#directories-work-a-little-differently). |
-| **Bash variables, quoting, and input** | Compare [single and double quotes](learning/bash-scripting/02-variables-and-expansion/quoting.sh), and [read a value from the person running a script](learning/bash-scripting/03-input-and-output/input.sh). |
-| **Arithmetic and command results** | Follow [numeric comparisons and their exit statuses](learning/bash-scripting/04-operators-and-expressions/numeric-comparisons.sh), then [choose the next command based on success or failure](learning/bash-scripting/04-operators-and-expressions/command-chaining.sh). |
-| **Checking a script before running it** | Use [Bash's syntax check](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) before executing a file. |
+It prints `Hello From Bash`. Then open a topic in the learning map or try a practice script.
 
 </details>
 
-<img align="right" src="assets/tux.png" alt="Tux, the Linux penguin, created by Larry Ewing." width="160">
-
-## First, a little about Linux
-
-You'll see these three names a lot here:
-
-**Linux** is the kernel: the core that helps software work with the computer's hardware. People also say “Linux” when they mean a whole operating system built around it.
-
-**Ubuntu** is one of those complete systems, called a *distribution*. It gives you Linux together with a desktop, applications, and tools. **Bash** is a shell: it reads your commands and runs them. Save those commands in a file, and you have the beginnings of a script.
-
-For me, that's the interesting part: learning a command today, then finding a way to use it in my own work.
-
-<sub>More about [Linux](https://www.kernel.org/linux.html), [Ubuntu](https://ubuntu.com/about), and [Bash](https://www.gnu.org/software/bash/manual/html_node/What-is-Bash_003f.html).</sub>
-
-<br clear="right">
-
-<a href="https://ubuntu.com/desktop"><img align="right" src="assets/logos/ubuntu.svg" alt="Ubuntu Circle of Friends logo." width="100"></a>
-
-## Get a Linux terminal
-
-The examples use Ubuntu. Choose a setup, then follow the full instructions in the getting-started guide.
-
-| Your setup | Where to start |
-| :--- | :--- |
-| Windows, with Linux commands and Bash | [Set up Ubuntu in WSL](docs/GETTING_STARTED.md#ubuntu-in-wsl). |
-| A full Ubuntu desktop alongside your usual OS | [Set up Ubuntu in a virtual machine](docs/GETTING_STARTED.md#ubuntu-in-a-virtual-machine). |
-| Linux already installed | Open a terminal, check `bash --version` and `git --version`, then [run the first script](#lets-run-something). |
-
-<br clear="right">
-
-## Learning resources and practice
-
-Read a small section, guess what its example will do, then run it. Change a value or an option and try again. Keep a scratch directory for file exercises, especially when practising `rm`: it doesn't send files to the desktop Trash.
-
 <details>
-<summary><strong>Practice: change a script, predict its output, and review lab reminders</strong></summary>
+<summary><strong>Folders and how I record my practice</strong></summary>
 
-<a href="https://www.gnu.org/software/bash/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logos/bash-dark.svg">
-    <img align="right" src="assets/logos/bash.svg" alt="GNU Bash logo." width="125">
-  </picture>
-</a>
-
-### Make the first script your own
-
-Open `hello.sh` in your editor. Change the greeting, save it, and run the same command again. Then try printing two lines instead of one. That's a small change, but now you're editing a program and checking what it does.
-
-When you move on to variables, replace the fixed greeting with a name stored in a variable. After input and output, try asking the person running it for their name. The same tiny script can grow with you.
-
-[Start with the script basics](learning/bash-scripting/01-shell-and-script-basics/README.md) · [Give it variables](learning/bash-scripting/02-variables-and-expansion/README.md) · [Make it ask a question](learning/bash-scripting/03-input-and-output/README.md)
-
-<br clear="right">
-
-### Why does “true” give 0?
-
-Run this in Bash:
-
-```bash
-printf 'Division: %s\n' "$((17 / 5))"
-printf 'Remainder: %s\n' "$((17 % 5))"
-(( 17 > 5 ))
-printf 'Exit status: %s\n' "$?"
-```
-
-Output:
+The main folders with recorded work:
 
 ```text
-Division: 3
-Remainder: 2
-Exit status: 0
+LINUX_LAB/
+├── learning/
+│   ├── linux-commands/       # Command notes and supplied example files
+│   └── bash-scripting/       # Bash notes and chapter scripts
+├── practice/
+│   └── bash-scripting/       # Standalone exercises and attempts
+├── docs/                    # Environment setup
+├── assets/                  # README and chapter artwork
+├── README.md                # Progress, next work, and links
+└── LICENSE
 ```
 
-Bash's built-in arithmetic uses integers, so division gives `3` and the remainder is `2`. The comparison is true, and the command reports success with an **exit status of `0`**.
+I'll add automation tools when I have a useful script to keep. Existing chapters stay available for revision; new entries can be a small script and a few notes about the result.
 
-Change `>` to `<` and run the block again. The last number becomes `1`. `$?` reads the status of the command that just ran, so check it immediately after the comparison.
+For each topic, I try the example, change something, and explain the result. Before treating a script as finished, I check its normal input and at least one failure case. A mistake and its correction belong here too.
 
-[Open the full chapter →](learning/bash-scripting/04-operators-and-expressions/README.md)
-
-### Three small wins to work towards
-
-| Try to do this without looking it up | Where to practise |
-| :--- | :--- |
-| Find your current directory, move to its parent, and return to where you were. | [Navigation and paths](learning/linux-commands/01-navigation-and-paths/README.md) |
-| Explain what changes when you use single quotes instead of double quotes around a variable. | [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md) |
-| Predict which command runs after `&&` or `\|\|`, then check your prediction. | [Operators and expressions](learning/bash-scripting/04-operators-and-expressions/README.md) |
-
-Being able to explain the result is a good reason to move on. If you can't yet, change the example and try again. There's no deadline here.
-
-### A few reminders for the next lab
-
-| Easy to forget | A useful reminder |
-| :--- | :--- |
-| Where a relative path begins | It starts from your current directory. Check with `pwd`. |
-| Spaces in variable assignment | Use `name="Shaikh Mahad"`, with no spaces around `=`. |
-| When variables expand | `echo "$name"` expands the variable; `echo '$name'` prints its name literally. |
-| Running a Bash script | `bash script.sh` explicitly chooses Bash and doesn't need executable permission. |
-| Checking syntax | `bash -n script.sh` checks syntax without running the script. |
-| Reading an exit status | Check `$?` immediately after the command you care about. |
-
-These reminders come from the current chapters. Follow the learning map when you want the full examples and explanations.
+`bash -n path/to/script.sh` checks syntax; `shellcheck path/to/script.sh` helps review common mistakes. I still need to run the script and check what happened. The quoting lesson deliberately includes examples with quotes removed.
 
 </details>
 
-<div align="center">
-<picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="assets/terminal-playground.svg">
-  <img src="assets/terminal-playground.gif" alt="A looping terminal Easter egg: a steam train passes, then a cowsay cow says mahad is dumb." width="800">
-</picture>
-</div>
+<details>
+<summary><strong>References for the next time I forget</strong></summary>
 
-## If you're learning with me
+| When I need | Where I'll look |
+| :--- | :--- |
+| A command's options | Local `man` pages, `command --help` where supported, and `help read` or `help set` for Bash builtins. |
+| Bash syntax and behaviour | [GNU Bash manual](https://www.gnu.org/software/bash/manual/) |
+| Spring Boot startup and configuration | [Running an application](https://docs.spring.io/spring-boot/reference/using/running-your-application.html) · [External configuration](https://docs.spring.io/spring-boot/reference/features/external-config.html) |
+| Building with the project's Maven version | [Apache Maven Wrapper](https://maven.apache.org/tools/wrapper/) |
+| HTTP requests and scripted checks | [curl manual](https://curl.se/docs/manpage.html) |
+| A service's state and logs | [systemctl](https://www.freedesktop.org/software/systemd/man/latest/systemctl.html) · [journalctl](https://www.freedesktop.org/software/systemd/man/latest/journalctl.html) |
+| My own applied example | [DeployLatch](https://github.com/codewithmahad/deploylatch) |
 
-Use the notes for your lab, revise a topic before an exam, or share a chapter with a friend. If you spot something wrong, [open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the chapter, the command you tried, and what happened. Corrections and clearer examples are welcome as pull requests.
+</details>
 
-<a href="https://github.com/codewithmahad"><img align="right" src="assets/shaikh-mahad-avatar.png" alt="A hooded character at a keyboard, used as Shaikh Mahad's illustrated avatar." width="96"></a>
+<br>
 
-## About
+The other parts of my backend practice: [**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**My projects**](https://github.com/codewithmahad?tab=repositories)
 
-I'm working towards becoming a **backend developer**, with a focus on Java, databases, and Linux. My other repositories show what I'm learning and building alongside this notebook.
+If something here helps with your own revision, use it. Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the file, command, and result.
 
-[GitHub profile](https://github.com/codewithmahad) · [More projects](https://github.com/codewithmahad?tab=repositories)
-
-<br clear="right">
-
-<div align="center">
-
-[MIT License](LICENSE) · [Artwork and demo credits](assets/README.md) · [Back to the start](#linux_lab)
-
-</div>
+<p><sub>Shaikh Mahad · BSSE, UBIT &nbsp;·&nbsp; <a href="LICENSE">MIT License</a> &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a> &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a></sub></p>
