@@ -29,11 +29,16 @@ The [light](readme/deploylatch-light.svg) and [dark](readme/deploylatch-dark.svg
 
 ## Connected lab links
 
-The closing section uses the same heading, 20-pixel inline links, and compact footer as the other learning labs. Its paragraph describes this lab's OS coursework and links to Java, DSA, and SQL. It adds no coding-profile row or second Tux illustration.
+The closing section has a paragraph specific to the host repository, a row of links to the other three labs, a short practice-profile line, and the LeetCode, HackerRank, and Codolio buttons. The lab and profile buttons are 40 pixels high.
 
-The six `readme/labs/{java,dsa,sql}-{light,dark}.svg` buttons are unchanged copies from [DSA_LAB's shared artwork](https://github.com/codewithmahad/DSA_LAB/tree/main/assets/readme/labs). Java uses the coffee-cup artwork and lettering from JAVA_LAB; DSA uses its orange tree and monospace title; SQL uses the PostgreSQL elephant and blue.
+The lab buttons use one solid pale fill each: Java white, DSA amber, PostgreSQL blue, and Linux silver. Their Segoe UI Semibold labels are converted to paths and vertically centered by their actual glyph bounds. Icon and label groups are centered together. The paired light/dark filenames use the same solid palette so the links stay consistent in both themes.
 
-The Java and PostgreSQL marks originate from [Devicon](https://github.com/devicons/devicon), with its [MIT notice](readme/labs/DEVICON-LICENSE.txt) included. The marks identify their respective languages and tools; their owners retain their rights.
+- **Java:** the Devicon coffee-cup geometry, adapted to Java.com blue and orange.
+- **DSA:** an original orange search-tree symbol.
+- **SQL:** the original Devicon PostgreSQL elephant.
+- **Linux:** unchanged **Tux, by Larry Ewing, created using The GIMP**. [Original artwork and reuse terms](http://isc.tamu.edu/~lewing/linux/) · [LINUX_LAB source notes](https://github.com/codewithmahad/LINUX_LAB/blob/main/assets/README.md#tux).
+
+The [Devicon MIT notice](readme/labs/DEVICON-LICENSE.txt) is retained for the Java and PostgreSQL artwork.
 
 ## Lesson covers
 
@@ -86,3 +91,9 @@ The Bash source files are [the dark-outline variant](https://bashlogo.com/img/sy
 - [The Linux Kernel Archives' Tux attribution](https://origin.kernel.org/faq.html)
 
 The PNG is unmodified, including where it is embedded in the cover SVGs. Its original reuse terms and creator credit apply.
+
+
+The profile buttons reuse [my profile’s contact artwork](https://github.com/codewithmahad/codewithmahad/tree/main/assets/profile/contact), with the logos and lettering enlarged within a 40-pixel frame to match the lab buttons. Their original platform colors and lettering are retained.
+
+
+The connected-labs title is a normal section heading. Lab buttons use black text on light fills; Java has a white background and a larger coffee-cup mark, SQL uses a stronger blue, and DSA has black branches and secondary-node outlines around orange centers. The social-button content is enlarged by 15% inside the same 40-pixel height, with wider backgrounds to preserve its proportions.

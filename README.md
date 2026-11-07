@@ -190,8 +190,21 @@ Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issu
 <h2 id="connected-labs"><a id="beyond-linux-lab"></a>How the labs fit together</h2>
 
 <p>
-This lab keeps my Linux and Bash work from the OS course: files, processes, logs, and scripts.
-My main programming practice lives in&#8239;<a href="https://github.com/codewithmahad/JAVA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/java-dark.svg"><img src="assets/readme/labs/java-light.svg" width="88" height="20" align="texttop" alt="JAVA_LAB"></picture></a> for the language, <a href="https://github.com/codewithmahad/DSA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/dsa-dark.svg"><img src="assets/readme/labs/dsa-light.svg" width="77" height="20" align="texttop" alt="DSA_LAB"></picture></a> for algorithms and problem solving, and <a href="https://github.com/codewithmahad/SQL_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/sql-dark.svg"><img src="assets/readme/labs/sql-light.svg" width="80" height="20" align="texttop" alt="SQL_LAB"></picture></a> for queries and relational design.
+This lab keeps my Linux and Bash coursework: files, processes, logs, and scripts. My main programming practice is in the other three labs: Java for the language, DSA for problem solving, and SQL for queries and relational design.
+</p>
+
+<p>
+  <a href="https://github.com/codewithmahad/JAVA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/java-dark.svg"><img src="assets/readme/labs/java-light.svg" width="124" height="40" vspace="2" alt="JAVA_LAB"></picture></a>
+  <a href="https://github.com/codewithmahad/DSA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/dsa-dark.svg"><img src="assets/readme/labs/dsa-light.svg" width="120" height="40" vspace="2" alt="DSA_LAB"></picture></a>
+  <a href="https://github.com/codewithmahad/SQL_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/sql-dark.svg"><img src="assets/readme/labs/sql-light.svg" width="120" height="40" vspace="2" alt="SQL_LAB"></picture></a>
+</p>
+
+<p>Outside this coursework, I keep my coding practice here.</p>
+
+<p>
+  <a href="https://leetcode.com/u/mahad2006/"><img src="assets/readme/leetcode-brand.svg" width="124" height="40" alt="LeetCode: my profile"></a>
+  <a href="https://www.hackerrank.com/codewithmahad"><img src="assets/readme/hackerrank-brand.svg" width="140" height="40" alt="HackerRank: my profile"></a>
+  <a href="https://codolio.com/profile/codewithmahad"><img src="assets/readme/codolio-brand.svg" width="120" height="40" alt="Codolio: my profile"></a>
 </p>
 <!-- learning-labs:end -->
 
