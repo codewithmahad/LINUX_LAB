@@ -27,6 +27,4 @@ Expected output: `Second largest distinct number: 4`. With only one distinct val
 
 Interactive scripts stop with a failure status if input ends before all required lines arrive. Empty text labels are allowed in the reporting examples; numeric exercises validate their input.
 
-The [regression tests](../../tests/test_practice.py) exercise normal results and failure cases. Run syntax checks, ShellCheck, and those tests together with `bash tests/check.sh`.
-
 [Back to the lab](../../README.md#backend-practice)

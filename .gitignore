@@ -33,6 +33,6 @@ tempCodeRunnerFile*
 # Local scratch work
 /temp/
 
-# Python test caches
+# Python caches
 __pycache__/
 *.pyc

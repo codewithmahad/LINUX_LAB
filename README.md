@@ -103,7 +103,7 @@ The Linux and Bash topics I want for backend development. **Linked topics open r
 
 - [Input validation](practice/bash-scripting/03-loops/01-validated-marks.sh) — numeric formats, decimal conversion, ranges, and retry loops.
 - [Syntax checks and tracing](learning/bash-scripting/01-shell-and-script-basics/README.md#check-script-syntax) — `bash -n` and `bash -x`.
-- [Static checks and regression tests](tests/check.sh) — ShellCheck and tests for normal input, invalid values, EOF, whitespace, and duplicates.
+- Static analysis and edge cases — ShellCheck, invalid input, EOF, whitespace, and duplicates.
 - Failure handling — explicit status checks, `exit`, stderr, `set -e`, `set -u`, `pipefail`, and their limits.
 - Cleanup — `trap`, temporary files, and `mktemp`.
 - Repeatable runs — checking dependencies, guarding file changes, and handling existing output.
@@ -157,9 +157,9 @@ For my OS project, I built a Bash tool that deploys a Java service on Ubuntu and
 Learn a topic, try it, change the input, check the result, and commit the useful part. Short notes and corrections stay with the code so I can return to them later.
 
 <details>
-<summary><a id="lets-run-something"></a><strong>Setup, first run, and checks</strong></summary>
+<summary><a id="lets-run-something"></a><strong>Setup and first run</strong></summary>
 
-Ubuntu in WSL or a VM works for the exercises. The [setup guide](docs/GETTING_STARTED.md) covers the terminal, Git, and editor.
+Use a Linux terminal with Bash and Git installed. Ubuntu in WSL or a VM works for the exercises.
 
 ```bash
 git clone https://github.com/codewithmahad/LINUX_LAB.git
@@ -167,15 +167,9 @@ cd LINUX_LAB
 bash learning/bash-scripting/01-shell-and-script-basics/hello.sh
 ```
 
-The greeting is `Hello From Bash`. Run the script checks from the repo root:
+The greeting is `Hello From Bash`. Use `bash -n path/to/script.sh` to check a script's syntax without running it.
 
-```bash
-bash tests/check.sh
-```
-
-The checks need Bash, Python 3, and ShellCheck. On Ubuntu, install ShellCheck with `sudo apt install shellcheck` if needed. The same checks are configured for pushes and pull requests in [GitHub Actions](.github/workflows/bash-checks.yml).
-
-Notes and chapter examples live in `learning/`; standalone exercises in `practice/`; checks in `tests/`. Existing chapters remain available for revision.
+Notes and chapter examples live in `learning/`; standalone exercises in `practice/`; illustrations and their credits in `assets/`.
 
 </details>
 
