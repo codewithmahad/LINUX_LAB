@@ -17,7 +17,7 @@ This is the Linux and Bash side of my **Java/Spring Boot backend work**: working
   <a href="#learning-map">Learning map</a> &nbsp;·&nbsp;
   <a href="#backend-practice">Practical work</a> &nbsp;·&nbsp;
   <a href="#working-in-this-lab">Use the lab</a> &nbsp;·&nbsp;
-  <a href="#beyond-linux-lab">Beyond the lab</a>
+  <a href="#connected-labs">Connected&nbsp;labs</a>
 </p>
 
 <h2 id="learning-map">
@@ -186,13 +186,23 @@ Notes and chapter examples live in `learning/`; standalone exercises in `practic
 
 Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the file, command, and result.
 
-<h2 id="beyond-linux-lab">Beyond LINUX_LAB</h2>
+<!-- learning-labs:start -->
+<h2 id="connected-labs"><a id="beyond-linux-lab"></a>How the labs fit together</h2>
 
-Alongside this lab, I'm building **Java/Spring Boot projects** and practising the language and database work behind them.
+<p>
+This lab keeps my Linux and Bash work from the OS course: files, processes, logs, and scripts.
+My main programming practice lives in&#8239;<a href="https://github.com/codewithmahad/JAVA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/java-dark.svg"><img src="assets/readme/labs/java-light.svg" width="88" height="20" align="texttop" alt="JAVA_LAB"></picture></a> for the language, <a href="https://github.com/codewithmahad/DSA_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/dsa-dark.svg"><img src="assets/readme/labs/dsa-light.svg" width="77" height="20" align="texttop" alt="DSA_LAB"></picture></a> for algorithms and problem solving, and <a href="https://github.com/codewithmahad/SQL_LAB"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/labs/sql-dark.svg"><img src="assets/readme/labs/sql-light.svg" width="80" height="20" align="texttop" alt="SQL_LAB"></picture></a> for queries and relational design.
+</p>
+<!-- learning-labs:end -->
 
-[**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**Projects**](https://github.com/codewithmahad?tab=repositories)
+<hr>
 
 <p align="center">
-  <strong>Shaikh Mahad Ud Din</strong> · Java Backend Development<br>
-  <sub><a href="https://github.com/codewithmahad">GitHub</a> &nbsp;·&nbsp; <a href="LICENSE">MIT License</a> &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a> &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a></sub>
+  <sub>
+    Maintained by <a href="https://github.com/codewithmahad">Shaikh Mahad</a>
+    &nbsp;·&nbsp; <a href="https://shaikhmahad.vercel.app/">Portfolio</a>
+    &nbsp;·&nbsp; <a href="LICENSE">MIT License</a>
+    &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a>
+    &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a>
+  </sub>
 </p>

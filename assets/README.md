@@ -27,6 +27,14 @@ Original sources: [official logo project](https://github.com/odb/official-bash-l
 
 The [light](readme/deploylatch-light.svg) and [dark](readme/deploylatch-dark.svg) emblems are copied unchanged from [DeployLatch's light mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark.svg) and [dark mark](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/deploylatch-mark-on-dark.svg). They are project-authored vector adaptations of my supplied logo, with its lock, server, upload arrow, and recovery arrows. The project records their origin in its [artwork notes](https://github.com/codewithmahad/deploylatch/blob/main/docs/assets/THIRD_PARTY.md).
 
+## Connected lab links
+
+The closing section uses the same heading, 20-pixel inline links, and compact footer as the other learning labs. Its paragraph describes this lab's OS coursework and links to Java, DSA, and SQL. It adds no coding-profile row or second Tux illustration.
+
+The six `readme/labs/{java,dsa,sql}-{light,dark}.svg` buttons are unchanged copies from [DSA_LAB's shared artwork](https://github.com/codewithmahad/DSA_LAB/tree/main/assets/readme/labs). Java uses the coffee-cup artwork and lettering from JAVA_LAB; DSA uses its orange tree and monospace title; SQL uses the PostgreSQL elephant and blue.
+
+The Java and PostgreSQL marks originate from [Devicon](https://github.com/devicons/devicon), with its [MIT notice](readme/labs/DEVICON-LICENSE.txt) included. The marks identify their respective languages and tools; their owners retain their rights.
+
 ## Lesson covers
 
 The Linux command chapters use explanatory covers with a palette chosen for each topic. Chapter 07 pairs dark cherry with amber and rose to separate output streams; chapter 08 uses pale pistachio and green to break down permission modes. The Bash covers use aubergine, peach, and green. Each has a compact version for narrow screens. The original Tux, Bash, and Ubuntu artwork are embedded unchanged, with [Larry Ewing's credit](#tux) and the [project logo credits](#project-logos).
