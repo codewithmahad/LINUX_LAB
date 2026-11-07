@@ -1,6 +1,6 @@
 <h1 id="linux_lab">
   <a id="top"></a>
-  <a href="assets/README.md#tux"><img src="assets/tux.png" align="right" width="108" alt="Tux, the original Linux penguin by Larry Ewing."></a>
+  <a href="assets/README.md#tux"><img src="assets/tux.png" align="right" width="120" alt="Tux, the original Linux penguin by Larry Ewing."></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/linux-title-dark.svg">
     <img src="assets/readme/linux-title-light.svg" width="60%" height="42" align="texttop" alt="LINUX_LAB">
@@ -22,7 +22,7 @@ This is the Linux and Bash side of my **Java/Spring Boot backend work**: working
   <a id="lab-record"></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/bash-dark.svg">
-    <img src="assets/readme/bash-light.svg" align="right" width="72" alt="GNU Bash logo in grayscale.">
+    <img src="assets/readme/bash-light.svg" align="right" width="100" alt="GNU Bash logo in grayscale.">
   </picture>
   Work so far
 </h2>
@@ -60,7 +60,7 @@ The Linux notes reach permissions. The Bash notes cover the fundamentals; the ex
   <a id="what-im-learning"></a>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/readme/filesystem-dark.svg">
-    <img src="assets/readme/filesystem-light.svg" align="right" width="94" alt="Linux filesystem sketch: the root directory branches into home, var, and opt.">
+    <img src="assets/readme/filesystem-light.svg" align="right" width="128" alt="Linux filesystem sketch: the root directory branches into home, var, and opt.">
   </picture>
   Learning map
 </h2>
@@ -174,7 +174,7 @@ Docker and Compose come with a later application exercise. Deep administration, 
   <a href="https://github.com/codewithmahad/deploylatch">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/readme/deploylatch-dark.svg">
-      <img src="assets/readme/deploylatch-light.svg" align="right" width="72" alt="DeployLatch emblem: a server lock with deployment and recovery arrows.">
+      <img src="assets/readme/deploylatch-light.svg" align="right" width="96" alt="DeployLatch emblem: a server lock with deployment and recovery arrows.">
     </picture>
   </a>
   Practical work
@@ -197,7 +197,7 @@ The smaller exercises are saved here:
 <h2 id="working-in-this-lab">
   <a id="get-a-linux-terminal"></a>
   <a id="working-setup"></a>
-  <a href="https://ubuntu.com/"><img src="assets/logos/ubuntu.svg" align="right" width="56" alt="Ubuntu Circle of Friends."></a>
+  <a href="https://ubuntu.com/"><img src="assets/logos/ubuntu.svg" align="right" width="80" alt="Ubuntu Circle of Friends."></a>
   Using the lab
 </h2>
 
