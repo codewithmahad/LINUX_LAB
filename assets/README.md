@@ -1,6 +1,6 @@
 # Artwork and sources
 
-The main README pairs the original Tux with a small title, then uses separate illustrations alongside the current work, learning map, applied project, and setup sections. This page records their sources and the chapter illustration credits.
+The main README pairs the original Tux with a small title. The filesystem, DeployLatch, and Ubuntu artwork sit alongside their sections; the Bash mark appears inside its fundamentals dropdown. This page records their sources and the chapter illustration credits.
 
 ## README artwork
 

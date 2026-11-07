@@ -11,50 +11,14 @@
 
 This is the Linux and Bash side of my **Java/Spring Boot backend work**: working with files, running an application, reading its logs, and automating repeated tasks. I started it during my **Operating Systems lab at UBIT, University of Karachi**, and keep the useful notes and scripts here for revision.
 
+**Recorded work:** [8 Linux chapters](learning/linux-commands/) · [4 Bash chapters](learning/bash-scripting/) · [12 Bash practice scripts](practice/bash-scripting/)
+
 <p>
-  <a href="#current-work">Work so far</a> &nbsp;·&nbsp;
   <a href="#learning-map">Learning map</a> &nbsp;·&nbsp;
   <a href="#backend-practice">Practical work</a> &nbsp;·&nbsp;
-  <a href="#working-in-this-lab">Use the lab</a>
+  <a href="#working-in-this-lab">Use the lab</a> &nbsp;·&nbsp;
+  <a href="#beyond-linux-lab">Beyond the lab</a>
 </p>
-
-<h2 id="current-work">
-  <a id="lab-record"></a>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/readme/bash-dark.svg">
-    <img src="assets/readme/bash-light.svg" align="right" width="100" alt="GNU Bash logo in grayscale.">
-  </picture>
-  Work so far
-</h2>
-
-The Linux notes reach permissions. The Bash notes cover the fundamentals; the exercises go further into conditions, loops, and arrays.
-
-<table width="100%" border="0" cellspacing="0" style="border:0;border-collapse:collapse;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;">
-  <thead>
-    <tr style="border:0;background:transparent;">
-      <th align="left" width="24%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Area</th>
-      <th align="left" width="56%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Work saved</th>
-      <th align="left" width="20%" style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;text-align:left;">Open it</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr style="border:0;background:transparent;">
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Linux commands</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">8 chapters, from paths to permissions</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="learning/linux-commands/">Command notes</a></td>
-    </tr>
-    <tr style="border:0;background:transparent;">
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Bash fundamentals</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">4 chapters, through operators and exit statuses</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="learning/bash-scripting/">Bash notes</a></td>
-    </tr>
-    <tr style="border:0;background:transparent;">
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">Bash practice</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;">12 scripts across basics, loops, and arrays</td>
-      <td style="border:0;border-bottom:1px solid rgba(127,127,127,.35);padding:6px 12px;"><a href="practice/bash-scripting/">Practice folder</a></td>
-    </tr>
-  </tbody>
-</table>
 
 <h2 id="learning-map">
   <a id="what-im-learning"></a>
@@ -65,7 +29,7 @@ The Linux notes reach permissions. The Bash notes cover the fundamentals; the ex
   Learning map
 </h2>
 
-The Linux and Bash topics I want for backend development. **Linked topics open recorded notes, exercises, or project code. Plain text is coverage still to add.** The links show where the work is, so the index can grow with the repository.
+The Linux and Bash topics I want for backend development. **Linked topics open recorded notes, exercises, or project code. Plain text is coverage still to add.**
 
 <details>
 <summary><strong>01 · Files, paths, and permissions</strong></summary>
@@ -78,8 +42,6 @@ The Linux and Bash topics I want for backend development. **Linked topics open r
 - [Symbolic links and resolved paths](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) — `ln -s` and `readlink` in the release-switching code.
 - Archives and disk space — `tar`, `zip`, `unzip`, `df`, `du`.
 
-Use these to organise projects, inspect application files, understand access errors, and manage artifacts.
-
 </details>
 
 <details>
@@ -90,8 +52,6 @@ Use these to organise projects, inspect application files, understand access err
 - [Text processing](learning/linux-commands/06-text-processing/README.md) — `wc`, `cut`, `sort`, `uniq`, `tr`, basic `sed` and `awk`.
 - [Pipes and redirection](learning/linux-commands/07-redirection-and-pipes/README.md) — stdin, stdout, stderr, `|`, `>`, `>>`, `2>`, `tee`.
 - Service logs and journal filters — `journalctl`.
-
-Use these to find a startup error, follow a request through logs, and save or summarise useful output.
 
 </details>
 
@@ -105,8 +65,6 @@ Use these to find a startup error, follow a request through logs, and save or su
 - Packages and JDK selection — `apt`, `command -v`, `java -version`, `javac -version`.
 - Running an executable JAR — `java -jar`, arguments, and process exit status.
 
-Use these to prepare a Linux development environment, identify a Java process, and stop or investigate it.
-
 </details>
 
 <details>
@@ -118,12 +76,15 @@ Use these to prepare a Linux development environment, identify a Java process, a
 - SSH access — keys, host verification, and `~/.ssh/config`.
 - File transfer — `scp` and basic `rsync`.
 
-Use these to test an API, distinguish a network problem from an application error, and work on a development VM.
-
 </details>
 
 <details>
 <summary><strong>05 · Bash fundamentals</strong></summary>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/bash-dark.svg">
+  <img src="assets/readme/bash-light.svg" align="right" width="100" alt="GNU Bash logo in grayscale.">
+</picture>
 
 - [Shell and script basics](learning/bash-scripting/01-shell-and-script-basics/README.md) — shebangs, execution order, working directories, and executable permissions.
 - [Variables and expansion](learning/bash-scripting/02-variables-and-expansion/README.md) — quoting, `${name}`, `$(command)`, arithmetic, splitting, and globbing.
@@ -134,8 +95,6 @@ Use these to test an API, distinguish a network problem from an application erro
 - [Arrays](practice/bash-scripting/04-arrays/) — indexed and associative arrays, iteration, lookup, and `"${items[@]}"`.
 - Arguments and defaults — `$1`, `$#`, `"$@"`, `shift`, `${name:-default}`, and usage messages.
 - Functions and scope — parameters, `local`, return statuses, and reusable operations.
-
-Use these to turn repeated terminal work into a small script that accepts inputs and produces predictable results.
 
 </details>
 
@@ -148,8 +107,6 @@ Use these to turn repeated terminal work into a small script that accepts inputs
 - Failure handling — explicit status checks, `exit`, stderr, `set -e`, `set -u`, `pipefail`, and their limits.
 - Cleanup — `trap`, temporary files, and `mktemp`.
 - Repeatable runs — checking dependencies, guarding file changes, and handling existing output.
-
-Use these to understand a failed command and check a helper script before relying on it.
 
 </details>
 
@@ -185,12 +142,6 @@ Docker and Compose come with a later application exercise. Deep administration, 
 For my OS project, I built a Bash tool that deploys a Java service on Ubuntu and verifies its health and version. I tested a working update and recovery from a failed one. It made one distinction clear: a running process can still be unhealthy or running the wrong release.
 
 [Deployment script](https://github.com/codewithmahad/deploylatch/blob/main/scripts/deploylatch.sh) · [Update and rollback demo](https://github.com/codewithmahad/deploylatch#deployment-demo)
-
-The smaller exercises are saved here:
-
-- **Reports:** [system report](practice/bash-scripting/01-basics/01-system-report.sh) · [session audit](practice/bash-scripting/01-basics/02-session-audit.sh).
-- **Control flow:** [validated marks](practice/bash-scripting/03-loops/01-validated-marks.sh) · [menu calculator](practice/bash-scripting/03-loops/03-menu-calculator.sh).
-- **Arrays:** [marks statistics](practice/bash-scripting/04-arrays/02-marks-statistics.sh) · [second-largest distinct value](practice/bash-scripting/04-arrays/03-second-largest.sh) · [name collection](practice/bash-scripting/04-arrays/05-name-collection.sh).
 
 [Browse the practice scripts and their expected behaviour →](practice/bash-scripting/README.md)
 
@@ -239,8 +190,15 @@ Notes and chapter examples live in `learning/`; standalone exercises in `practic
 
 </details>
 
-Other backend practice: [**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**My projects**](https://github.com/codewithmahad?tab=repositories)
-
 Found a mistake? [Open an issue](https://github.com/codewithmahad/LINUX_LAB/issues) with the file, command, and result.
 
-<p><sub>Shaikh Mahad · BSSE, UBIT &nbsp;·&nbsp; <a href="LICENSE">MIT License</a> &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a> &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a></sub></p>
+<h2 id="beyond-linux-lab">Beyond LINUX_LAB</h2>
+
+Alongside this lab, I'm building **Java/Spring Boot projects** and practising the language and database work behind them.
+
+[**Java Lab**](https://github.com/codewithmahad/JAVA_LAB) · [**SQL Lab**](https://github.com/codewithmahad/SQL_LAB) · [**Projects**](https://github.com/codewithmahad?tab=repositories)
+
+<p align="center">
+  <strong>Shaikh Mahad Ud Din</strong> · Java Backend Development<br>
+  <sub><a href="https://github.com/codewithmahad">GitHub</a> &nbsp;·&nbsp; <a href="LICENSE">MIT License</a> &nbsp;·&nbsp; <a href="assets/README.md">Artwork credits</a> &nbsp;·&nbsp; <a href="#linux_lab">Back to top ↑</a></sub>
+</p>
